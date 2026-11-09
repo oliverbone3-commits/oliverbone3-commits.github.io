@@ -11,20 +11,20 @@
 .lab-cursor { position: absolute; left: 0; top: 0; width: 18px; height: 22px; z-index: 20; pointer-events: none; opacity: 0; transition: transform .38s cubic-bezier(.3, .7, .3, 1), opacity .25s; will-change: transform; }
 .lab-cursor.show { opacity: 1; }
 .lab-cursor svg { width: 18px; height: 22px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3)); }
-.lab-ring { position: absolute; left: -10px; top: -10px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3465FF; opacity: 0; }
+.lab-ring { position: absolute; left: -10px; top: -10px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #4A3FF0; opacity: 0; }
 .lab-cursor.click .lab-ring { animation: lab-ring .4s ease-out; }
 .lab-ghost { position: absolute; left: 0; top: 0; z-index: 19; pointer-events: none; transform-origin: 0 0; transition: transform .42s cubic-bezier(.3, .7, .3, 1); }
-.lab-ghost .fb-prow { background: #fff; border: 1px solid #3465FF; border-radius: 8px; box-shadow: 0 8px 16px rgba(12, 12, 12, .08), 0 0 4px rgba(12, 12, 12, .08); width: 272px; }
+.lab-ghost .fb-prow { background: #fff; border: 1px solid #4A3FF0; border-radius: 8px; box-shadow: 0 8px 16px rgba(12, 12, 12, .08), 0 0 4px rgba(12, 12, 12, .08); width: 272px; }
 .lab-press { transform: scale(.96); transition: transform .12s; }
 
 /* Loose port and the edge being drawn */
 .lab-loose { border-radius: 50%; box-shadow: 0 0 0 3px rgba(229, 72, 77, .35); }
 .lab-draw { animation: lab-reveal .45s ease-out; }
-.lab-drop { box-shadow: 0 0 0 2px #3465FF !important; }
+.lab-drop { box-shadow: 0 0 0 2px #4A3FF0 !important; }
 .lab-new { animation: lab-in .3s ease-out; }
 
 /* Payer checkout drawn in the file's language: Inter with the same features, #0C0C0C alphas, radii 8 */
-.co { --b: #3465FF; --on: #FFFFFF; --bg: #FFFFFF; --fg: #0C0C0C; --mut: rgba(12, 12, 12, .48); --sub: rgba(12, 12, 12, .68); --line: rgba(12, 12, 12, .16); --field: rgba(12, 12, 12, .02);
+.co { --b: #4A3FF0; --on: #FFFFFF; --bg: #FFFFFF; --fg: #0C0C0C; --mut: rgba(12, 12, 12, .48); --sub: rgba(12, 12, 12, .68); --line: rgba(12, 12, 12, .16); --field: rgba(12, 12, 12, .02);
   width: 100%; height: 100%; display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 1px solid rgba(12, 12, 12, .08); border-radius: 12px; padding: 24px;
   font: 500 13px/20px "Inter", sans-serif; letter-spacing: -0.15px; box-sizing: border-box;
   font-feature-settings: "cv11", "cv10", "cv09", "cv08", "cv05", "cv04", "cv03", "cv02", "cv01", "ss01", "ss02", "ss04";

@@ -37,7 +37,7 @@
   function fit() { scale = vp.clientWidth / 1600; stage.style.transform = 'scale(' + scale + ')'; }
   fit(); window.addEventListener('resize', fit);
 
-  var BRANDS = { blue: ['#3465FF', '#FFFFFF'], green: ['#17746C', '#FFFFFF'], yellow: ['#F5C518', '#4A3A00'], purple: ['#6E4BD8', '#FFFFFF'] };
+  var BRANDS = { blue: ['#4A3FF0', '#FFFFFF'], green: ['#17746C', '#FFFFFF'], yellow: ['#F5C518', '#4A3A00'], purple: ['#6E4BD8', '#FFFFFF'] };
   var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
 
   function initial() { return { mode: 'flow', wired: false, copy: false, ptab: 'properties', brand: 'blue', dark: false, modal: false, co: 'payment' }; }

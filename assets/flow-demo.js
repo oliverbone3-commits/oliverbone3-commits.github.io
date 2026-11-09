@@ -29,7 +29,7 @@
     };
     var EDGE = { 'payment.pay': 'submit', 'submit.success': 'success', 'submit.pending': 'pending', 'submit.failure': 'failure', 'failure.retry': 'payment', 'any.cancel': 'canceled', 'any.timeout': 'expired' };
     var SCREENS = [['payment', 'Choose a payment method', 'entry'], ['pending', 'Waiting for confirmation', 'poll'], ['success', 'Payment complete', ''], ['failure', 'Payment declined', ''], ['canceled', 'Payment canceled', ''], ['expired', 'Time is up', '']];
-    var BRANDS = { blue: { b: '#3366FF', on: '#FFFFFF' }, green: { b: '#17746C', on: '#FFFFFF' }, yellow: { b: '#F5C518', on: '#4A3A00' }, purple: { b: '#6E4BD8', on: '#FFFFFF' } };
+    var BRANDS = { blue: { b: '#483EF0', on: '#FFFFFF' }, green: { b: '#17746C', on: '#FFFFFF' }, yellow: { b: '#F5C518', on: '#4A3A00' }, purple: { b: '#6E4BD8', on: '#FFFFFF' } };
     var ICON = {
       back: '<svg class="fd-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>',
       eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
