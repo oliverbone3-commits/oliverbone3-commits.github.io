@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout builder — Dzmitry Kuzmiankou</title>
+<meta name="description" content="How dozens of hand-drawn payment forms became ~30 blocks, two theme axes and a working prototype that engineering took into production.">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../assets/site.css?v=20261109b">
+<link rel="stylesheet" href="../assets/rule-demo.css?v=20261106e">
+<link rel="stylesheet" href="../lab/flow/frames.css">
+<link rel="stylesheet" href="../lab/flow/lab.css">
+<link rel="stylesheet" href="../assets/antifraud-demo.css?v=5">
+<link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
+<script src="../assets/font-lab.js?v=20261106e"></script>
+<link rel="stylesheet" href="../assets/next.css?v=46">
+</head>
+<body class="nx" data-case="checkout">
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-pic" src="../assets/avatar.jpg" alt="" width="32" height="32">Dzmitry Kuzmiankou</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a class="hide-sm" href="../index.html#ai">AI</a>
+      <a class="hide-sm" href="../index.html#about">About</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark theme">
+        <svg class="theme-light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="case-hero">
+    <div class="wrap">
+      <div class="hero-top"><a class="back" href="../index.html#work">← All work</a>
+      </div>
+      <div class="tags"><span class="tag own">Only designer</span><span class="tag">Prototype shipped</span><span class="tag">Payments</span></div>
+      <h1>A checkout builder that grew from blocks into a payment-flow editor</h1>
+      <p class="summary">Every payment method, region and provider brand used to get its own hand-drawn form. I turned them into ~30 blocks with two-axis theming and a working prototype that the checkout engineer took into production. Then it grew into a flow editor: the whole payment scenario as a graph, with every screen assembled from the same blocks.</p>
+      <dl class="case-facts">
+        <div><dt>Role</dt><dd>Lead Product Designer, solo: research, block system, theming, working prototype in code, handoff</dd></div>
+        <div><dt>Team</dt><dd>1 checkout engineer, product, analytics</dd></div>
+        <div><dt>Timeline</dt><dd>Jul – Oct 2026 · flow editor in development</dd></div>
+        <div><dt>Scale</dt><dd>~30 blocks · 10 brands × light/dark · 5+ languages · 4+ regions · flow editor of 25 screens</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="case-body" data-mode="full">
+
+      <div class="read-mode">
+        <p class="read-q">How do you want to read the case?</p>
+        <div class="switch" data-read-switch role="group" aria-label="Reading mode">
+          <button type="button" data-mode="skim" aria-pressed="false">Skim · 60 sec</button>
+          <button type="button" data-mode="full" aria-pressed="true">Full story</button>
+        </div>
+      </div>
+
+      <section class="case-section skim-only">
+        <div class="prose tldr">
+          <p>Every new payment method or region was drawn from scratch, and light provider brands broke contrast. I turned dozens of forms into ~30 blocks with two-axis theming, then built a working prototype for the business and rebuilt its structure in a day once it became a pile of features. The engineer took the prototype into production and it carried rollouts in 4+ regions. Together we then grew it into a flow editor: the payment scenario as a graph of screens and backend operations, every screen built from the same blocks. That part is in development.</p>
+        </div>
+      </section>
+
+      <section class="case-section rd-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Walkthrough · in development</p>
+          <h2>Build a payment flow in the editor</h2><ul class="sec-chips"><li>Flow</li><li>Form</li><li>Theme</li><li>Preview</li></ul></header>
+          <p>Where the builder is going: wire the payment scenario, build a screen from blocks, theme it, then run it as a payer. The editor isn't in production yet.</p>
+        </div>
+        <div class="rd lab-demo" data-lab-flow data-base="../lab/flow/" role="region" aria-label="Checkout flow editor walkthrough">
+    <div class="lab-viewport" aria-hidden="true">
+      <div class="lab-stage"></div>
+      <div class="lab-cursor"><svg viewBox="0 0 18 22"><path d="M1 1v17l4.5-4.2 3 6.7 3-1.4-3-6.6H15z" fill="#0C0C0C" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="lab-ring"></span></div>
+    </div>
+    <div class="rd-controls">
+      <button class="rd-btn" type="button" data-rd="prev" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button class="rd-btn" type="button" data-rd="play"></button>
+      <button class="rd-btn" type="button" data-rd="next" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      <div class="rd-progress" role="group" aria-label="Steps"></div>
+      <span class="rd-count"></span>
+    </div>
+    <p class="rd-caption lab-caption" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">01 · The problem</p>
+          <h2>Every "add a region" task started almost from zero</h2><ul class="sec-chips"><li>New region = new drawing</li><li>4 fonts in files</li><li>Hard-coded colours</li></ul></header>
+          <p>Launching a new region or payment method meant waiting for a designer to draw its checkout, almost from scratch. A payment gateway shows the buyer a checkout: card, bank transfer, QR, mobile money, local wallets. Every method, region and provider brand needed its own form. They were drawn screen by screen: four fonts in the files, hard-coded colours, and the same blocks — amount, timer, copyable details, instructions — redrawn with small differences each time.</p>
+          <div class="insight">
+            <b>Second attempt</b>
+            <p>I first proposed a checkout builder at Payler, my previous company. Engineering was overloaded and it never got capacity. At my next company the same pain came back, and this time I built it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">02 · Decision</p>
+          <h2>Blocks, not screens</h2><ul class="sec-chips"><li>~12 regions reviewed</li><li>~30 blocks</li><li>Fix once, everywhere</li></ul></header>
+          <p>I went through the payment methods of about twelve regions and pulled out what repeats. The result was ~30 blocks with properties instead of a library of finished screens:</p>
+          <ul>
+            <li><strong>Basic:</strong> button, input, toggle, badge, timer, language switch.</li>
+            <li><strong>Payment:</strong> amount header, copy field, bank row, QR, bank and app lists, operator choice, step-by-step instructions.</li>
+            <li><strong>Service:</strong> notices, waiting and result states, confirmation dialogs.</li>
+          </ul>
+          <p>A new region became an assembly task. A screen is built from instances, so a fix in one block reaches every checkout. <span class="seen">Same rule as in the <a href="design-system-audit.html">design system audit</a>: fix the source, not the copies.</span></p>
+        </div>
+        <figure class="fig">
+          <div class="canvas">
+            <div class="blocks-map" aria-hidden="true">
+              <div class="mini-co" style="--b:#3465FF">
+                <div class="mc-top"><span class="mc-logo"></span><span class="mc-lang">EN · 14:59</span></div>
+                <div class="mc-label">Amount to pay</div>
+                <div class="mc-amount">€ 49.00</div>
+                <div class="mc-field"><span></span></div>
+                <div class="mc-field"><span style="width:40%"></span></div>
+                <div class="mc-field"><span style="width:70%"></span></div>
+                <div class="mc-btn">I've paid</div>
+              </div>
+              <div class="blocks-list">
+                <div><span>header</span>Brand logo, language switch, payment timer</div>
+                <div><span>amount</span>Amount header with currency formatting per market</div>
+                <div><span>copy-field</span>Bank details the buyer copies into their banking app</div>
+                <div><span>instructions</span>Step-by-step guide that changes per method</div>
+                <div><span>button</span>Primary action on Brand/600 with "text on brand"</div>
+                <div><span>states</span>Waiting, success and failure screens with auto status checks</div>
+              </div>
+            </div>
+          </div>
+          <figcaption>One bank-transfer checkout and the blocks it is assembled from. The same blocks build card, QR and wallet flows.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">03 · Decision</p>
+          <h2>Theme is two axes, not twenty modes</h2><ul class="sec-chips"><li>Light / dark</li><li>Brand</li><li>1 anchor colour per brand</li></ul></header>
+          <p>Ten brands times light and dark would have meant twenty theme modes and hit Figma's plan limit. I split theming into two independent axes: light/dark and brand. Each brand scale is generated from one anchor colour, so hover, pressed and tints come from a formula, not from hand-picking.</p>
+          <div class="tradeoff">
+            <div><span>Rejected</span><p>One mode per brand and theme: 20 modes, every new brand adds two more, plan limit reached.</p></div>
+            <div class="chosen"><span>Chosen</span><p>Brand × light/dark as separate axes. A new brand is one anchor colour; the rest is generated.</p></div>
+          </div>
+          <p>The hard part was light brands — yellow, light blue — where white text fails. Black text looked foreign on them. The fix was a brand-dependent <strong>"text on brand"</strong> token: a deep shade of the brand colour itself, with contrast of at least 5.5:1.</p>
+          <p>Mobile got its own axis too. At 320 px the desktop paddings ate 27.5% of the width, so viewport spacing became a separate collection, independent of theme.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas">
+            <div class="axis-label"><span>brand →</span><span>light / dark ↓</span></div>
+            <div class="theme-grid" aria-hidden="true">
+              <div class="mini-co" style="--b:#3465FF"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co" style="--b:#17746C"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co" style="--b:#ED1C24"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co" style="--b:#FF7900"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co" style="--b:#1DC8FF;--on:#003B4F"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co" style="--b:#FEE301;--on:#5C5200"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co dark" style="--b:#5B82FF"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co dark" style="--b:#1F9A8F"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co dark" style="--b:#F0444A"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co dark" style="--b:#FF8A26"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co dark" style="--b:#1DC8FF;--on:#003B4F"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+              <div class="mini-co dark" style="--b:#FEE301;--on:#5C5200"><div class="mc-label">Amount</div><div class="mc-amount">€ 49.00</div><div class="mc-field"><span></span></div><div class="mc-btn">Pay</div></div>
+            </div>
+          </div>
+          <figcaption>Six brands on both axes. On light blue and yellow, the button text is a deep shade of the brand itself instead of white or black.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">04 · Decision</p>
+          <h2>Show the business a product, not mockups</h2><ul class="sec-chips"><li>Prototype in one HTML file</li><li>5 iterations in a day</li><li>CSS variables + JSON tokens</li></ul></header>
+          <p>People who decide on a merchant-facing builder don't open Figma. So I built a working prototype in one HTML file: the live checkout on the right, settings on the left, export of CSS variables and JSON tokens.</p>
+          <p>By the third iteration it had turned into a pile of features: fifteen equal sections in one flat list. I stopped and researched how leading payment providers and e-commerce platforms let merchants configure checkouts, then audited the prototype against it. Three findings changed the structure:</p>
+          <ul>
+            <li>there are three different jobs: one-time setup, variants per market, and rare compliance edits;</li>
+            <li>the "field state preview" was a testing tool pretending to be a setting;</li>
+            <li>the country preset felt like a restriction, though it was really a quick-fill.</li>
+          </ul>
+          <p>Version 4 got a new structure: side navigation with six sections, state preview moved to a separate dev toolbar, the compliance block locked, and no way to switch off the last payment method. Version 5 added a dashboard of named configurations, which turned the builder into a product with objects rather than a panel of sliders. <strong>Five iterations took one day.</strong></p>
+        </div>
+        <figure class="fig">
+          <div class="canvas">
+            <div class="timeline-v" style="grid-template-columns: repeat(4, 1fr)">
+              <div><b>v1</b>Live checkout on the right, settings on the left, token export.</div>
+              <div><b>v2–v3</b>Settings added one by one: fifteen equal sections in a flat list.</div>
+              <div class="turn"><b>v4 · research</b>Three jobs → six sections, dev toolbar, locked compliance block.</div>
+              <div class="turn"><b>v5</b>Dashboard of named configurations: a product with objects.</div>
+            </div>
+          </div>
+          <figcaption>Five iterations in one day. The turn came from research into how merchants actually configure checkouts.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">05 · Honest part</p>
+          <h2>What went wrong</h2><ul class="sec-chips"><li>Features before jobs</li><li>Token layers beyond the team</li><li>Brief read literally</li></ul><aside class="nx-note" style="--tilt:2.5deg"><p>Ask who sets it up, why and how often — before adding the option.</p><span>Note to self</span></aside></header>
+          <ul class="lessons">
+            <li><strong>Features before jobs.</strong> Three iterations added options without asking who configures this, why and how often. Researching the jobs first would have saved them.</li>
+            <li><strong>Token architecture beyond the team.</strong> I rebuilt the builder on an open UI kit with three token layers: 145 primitives and 35 semantic tokens. It was correct and too complex for daily work. Together with the team we went back to one collection of 43 tokens that people actually use.</li>
+            <li><strong>Reading the brief literally.</strong> One checkout had to be redone: "manual entry" meant input fields, not copyable details.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">06 · Result</p>
+          <h2>What changed after</h2><ul class="sec-chips"><li>In production</li><li>4+ regions</li><li>No designer in the loop</li></ul></header>
+        </div>
+        <div class="results">
+          <div><b>Prototype → production</b><p>The checkout engineer took the working prototype and extended it against production.</p></div>
+          <div><b>No designer in the loop</b><p>New checkouts are assembled by the engineer from the builder.</p></div>
+          <div><b>Real rollouts in 4+ regions</b><p>Desktop and mobile: bank transfers with "I've paid", QR with seven bank deep links, automatic status checks, custom merchant brands.</p></div>
+          <div><b>336 → 36 input variants</b><p>One layer structure, so typed values no longer disappear when the state changes.</p></div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">07 · Where it went</p>
+          <h2>From a settings panel to an editor for the whole payment flow</h2><ul class="sec-chips"><li>Flows list with checks</li><li>Graph of screens and operations</li><li>Backend contract</li><li>Preview as a payer</li><li>19 components</li></ul></header>
+          <p>A checkout isn't one screen. It is a scenario: choose a method, pay, wait for the bank, succeed or fail, retry, cancel, time out. The settings panel could style the screens but not the scenario between them. I went through the prototype with the checkout engineer; he gathered every checkout we had and extended it to cover them, and I redesigned his second iteration into a flow editor.</p>
+
+          <h3>Every flow, with its problems in plain sight</h3>
+          <p>The flows list shows each checkout flow with its entry screen, number of screens and checks: <strong>No issues</strong>, <strong>2 warnings</strong>, <strong>8 errors · 4 warnings</strong>. A broken flow is visible before anyone opens it.</p>
+
+          <h3>A checkout as a graph</h3>
+          <p>In <strong>Flow</strong> mode the scenario is a canvas. Screens are nodes with the actions a payer can take: pay, cancel, report. Between them sit backend operations (submit, status, cancel), and every outcome an operation can return (success, pending, failure, default) is its own exit that has to lead somewhere. Events that can happen anywhere, like cancel and timeout, hang off a single <strong>From any screen</strong> node instead of being wired to every screen. A pending screen polls status on its own. The same graph can be read as a flowchart or re-laid out as a graph.</p>
+
+          <h3>The backend contract on the same canvas</h3>
+          <p>The inspector has three tabs: <strong>Screen, Transition, Operations</strong>. Operations is the contract with the backend: what we call, which fields go in, which outcomes may come back, and which values land in <code>{{placeholders}}</code> on the screens. Designers, frontend and backend are meant to look at one source instead of a spec and a mockup that drift apart.</p>
+
+          <h3>Screens from the same blocks</h3>
+          <p>In <strong>Form</strong> mode a screen is a shared header (amount, language switcher, timer, payment ID), a body of steps and a footer of buttons, assembled from a palette of ready-made blocks and fields: card, card without CVV, phone, text input, copyable value, details card. One flow can serve several methods, filtered as All methods, Card or UPI. Texts are kept per language, and the theme keeps the two axes from the block system.</p>
+
+          <h3>Run it as a payer, hand it off as code</h3>
+          <p><strong>Preview</strong> clicks through the whole flow as a payer, with backend calls simulated, so a broken branch would show up before release. The <strong>Component catalog</strong> lists the 19 form components with their props as JSON, ready to copy into the frontend.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Scale</p>
+          <h2>One editor, many screens and states</h2><ul class="sec-chips"><li>20 of 25 screens</li><li>Open full size</li></ul></header>
+          <p>Flows list, canvas modes, inspector tabs, form editing, drag and drop, confirmations, preview steps. Open any of them full size.</p>
+        </div>
+        <div class="af-wall" data-fb-wall>
+          <a href="img/flowbuilder/01-flows-list.png" target="_blank" rel="noopener"><img width="1440" height="985" src="img/flowbuilder/01-flows-list.png" alt="Flows list: table of checkout flows with entry screen, screen count and validation status" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/flowbuilder/screen-drawer-2.png" target="_blank" rel="noopener"><img width="448" height="1175" src="img/flowbuilder/screen-drawer-2.png" alt="Screen drawer with an action expanded into its modal window settings" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/04-flow-canvas.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/04-flow-canvas.png" alt="Flow editor: screen list, flowchart canvas of screens and transitions, screen properties" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/02-add-flow-empty.png" target="_blank" rel="noopener"><img width="480" height="278" src="img/flowbuilder/02-add-flow-empty.png" alt="New flow modal with an empty name field and Create disabled" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/08-operations-tab.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/08-operations-tab.png" alt="Operations tab: backend contract with required fields, outcomes and provided values" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/25-graph-view.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/25-graph-view.png" alt="Graph view of the flow showing screens and transitions as a node graph" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/flowbuilder/palette.png" target="_blank" rel="noopener"><img width="272" height="814" src="img/flowbuilder/palette.png" alt="Palette panel: ready-made blocks and field types to add to a form" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/09-form-mode-step.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/09-form-mode-step.png" alt="Form mode: palette, screen structure, preview and properties of a form step" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/flowbuilder/properties-drawer.png" target="_blank" rel="noopener"><img width="448" height="1155" src="img/flowbuilder/properties-drawer.png" alt="Properties drawer for a selected form field with per-language values" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/20-drag-field-dragging.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/20-drag-field-dragging.png" alt="Field being dragged with a drop indicator in the screen structure" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/24-component-catalog.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/24-component-catalog.png" alt="Component catalog: list of form components with an isolated preview and props" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/edit-name-modal.png" target="_blank" rel="noopener"><img width="480" height="234" src="img/flowbuilder/edit-name-modal.png" alt="Edit name modal for renaming an existing flow" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/16-preview-modal-open.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/16-preview-modal-open.png" alt="Preview with the report-a-problem modal opened over the payment screen" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/flowbuilder/structure.png" target="_blank" rel="noopener"><img width="320" height="814" src="img/flowbuilder/structure.png" alt="Screen structure panel: header, body steps, footer buttons and modal buttons" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/07-transition-tab.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/07-transition-tab.png" alt="Transition tab: outgoing and incoming transitions of the payment screen by outcome" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/12-form-settings-languages.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/12-form-settings-languages.png" alt="Form-wide settings: active languages with drag to reorder and default language" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/warnings-panel.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/warnings-panel.png" alt="Form editor with the validation warnings panel expanded at the bottom" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/23-confirmation-dialog-fields.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/23-confirmation-dialog-fields.png" alt="Confirmation dialog with a field the payer fills in before confirming" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/10-form-mode-field-bank-list.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/10-form-mode-field-bank-list.png" alt="Form mode with the Bank list field selected and its bilingual properties" loading="lazy" decoding="async"></a>
+          <a href="img/flowbuilder/05-action-modal-editor.png" target="_blank" rel="noopener"><img width="1600" height="1000" src="img/flowbuilder/05-action-modal-editor.png" alt="Footer action configured to open a modal: title, text, buttons and post-send message" loading="lazy" decoding="async"></a>
+        </div>
+      </section>
+
+      
+
+    </article>
+
+    <a class="next-case" href="back-office.html">
+      <div><small>Next case</small><b>An anti-fraud back-office built around the analyst's loop</b></div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Building something with a small team?</h2>
+        <p>I'm looking for a founding or first-designer role in a product team where design changes what ships. Telegram is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="https://t.me/dkuzmenkov">Message on Telegram</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:oliverbone3@gmail.com">oliverbone3@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Dzmitry Kuzmiankou</span>
+    <span>Built in code on my own design tokens, with AI.</span>
+  </footer>
+</div>
+<script src="../assets/wall.js?v=4"></script>
+<script src="../assets/site.js?v=20261109a"></script>
+<template id="lab-frames">
+<!-- ============================================================
+     04 · Flow canvas  (Figma 6:1478)
+     ============================================================ -->
+<div class="fb-frame" id="fb-flow">
+  <header class="fb-header">
+    <div class="fb-header__back"><img src="img/ic-arrow-left-20.svg" width="20" height="20" alt=""></div>
+    <div class="fb-header__info">
+      <p class="fb-t-h4">Demo merchant</p>
+      <p class="fb-t-c10">demo-merchant · 6 screens</p>
+    </div>
+    <div class="fb-header__actions">
+      <button class="fb-btn fb-btn--m fb-t-btn13" data-k="preview"><img src="img/ic-eye-20.svg" width="20" height="20" alt="">Preview</button>
+      <button class="fb-btn fb-btn--m fb-btn--pri fb-t-btn13"><img src="img/ic-save-20.svg" width="20" height="20" alt="">Save</button>
+    </div>
+  </header>
+
+  <div class="fb-toolbar">
+    <div class="fb-seg">
+      <button class="fb-seg__item fb-t-b13 is-on" data-k="mode-flow">Flow</button>
+      <button class="fb-seg__item fb-t-b13" data-k="mode-form">Form</button>
+      <span class="fb-seg__div"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+      <button class="fb-seg__item fb-t-b13">Component catalog</button>
+    </div>
+    <div class="fb-seg fb-seg--fill fb-seg--w220">
+      <button class="fb-seg__item fb-t-b13 is-on">Flowchart</button>
+      <button class="fb-seg__item fb-t-b13">Graph</button>
+    </div>
+    <button class="fb-btn fb-btn--m fb-t-btn13"><img src="img/ic-refresh-cw-20.svg" width="20" height="20" alt="">Re-layout</button>
+    <div class="fb-spacer"></div>
+    <div class="fb-valid fb-valid-ok"><img src="img/ic-circle-check-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">No errors</span></div>
+    <div class="fb-valid fb-valid-err fb-hidden"><img src="img/ic-circle-alert-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">1 error</span></div>
+  </div>
+
+  <div class="fb-body">
+    <!-- Screens panel -->
+    <aside class="fb-panel fb-panel--screens">
+      <div class="fb-panel__head fb-panel__head--32">
+        <p class="fb-t-b15e">Screens</p>
+        <button class="fb-btn fb-btn--s fb-t-btn10e"><img src="img/ic-plus-16.svg" width="16" height="16" alt="">Screen</button>
+      </div>
+      <div class="fb-search"><img src="img/ic-search-16.svg" width="16" height="16" alt=""><p class="fb-t-b13">Search screens</p></div>
+      <div class="fb-card">
+        <div class="fb-card__head"><p class="fb-t-b15e">Shared · 6</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+        <div class="fb-card__body">
+          <div class="fb-sitem is-sel"><span class="fb-dot fb-dot--blue"></span><div class="fb-sitem__text"><p class="fb-t-b13">payment</p><p class="fb-t-c10">Choose a payment method</p></div><p class="fb-t-c10 fb-sitem__tag">entry</p></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">pending</p><p class="fb-t-c10">Waiting for confirmation</p></div><p class="fb-t-c10 fb-sitem__tag">poll</p></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">success</p><p class="fb-t-c10">Payment complete</p></div></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">failure</p><p class="fb-t-c10">Payment failed</p></div></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">canceled</p><p class="fb-t-c10">Payment canceled</p></div></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">expired</p><p class="fb-t-c10">Time ran out</p></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Canvas -->
+    <div class="fb-canvas">
+      <img class="fb-canvas__grid" src="img/imgFlowCanvasGrid.svg" width="1600" height="1000" alt="">
+
+      <!-- Edges (canvas coordinates from Figma; svg drawn at natural size, offset by half stroke) -->
+      <img class="fb-edge" src="img/imgStatusTDefaultExpired.svg" width="491" height="293" style="left:13px;top:542px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgStatusTSuccessSuccess.svg" width="94" height="363" style="left:463px;top:452px" alt="">
+      <img class="fb-edge" src="img/imgCancelOpOkCanceled.svg" width="481" height="287" style="left:17px;top:438px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgGlobalTimeoutStatusT.svg" width="78" height="55" style="left:215px;top:764px" alt="">
+      <img class="fb-edge" src="img/imgGlobalCancelCancelOp.svg" width="78" height="17" style="left:215px;top:728px" alt="">
+      <img class="fb-edge" src="img/imgStatusFailureFailure.svg" width="94" height="121" style="left:463px;top:280px" alt="">
+      <img class="fb-edge" src="img/imgStatusSuccessSuccess.svg" width="94" height="73" style="left:463px;top:380px" alt="">
+      <img class="fb-edge" src="img/imgStatusPendingPending.svg" width="471" height="87" style="left:21px;top:274px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgPendingPollStatus.svg" width="78" height="5" style="left:215px;top:364px" alt="">
+      <img class="fb-edge" src="img/imgFailureRetryPayment.svg" width="725" height="273" style="left:25px;top:28px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgSubmitDefaultFailure.svg" width="94" height="113" style="left:463px;top:168px" alt="">
+      <img class="fb-edge" id="edge-submit-failure" src="img/imgSubmitFailureFailure.svg" width="94" height="133" style="left:463px;top:148px" alt="">
+      <img class="fb-edge" src="img/imgSubmitPendingPending.svg" width="451" height="221" style="left:29px;top:128px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgSubmitSuccessSuccess.svg" width="94" height="345" style="left:463px;top:108px" alt="">
+      <img class="fb-edge" src="img/imgPaymentPaySubmit.svg" width="79" height="6" style="left:214px;top:112px" alt="">
+
+      <!-- Nodes -->
+      <div class="fb-node fb-node--sel" style="left:48px;top:48px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">payment</p><p class="fb-t-c10 fb-node__tag">entry</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">Choose a payment method</p></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">pay</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">cancel</p><p class="fb-t-c10 fb-node__tag">from any</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">report</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:64px">
+        <div class="fb-node__head"><p class="fb-t-s12e">submit</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">success</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">pending</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">failure</p><img class="fb-port" data-k="port-submit-failure" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">default</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:560px;top:232px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">failure</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">error</p></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">retry</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport" data-k="in-failure"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:300px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">pending</p><p class="fb-t-c10 fb-node__tag">poll</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">pending</p></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">poll</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:316px">
+        <div class="fb-node__head"><p class="fb-t-s12e">status</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">pending</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">success</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">failure</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:560px;top:404px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">success</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">success · no actions</p></div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:470px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">canceled</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">canceled · no actions</p></div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:580px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">expired</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">expired · no actions</p></div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:700px">
+        <div class="fb-node__head"><span class="fb-dot fb-dot--gray"></span><p class="fb-t-s12e">From any screen</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">cancel</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">timeout</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:680px">
+        <div class="fb-node__head"><p class="fb-t-s12e">cancel</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">ok</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:770px">
+        <div class="fb-node__head"><p class="fb-t-s12e">status</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">success</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">default</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <!-- Edge labels -->
+      <div class="fb-elabel fb-t-c10" style="left:218px;top:107px">pay</div>
+      <div class="fb-elabel fb-t-c10" style="left:477px;top:410px">success</div>
+      <div class="fb-elabel fb-t-c10" style="left:228px;top:276px">pending</div>
+      <div class="fb-elabel fb-t-c10" id="label-submit-failure" style="left:488px;top:150px">failure</div>
+      <div class="fb-elabel fb-t-c10" style="left:494px;top:184px">default</div>
+      <div class="fb-elabel fb-t-c10" style="left:369px;top:18px">retry</div>
+      <div class="fb-elabel fb-t-c10" style="left:219px;top:358px">poll</div>
+      <div class="fb-elabel fb-t-c10" style="left:211px;top:734px">cancel</div>
+      <div class="fb-elabel fb-t-c10" style="left:229px;top:781px">timeout</div>
+      <div class="fb-elabel fb-t-c10" style="left:244px;top:428px">ok</div>
+      <div class="fb-elabel fb-t-c10" style="left:234px;top:532px">default</div>
+
+      <div class="fb-zoom">
+        <button class="fb-btn fb-btn--s"><img src="img/imgCirclePlus.svg" width="16" height="16" alt=""></button>
+        <button class="fb-btn fb-btn--s"><img src="img/imgCircleMinus.svg" width="16" height="16" alt=""></button>
+        <button class="fb-btn fb-btn--s"><img src="img/imgLayoutGrid.svg" width="16" height="16" alt=""></button>
+      </div>
+    </div>
+
+    <!-- Screen inspector -->
+    <aside class="fb-drawer">
+      <div class="fb-drawer__content">
+        <div class="fb-seg fb-seg--fill">
+          <button class="fb-seg__item fb-t-b13 is-on">Screen</button>
+          <button class="fb-seg__item fb-t-b13">Transition</button>
+          <span class="fb-seg__div"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+          <button class="fb-seg__item fb-t-b13">Operations</button>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-card__head"><p class="fb-t-b15e">General</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+          <div class="fb-card__body fb-card__body--fields">
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Screen id</p><p class="fb-t-b13 fb-input__value">payment</p></div></div>
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Kind</p><p class="fb-t-b13 fb-input__value">form — fields</p></div><img src="img/ic-chevron-down-input.svg" width="16" height="16" alt=""></div>
+            <div class="fb-input"><p class="fb-t-b13 fb-input__ph">Method (canvas group)</p></div>
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Extends screen</p><p class="fb-t-b13 fb-input__value">—</p></div><img src="img/ic-chevron-down-input.svg" width="16" height="16" alt=""></div>
+          </div>
+        </div>
+
+        <div class="fb-togrow"><p class="fb-t-s12e">Status polling</p><span class="fb-toggle"><span class="fb-toggle__knob"></span></span></div>
+
+        <div class="fb-card">
+          <div class="fb-card__head"><p class="fb-t-b15e">Texts</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+          <div class="fb-card__body fb-card__body--fields">
+            <div class="fb-input"><p class="fb-t-b13 fb-input__ph">Eyebrow</p></div>
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Title</p><p class="fb-t-b13 fb-input__value">Choose a payment method</p></div></div>
+            <div class="fb-input"><p class="fb-t-b13 fb-input__ph">Description</p></div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Actions (footer) · 3</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+          <div class="fb-card__body">
+            <div class="fb-pitem fb-pitem--soft"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Pay</p><p class="fb-t-c10">pay · primary</p></div></div>
+            <div class="fb-pitem fb-pitem--soft is-hover"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Cancel payment</p><p class="fb-t-c10">cancel · link</p></div><img src="img/ic-x-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-pitem fb-pitem--soft"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Can't pay</p><p class="fb-t-c10">report · modal</p></div></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============================================================
+     09 · Form mode — step  (Figma 17:3138)
+     ============================================================ -->
+<div class="fb-frame" id="fb-form">
+  <header class="fb-header">
+    <div class="fb-header__back"><img src="img/ic-arrow-left-20.svg" width="20" height="20" alt=""></div>
+    <div class="fb-header__info">
+      <p class="fb-t-h4">Demo merchant</p>
+      <p class="fb-t-c10">demo-merchant · 6 screens</p>
+    </div>
+    <div class="fb-header__actions">
+      <button class="fb-btn fb-btn--m fb-t-btn13" data-k="preview"><img src="img/ic-eye-20.svg" width="20" height="20" alt="">Preview</button>
+      <button class="fb-btn fb-btn--m fb-btn--pri fb-t-btn13"><img src="img/ic-save-20.svg" width="20" height="20" alt="">Save</button>
+    </div>
+  </header>
+
+  <div class="fb-toolbar">
+    <div class="fb-seg">
+      <button class="fb-seg__item fb-t-b13" data-k="mode-flow">Flow</button>
+      <button class="fb-seg__item fb-t-b13 is-on" data-k="mode-form">Form</button>
+      <span class="fb-seg__div" style="visibility:hidden"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+      <button class="fb-seg__item fb-t-b13">Component catalog</button>
+    </div>
+    <div class="fb-seg fb-seg--fill fb-seg--w300">
+      <button class="fb-seg__item fb-t-b13 is-on">All methods</button>
+      <button class="fb-seg__item fb-t-b13">Card</button>
+      <span class="fb-seg__div"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+      <button class="fb-seg__item fb-t-b13">UPI</button>
+    </div>
+    <div class="fb-spacer"></div>
+    <div class="fb-valid fb-valid-ok"><img src="img/ic-circle-check-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">No errors</span></div>
+    <div class="fb-valid fb-valid-err fb-hidden"><img src="img/ic-circle-alert-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">1 error</span></div>
+  </div>
+
+  <div class="fb-screenbar">
+    <button class="fb-btn fb-btn--s fb-t-btn10e"><img src="img/ic-arrow-left-16.svg" width="16" height="16" alt="">Back to flow</button>
+    <p class="fb-t-b13e fb-c-500">Screen method-select</p>
+    <p class="fb-t-b13 fb-c-300">Choose a payment method</p>
+  </div>
+
+  <div class="fb-body">
+    <!-- Palette -->
+    <aside class="fb-panel fb-panel--palette">
+      <div class="fb-panel__head"><p class="fb-t-b15e">Palette</p><img src="img/ic-panel-left-close-16.svg" width="16" height="16" alt=""></div>
+      <div class="fb-card">
+        <div class="fb-card__head"><p class="fb-t-b15e">Ready-made blocks</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+        <div class="fb-card__body">
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Card</p><p class="fb-t-c10">number, expiry, CVC, name, e-mail</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Card without CVV</p><p class="fb-t-c10">same, without the security code</p></div></div>
+        </div>
+      </div>
+      <div class="fb-card">
+        <div class="fb-card__head"><p class="fb-t-b15e">Fields</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+        <div class="fb-card__body">
+          <div class="fb-prow" data-k="pal-phone"><div class="fb-prow__text"><p class="fb-t-b13">Phone</p><p class="fb-t-c10">number with mask and prefix</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Text input</p><p class="fb-t-c10">payment code, UTR etc.</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Multiline input</p><p class="fb-t-c10">«Report a problem»</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Copyable value</p><p class="fb-t-c10">payment details, account number</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Details card</p><p class="fb-t-c10">several rows + «Verified» badge</p></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Screen structure -->
+    <aside class="fb-panel fb-panel--structure">
+      <div class="fb-panel__head"><p class="fb-t-b15e">Screen structure</p><img src="img/ic-panel-left-close-16.svg" width="16" height="16" alt=""></div>
+      <div class="fb-card">
+        <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Header · shared</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+        <div class="fb-card__body">
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Amount</p><p class="fb-t-c10">amount</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Language switcher</p><p class="fb-t-c10">ru, en</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Timer</p><p class="fb-t-c10">900 s</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Payment ID</p><p class="fb-t-c10">ID</p></div></div>
+        </div>
+      </div>
+      <div class="fb-card" data-k="body-drop">
+        <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Body · steps</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+        <div class="fb-card__body" id="body-items">
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Choose a payment method · 3</p><p class="fb-t-c10">Step · 4 fields</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Bank list</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Text input</p><p class="fb-t-c10">Code</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Phone</p><p class="fb-t-c10">Phone number</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">USSD code</p></div></div>
+        </div>
+      </div>
+      <div class="fb-card">
+        <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Footer · buttons</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+        <div class="fb-card__body">
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Cancel payment</p><p class="fb-t-c10">link</p></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Checkout preview -->
+    <div class="fb-preview-area">
+      <div id="co-slot"></div>
+    </div>
+
+    <!-- Properties / Theme -->
+    <aside class="fb-drawer">
+      <div class="fb-drawer__content">
+        <div class="fb-seg fb-seg--fill">
+          <button class="fb-seg__item fb-t-b13 is-on" data-k="ptab-properties">Properties</button>
+          <button class="fb-seg__item fb-t-b13" data-k="ptab-theme">Theme</button>
+        </div>
+
+        <div id="ptab-properties-panel">
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Step title</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">RU</p><p class="fb-t-b13 fb-input__value">Choose a payment method</p></div></div>
+              <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">EN</p><p class="fb-t-b13 fb-input__value">Choose payment method</p></div></div>
+            </div>
+          </div>
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Step description</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-input"><p class="fb-t-b13 fb-input__ph">RU</p></div>
+              <div class="fb-input"><p class="fb-t-b13 fb-input__ph">EN</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="ptab-theme-panel" class="fb-hidden">
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Brand</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-theme-field">
+                <p class="fb-t-b13 fb-field-label">Accent colour</p>
+                <div class="fb-swatches">
+                  <button class="fb-swatch is-on" data-k="sw-blue" style="--sw:#3465FF" aria-label="Blue"></button>
+                  <button class="fb-swatch" data-k="sw-green" style="--sw:#17746C" aria-label="Green"></button>
+                  <button class="fb-swatch" data-k="sw-yellow" style="--sw:#F5C518" aria-label="Yellow"></button>
+                  <button class="fb-swatch" data-k="sw-purple" style="--sw:#6E4BD8" aria-label="Purple"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Mode</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-seg fb-seg--fill">
+                <button class="fb-seg__item fb-t-b13 is-on" data-k="th-light">Light</button>
+                <button class="fb-seg__item fb-t-b13" data-k="th-dark">Dark</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============================================================
+     14 · Preview — payment screen: modal only  (Figma 28:6373)
+     ============================================================ -->
+<div class="fb-modal" id="fb-modal">
+  <div class="fb-modal__head">
+    <p class="fb-t-h4">Preview</p>
+    <p class="fb-t-b13s">Click through the flow as a payer. Backend calls are simulated.</p>
+  </div>
+  <div class="fb-modal__content">
+    <div class="fb-modal__state">
+      <p class="fb-t-b13 fb-c-300 fb-nowrap">Screen</p>
+      <p class="fb-t-b13e" id="modal-screen">payment</p>
+      <span class="fb-entry"><span class="fb-t-tag10">entry</span></span>
+    </div>
+    <div id="co-modal-slot"></div>
+  </div>
+  <div class="fb-modal__foot">
+    <button class="fb-btn fb-btn--l fb-t-btn14e" data-k="modal-start-over"><img src="img/ic-refresh-cw-24.svg" width="24" height="24" alt="">Start over</button>
+    <button class="fb-btn fb-btn--l fb-btn--pri fb-t-btn14e" data-k="modal-close">Close preview</button>
+  </div>
+</div>
+</template>
+<script src="../lab/flow/lab.js"></script>
+</body>
+</html>

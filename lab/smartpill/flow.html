@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>SmartPill flow</title>
+<link rel="stylesheet" href="sp.css">
+<link rel="stylesheet" href="flow.css">
+</head>
+<body class="fl-body">
+<main class="fl">
+  <div class="fl-viewport">
+    <div class="fl-fit">
+      <div class="fl-phone" id="stage">
+        <div class="fl-cursor"><span class="fl-ring"></span></div>
+        <div class="fl-toast"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Metformin taken · 14:00</div>
+      </div>
+    </div>
+  </div>
+  <div class="fl-controls">
+    <p class="fl-caption" aria-live="polite"></p>
+    <div class="fl-bar">
+      <button type="button" class="fl-btn" data-fl="prev" aria-label="Previous step"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="fl-btn fl-play" data-fl="play"></button>
+      <button type="button" class="fl-btn" data-fl="next" aria-label="Next step"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="fl-progress"></div>
+      <span class="fl-count"></span>
+      <button type="button" class="fl-btn fl-theme" data-fl="theme" aria-label="Dark phone" aria-pressed="false"><svg class="fl-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><svg class="fl-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</main>
+<script src="screens.js"></script>
+<script src="flow.js"></script>
+</body>
+</html>

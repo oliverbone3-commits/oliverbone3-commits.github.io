@@ -1,0 +1,255 @@
+/* =====================================================================
+   "Gallery" look — experiment based on the Apple style reference
+   (Desktop/DESIGN.md). Opt-in: open any page with ?look=gallery,
+   back to the base look with ?look=base. Everything is scoped to
+   :root[data-look="gallery"]; since 6 Nov 2026 every page sets it in <html>.
+
+   What is borrowed (principles, not Apple's numbers or colours):
+   1. The work is the hero: demos and screens sit large on a quiet
+      band, without extra frames or cast shadows.
+   2. Depth from surfaces and tints, not shadows.
+   3. One large media radius (28px) for cards and figures.
+   4. Chapter rhythm on case pages (~90px between sections).
+   Own tokens stay: Inter, --brand, the dark theme.
+   ===================================================================== */
+
+:root[data-look="gallery"] {
+  --bg: #FFFFFF;
+  --band: #F5F5F7;
+  --surface: #FFFFFF;
+  --r6: 28px;
+  --chapter: clamp(56px, 8vw, 88px);
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-look="gallery"]:not([data-theme="light"]) { --bg: #1C1B1A; --band: #262624; --surface: #30302E; }
+}
+:root[data-look="gallery"][data-theme="dark"] { --bg: #1C1B1A; --band: #262624; --surface: #30302E; }
+
+/* ---------- Home ----------
+   Sections stay on the white page (grey bands were too heavy);
+   colour comes from each case's tinted visual instead. */
+
+/* Case cards: white with a hairline edge, no shadow; the visual sits directly on the card */
+[data-look="gallery"] .case { border: 1px solid var(--primary-100); border-radius: var(--r6); padding: clamp(24px, 3vw, 40px); }
+[data-look="gallery"] .case:hover { box-shadow: none; }
+[data-look="gallery"] .visual { background: var(--band); border: 0; border-radius: calc(var(--r6) - 8px); }
+
+/* Other work: large-radius screenshots with a hairline edge on the white page */
+[data-look="gallery"] .shot { border-radius: 20px; }
+[data-look="gallery"] .work .shot img { transition: transform .4s ease; }
+[data-look="gallery"] .work:hover .shot img { transform: scale(1.015); }
+
+[data-look="gallery"] .video { border-radius: var(--r6); background: var(--band); }
+[data-look="gallery"] .contact { border-radius: var(--r6); }
+[data-look="gallery"] .mini { border-radius: 20px; }
+
+/* ---------- Case pages ---------- */
+[data-look="gallery"] .case-section { padding-top: var(--chapter); }
+[data-look="gallery"] .case-section:first-child { padding-top: 0; }
+
+/* Walkthrough as the hero of the case: the demo sits large on a band */
+[data-look="gallery"] .rd-section .rd {
+  background: var(--band);
+  border-radius: var(--r6);
+  padding: clamp(16px, 4vw, 48px);
+  margin-top: var(--p5);
+}
+[data-look="gallery"] .rd-stage { box-shadow: none; border-color: transparent; border-radius: 16px; }
+
+/* Figures: band instead of a bordered white canvas; screens without cast shadows */
+[data-look="gallery"] figure.fig { margin: var(--p7) 0; }
+[data-look="gallery"] figure.fig .canvas,
+[data-look="gallery"] .fig .canvas.screens-canvas { background: var(--band); border: 0; border-radius: var(--r6); padding: clamp(16px, 4vw, 48px); }
+[data-look="gallery"] .fig .shot-link { box-shadow: none; border-color: var(--primary-50); border-radius: 12px; }
+[data-look="gallery"] .placeholder { border-radius: var(--r6); }
+
+/* Boxed callouts: surface contrast instead of borders */
+[data-look="gallery"] .tldr,
+[data-look="gallery"] .results div,
+[data-look="gallery"] .tradeoff div { background: var(--band); border-color: transparent; }
+[data-look="gallery"] .tldr { border-radius: 20px; }
+[data-look="gallery"] .results div { border-radius: 20px; }
+[data-look="gallery"] .tradeoff div { border-radius: 16px; }
+[data-look="gallery"] .tradeoff .chosen { border-color: var(--brand); background: var(--surface); }
+[data-look="gallery"] .next-case { background: var(--band); border-color: transparent; border-radius: var(--r6); }
+[data-look="gallery"] .next-case:hover { border-color: transparent; background: color-mix(in srgb, var(--band) 92%, var(--primary)); }
+
+/* =====================================================================
+   Liveliness, step 1: every case owns a colour.
+   Like product colours on a store page: the colour lives in the case's
+   media and labels; text, buttons and the page stay neutral.
+   ===================================================================== */
+[data-look="gallery"] .case[href*="checkout-builder"], [data-look="gallery"] body[data-case="checkout"] { --case: #3465FF; --case-ink: #2A55E0; }
+[data-look="gallery"] .case[href*="back-office"],      [data-look="gallery"] body[data-case="backoffice"] { --case: #E8890C; --case-ink: #9A5200; }
+[data-look="gallery"] .case[href*="rule-builder"],     [data-look="gallery"] body[data-case="rules"] { --case: #1E9E3E; --case-ink: #157A2F; }
+[data-look="gallery"] .case[href*="design-system"],    [data-look="gallery"] body[data-case="ds"] { --case: #7A5AF8; --case-ink: #5B3FD6; }
+@media (prefers-color-scheme: dark) {
+  :root[data-look="gallery"]:not([data-theme="light"]) .case[href*="checkout-builder"], :root[data-look="gallery"]:not([data-theme="light"]) body[data-case="checkout"] { --case-ink: #84A1FF; }
+  :root[data-look="gallery"]:not([data-theme="light"]) .case[href*="back-office"], :root[data-look="gallery"]:not([data-theme="light"]) body[data-case="backoffice"] { --case-ink: #F2B45A; }
+  :root[data-look="gallery"]:not([data-theme="light"]) .case[href*="rule-builder"], :root[data-look="gallery"]:not([data-theme="light"]) body[data-case="rules"] { --case-ink: #6CCB85; }
+  :root[data-look="gallery"]:not([data-theme="light"]) .case[href*="design-system"], :root[data-look="gallery"]:not([data-theme="light"]) body[data-case="ds"] { --case-ink: #B3A1FF; }
+}
+:root[data-look="gallery"][data-theme="dark"] .case[href*="checkout-builder"], :root[data-look="gallery"][data-theme="dark"] body[data-case="checkout"] { --case-ink: #84A1FF; }
+:root[data-look="gallery"][data-theme="dark"] .case[href*="back-office"], :root[data-look="gallery"][data-theme="dark"] body[data-case="backoffice"] { --case-ink: #F2B45A; }
+:root[data-look="gallery"][data-theme="dark"] .case[href*="rule-builder"], :root[data-look="gallery"][data-theme="dark"] body[data-case="rules"] { --case-ink: #6CCB85; }
+:root[data-look="gallery"][data-theme="dark"] .case[href*="design-system"], :root[data-look="gallery"][data-theme="dark"] body[data-case="ds"] { --case-ink: #B3A1FF; }
+
+[data-look="gallery"] .case,
+[data-look="gallery"] body[data-case] { --tint: color-mix(in srgb, var(--case) 11%, var(--surface)); --tint-soft: color-mix(in srgb, var(--case) 6%, var(--surface)); }
+
+/* Home cards */
+[data-look="gallery"] .case .visual { background: var(--tint); transition: background-color .3s; }
+[data-look="gallery"] .case:hover .visual { background: color-mix(in srgb, var(--case) 16%, var(--surface)); }
+[data-look="gallery"] .case .tag.own { background: color-mix(in srgb, var(--case) 13%, transparent); color: var(--case-ink); }
+[data-look="gallery"] .case:hover .read { color: var(--case-ink); }
+[data-look="gallery"] .case .v-axes span { border-color: color-mix(in srgb, var(--case) 22%, transparent); }
+
+/* Case page */
+[data-look="gallery"] body[data-case] .rd-section .rd { background: var(--tint); }
+[data-look="gallery"] body[data-case] figure.fig .canvas,
+[data-look="gallery"] body[data-case] .fig .canvas.screens-canvas { background: var(--tint-soft); }
+[data-look="gallery"] body[data-case] .case-section .num { color: var(--case-ink); }
+[data-look="gallery"] body[data-case] .insight { border-left-color: var(--case); background: var(--tint-soft); }
+[data-look="gallery"] body[data-case] .insight b { color: var(--case-ink); }
+[data-look="gallery"] body[data-case] .tradeoff .chosen { border-color: var(--case); }
+[data-look="gallery"] body[data-case] .tradeoff .chosen span { color: var(--case-ink); }
+[data-look="gallery"] body[data-case] .case-hero .back { color: var(--case-ink); }
+
+/* =====================================================================
+   Liveliness, step 2: things arrive as you scroll, and the status breathes.
+   CSS-only (scroll-driven animations); browsers without support and
+   people with reduced motion get the static page.
+   ===================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  [data-look="gallery"] .status i { animation: g-pulse 2.4s ease-in-out infinite; }
+  @keyframes g-pulse { 0%, 100% { box-shadow: 0 0 0 3px var(--green-100); } 50% { box-shadow: 0 0 0 6px transparent; } }
+
+  @supports (animation-timeline: view()) {
+    [data-look="gallery"] .case,
+    [data-look="gallery"] .work,
+    [data-look="gallery"] figure.fig,
+    [data-look="gallery"] .rd-section .rd,
+    [data-look="gallery"] .proof div {
+      animation: g-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    [data-look="gallery"] .case .visual > * {
+      animation: g-zoom linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 45%;
+    }
+    @keyframes g-rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+    @keyframes g-zoom { from { transform: scale(.92); } to { transform: none; } }
+  }
+}
+
+/* =====================================================================
+   Liveliness, step 3: live mini visuals (driven by assets/gallery.js)
+   ===================================================================== */
+@property --b { syntax: "<color>"; inherits: true; initial-value: #3465FF; }
+
+/* Checkouts */
+[data-look="gallery"] .mini-co { transition: background-color .45s ease, color .45s ease, --b .45s ease; }
+[data-look="gallery"] .mini-co > * { transition: opacity .18s ease, transform .18s ease; }
+[data-look="gallery"] .mini-co.swapping > * { opacity: 0; transform: translateY(4px); }
+[data-look="gallery"] .mini-co .mc-btn { transition: background-color .45s ease, color .45s ease, transform .12s ease; }
+[data-look="gallery"] .mini-co.press .mc-btn { transform: scale(.94); }
+[data-look="gallery"] .mini-co .mc-field { justify-content: space-between; }
+[data-look="gallery"] .mini-co .mc-field em { font-style: normal; font-size: 10px; opacity: .55; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; }
+[data-look="gallery"] .v-axes span { transition: background-color .3s, color .3s, border-color .3s; }
+[data-look="gallery"] .v-axes span.hit { animation: g-hit .9s ease; }
+[data-look="gallery"] .v-count { font-variant-numeric: tabular-nums; }
+@keyframes g-hit { 0% { background: var(--case, var(--brand)); color: #fff; border-color: transparent; } 100% { } }
+
+/* Back-office */
+[data-look="gallery"] .toggle { transition: background-color .2s ease; }
+[data-look="gallery"] .toggle::after { right: auto; left: 14px; transition: left .2s ease; }
+[data-look="gallery"] .toggle.off::after { left: 2px; }
+[data-look="gallery"] .v-flow .tr { transition: background-color .25s ease; }
+[data-look="gallery"] .v-flow .tr.hover { background: var(--primary-50); }
+[data-look="gallery"] .v-flow .tr.oops { background: var(--red-100); }
+[data-look="gallery"] .v-flow .badge { transition: background-color .3s, color .3s; }
+[data-look="gallery"] .v-flow .badge.changed { animation: g-pop .4s ease; }
+[data-look="gallery"] .v-flow.is-live .warn,
+[data-look="gallery"] .v-flow.is-live .dialog { opacity: 0; transform: translateY(6px); transition: opacity .25s ease, transform .25s ease; }
+[data-look="gallery"] .v-flow.is-live .warn.show { opacity: 1; transform: none; animation: g-shake .4s ease .05s; }
+[data-look="gallery"] .v-flow.is-live .dialog.show { opacity: 1; transform: none; }
+[data-look="gallery"] .dialog .row span { transition: transform .12s ease; }
+[data-look="gallery"] .dialog .row span.press { transform: scale(.93); }
+@keyframes g-pop { 0% { transform: scale(.85); } 60% { transform: scale(1.08); } 100% { transform: none; } }
+@keyframes g-shake { 0%, 100% { transform: none; } 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+
+/* Audit */
+[data-look="gallery"] .v-audit .pass { transition: background-color .25s ease; }
+[data-look="gallery"] .v-audit .pass.active { background: color-mix(in srgb, var(--case, var(--brand)) 8%, transparent); }
+[data-look="gallery"] .v-audit .num { font-variant-numeric: tabular-nums; min-width: 5ch; text-align: right; }
+[data-look="gallery"] .v-audit .check { transition: background-color .25s, color .25s, transform .25s; }
+[data-look="gallery"] .v-audit .pass.todo .check { background: var(--primary-50); color: transparent; }
+[data-look="gallery"] .v-audit .pass.done .check { animation: g-pop .35s ease; }
+[data-look="gallery"] .v-audit .pass.todo .num { color: var(--red); }
+[data-look="gallery"] .v-audit .missed { transition: color .25s; }
+[data-look="gallery"] .v-audit .pass.missed-now { background: var(--red-100); }
+[data-look="gallery"] .v-audit .pass.missed-now .missed { color: var(--red); font-weight: 500; }
+[data-look="gallery"] .v-audit .foot span:last-child { font-variant-numeric: tabular-nums; transition: color .3s; color: var(--red); }
+[data-look="gallery"] .v-audit .foot.done span:last-child { color: var(--green); animation: g-pop .4s ease; }
+[data-look="gallery"] .v-checkouts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 520px) { [data-look="gallery"] .v-checkouts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+[data-look="gallery"] .mini-co { min-width: 0; }
+[data-look="gallery"] .mini-co .mc-field em { min-width: 0; text-overflow: ellipsis; }
+[data-look="gallery"] .v-axes .v-count { border: 0; background: none; padding: 0; border-radius: 0; font: inherit; color: inherit; }
+
+/* =====================================================================
+   Display font: Inter Tight (OFL, from Google Fonts, self-hosted).
+   Chosen 6 Nov 2026 in the font lab over Familjen Grotesk and others.
+   Headings and big numbers only; body text stays Inter.
+   Preloaded by the look script in <head> when the gallery look is on.
+   ===================================================================== */
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("fonts/inter-tight-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("fonts/inter-tight-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root[data-look="gallery"] { --display: "Inter Tight", var(--font); }
+[data-look="gallery"] .hero h1,
+[data-look="gallery"] .case-hero h1,
+[data-look="gallery"] h2.section-title,
+[data-look="gallery"] .case h3,
+[data-look="gallery"] .work h3,
+[data-look="gallery"] .about .lead,
+[data-look="gallery"] .contact h2,
+[data-look="gallery"] .case-section h2,
+[data-look="gallery"] .next-case b,
+[data-look="gallery"] .mini-head h3,
+[data-look="gallery"] .proof b { font-family: var(--display); font-feature-settings: normal; }
+[data-look="gallery"] .hero h1 { font-weight: 600; letter-spacing: -0.025em; line-height: 1.04; max-width: 23ch; }
+[data-look="gallery"] .case-hero h1,
+[data-look="gallery"] .contact h2 { letter-spacing: -0.02em; }
+[data-look="gallery"] h2.section-title,
+[data-look="gallery"] .case h3,
+[data-look="gallery"] .case-section h2 { letter-spacing: -0.015em; }
+
+/* ---------- Font lab overrides (set by assets/font-lab.js) ---------- */
+:root[data-look="gallery"][data-hw] :is(.hero h1, .case-hero h1, h2.section-title, .case h3, .work h3, .about .lead, .contact h2, .case-section h2, .next-case b, .mini-head h3, .proof b) { font-weight: var(--display-weight); }
+:root[data-look="gallery"][data-ht] :is(.hero h1, .case-hero h1, h2.section-title, .case h3, .work h3, .about .lead, .contact h2, .case-section h2, .next-case b, .mini-head h3, .proof b) { letter-spacing: var(--display-track); }
+
+/* ---------- Font lab panel ---------- */
+.fl { position: fixed; left: 16px; bottom: 16px; z-index: 20; font: 500 13px/18px -apple-system, system-ui, sans-serif; letter-spacing: 0; color: var(--primary); }
+.fl-toggle { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--primary-100); background: var(--surface); color: var(--primary); font: inherit; cursor: pointer; box-shadow: 0 4px 16px var(--shadow-soft); }
+.fl-toggle b { font: 600 15px/1 Georgia, serif; }
+.fl-toggle[aria-expanded="true"] { background: var(--primary); color: var(--secondary); border-color: transparent; }
+.fl-panel { position: absolute; left: 0; bottom: 44px; width: 280px; display: grid; gap: 12px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--primary-100); box-shadow: 0 12px 40px var(--shadow-soft); }
+.fl-panel[hidden] { display: none; }
+.fl label { display: grid; gap: 6px; color: var(--primary-400); }
+.fl select { height: 36px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--primary-200); background: var(--surface); color: var(--primary); font-family: inherit; font-size: 14px; }
+.fl-row { display: grid; gap: 6px; color: var(--primary-400); }
+.fl-seg { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--primary-50); border-radius: 10px; padding: 3px; }
+.fl-seg button { border: 0; background: transparent; color: var(--primary-400); font: inherit; padding: 6px 0; border-radius: 8px; cursor: pointer; }
+.fl-seg button[aria-pressed="true"] { background: var(--surface); color: var(--primary); box-shadow: 0 1px 2px var(--shadow-soft); }
+.fl-range { grid-template-columns: 1fr auto; align-items: center; }
+.fl-range output { font: 500 12px/1 var(--mono); color: var(--primary); }
+.fl-range input { grid-column: 1 / -1; width: 100%; accent-color: var(--primary); }
+.fl-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 4px; border-top: 1px solid var(--primary-50); }
+.fl-reset { border: 0; background: none; padding: 4px 0; color: var(--primary); font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.fl-note { font-size: 12px; color: var(--primary-300); }
+@media (max-width: 560px) { .fl { left: 12px; right: 12px; bottom: 12px; } .fl-panel { width: auto; left: 0; right: 0; } }
+@media print { .fl { display: none; } }
+[data-look="gallery"] :is(.hero h1, .case-hero h1, h2.section-title, .case h3, .work h3, .about .lead, .contact h2, .case-section h2, .next-case b, .mini-head h3, .proof b) { font-synthesis: none; }

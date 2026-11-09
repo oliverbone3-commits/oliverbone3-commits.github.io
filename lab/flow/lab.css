@@ -1,0 +1,61 @@
+/* Lab page chrome + the 1:1 stage. The product frames come from frames.css (Figma values). */
+.lab { padding-top: 32px; padding-bottom: 64px; }
+.lab-note { color: var(--primary-400); font-size: 14px; margin: 0 0 16px; }
+.lab-viewport { position: relative; width: 100%; aspect-ratio: 1600 / 1000; overflow: hidden; border: 1px solid var(--primary-100); border-radius: 12px; background: #fff; }
+.lab-stage { position: absolute; left: 0; top: 0; width: 1600px; height: 1000px; transform-origin: 0 0; }
+.lab-stage > .fb-frame { position: absolute; inset: 0; margin: 0; }
+.lab-backdrop { position: absolute; inset: 0; background: rgba(12, 12, 12, .32); display: grid; place-items: center; animation: lab-fade .2s ease-out; }
+.lab-backdrop.still { animation: none; }
+.lab-backdrop .fb-modal { position: relative; margin: 0; left: 0; }
+.lab-caption { margin-top: 12px; }
+.lab-cursor { position: absolute; left: 0; top: 0; width: 18px; height: 22px; z-index: 20; pointer-events: none; opacity: 0; transition: transform .38s cubic-bezier(.3, .7, .3, 1), opacity .25s; will-change: transform; }
+.lab-cursor.show { opacity: 1; }
+.lab-cursor svg { width: 18px; height: 22px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3)); }
+.lab-ring { position: absolute; left: -10px; top: -10px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3465FF; opacity: 0; }
+.lab-cursor.click .lab-ring { animation: lab-ring .4s ease-out; }
+.lab-ghost { position: absolute; left: 0; top: 0; z-index: 19; pointer-events: none; transform-origin: 0 0; transition: transform .42s cubic-bezier(.3, .7, .3, 1); }
+.lab-ghost .fb-prow { background: #fff; border: 1px solid #3465FF; border-radius: 8px; box-shadow: 0 8px 16px rgba(12, 12, 12, .08), 0 0 4px rgba(12, 12, 12, .08); width: 272px; }
+.lab-press { transform: scale(.96); transition: transform .12s; }
+
+/* Loose port and the edge being drawn */
+.lab-loose { border-radius: 50%; box-shadow: 0 0 0 3px rgba(229, 72, 77, .35); }
+.lab-draw { animation: lab-reveal .45s ease-out; }
+.lab-drop { box-shadow: 0 0 0 2px #3465FF !important; }
+.lab-new { animation: lab-in .3s ease-out; }
+
+/* Payer checkout drawn in the file's language: Inter with the same features, #0C0C0C alphas, radii 8 */
+.co { --b: #3465FF; --on: #FFFFFF; --bg: #FFFFFF; --fg: #0C0C0C; --mut: rgba(12, 12, 12, .48); --sub: rgba(12, 12, 12, .68); --line: rgba(12, 12, 12, .16); --field: rgba(12, 12, 12, .02);
+  width: 100%; height: 100%; display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 1px solid rgba(12, 12, 12, .08); border-radius: 12px; padding: 24px;
+  font: 500 13px/20px "Inter", sans-serif; letter-spacing: -0.15px; box-sizing: border-box;
+  font-feature-settings: "cv11", "cv10", "cv09", "cv08", "cv05", "cv04", "cv03", "cv02", "cv01", "ss01", "ss02", "ss04";
+  transition: background-color .3s, color .3s; }
+.co.dark { --bg: #161618; --fg: #F4F4F5; --mut: rgba(244, 244, 245, .5); --sub: rgba(244, 244, 245, .72); --line: rgba(244, 244, 245, .16); --field: rgba(244, 244, 245, .04); border-color: #2A2A2E; }
+.co-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.co-logo { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; line-height: 22px; }
+.co-logo i { width: 24px; height: 24px; border-radius: 6px; background: var(--b); transition: background-color .3s; }
+.co-lang { font-size: 12px; line-height: 16px; color: var(--sub); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; }
+.co-l { font-size: 10px; line-height: 14px; color: var(--sub); letter-spacing: 0; }
+.co-amt { font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.5px; }
+.co-timer { font-size: 12px; line-height: 16px; color: var(--mut); margin: 2px 0 24px; letter-spacing: 0; }
+.co-f { margin-bottom: 12px; }
+.co-f .co-l { margin-bottom: 4px; display: block; }
+.co-in { height: 40px; border-radius: 8px; border: 1px solid var(--line); background: var(--field); display: flex; align-items: center; padding: 0 12px; color: var(--mut); transition: border-color .3s, background-color .3s; }
+.co-in.copy { justify-content: space-between; color: var(--fg); }
+.co-in.copy span { color: var(--b); font-weight: 600; font-size: 12px; transition: color .3s; }
+.co.dark .co-in.copy span, .co .co-in.copy span.on-light { color: var(--fg); }
+.co-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.co-pay { margin-top: auto; height: 48px; border-radius: 8px; background: var(--b); color: var(--on); display: grid; place-items: center; font-weight: 600; font-size: 15px; transition: background-color .3s, color .3s, transform .12s; }
+.co-cancel { text-align: center; color: var(--sub); margin-top: 12px; }
+.co-state { margin: auto 0; display: grid; justify-items: center; gap: 12px; text-align: center; animation: lab-in .3s ease-out; }
+.co-state b { font-size: 18px; line-height: 26px; font-weight: 700; letter-spacing: -0.2px; }
+.co-state span { color: var(--sub); }
+.co-spin { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--b); animation: lab-rot .8s linear infinite; }
+.co-ok { width: 56px; height: 56px; border-radius: 50%; background: var(--b); color: var(--on); display: grid; place-items: center; }
+.co-ok svg { width: 28px; height: 28px; }
+
+@keyframes lab-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes lab-in { from { opacity: 0; transform: translateY(6px); } }
+@keyframes lab-fade { from { opacity: 0; } }
+@keyframes lab-rot { to { transform: rotate(360deg); } }
+@keyframes lab-ring { from { opacity: .8; transform: scale(.4); } to { opacity: 0; transform: scale(1.7); } }
+@media (prefers-reduced-motion: reduce) { .lab-cursor, .lab-ghost, .lab-draw, .lab-new, .co-state, .lab-backdrop { transition: none; animation: none; } }

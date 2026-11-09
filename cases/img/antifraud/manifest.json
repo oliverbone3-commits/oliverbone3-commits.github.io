@@ -1,0 +1,398 @@
+[
+  {
+    "file": "monitoring-list.png",
+    "frameName": "Monitoring",
+    "copyNodeId": "59:24397",
+    "width": 1440,
+    "height": 808,
+    "group": "animation",
+    "note": "Transaction monitoring list with active filter chips, row selection and pagination"
+  },
+  {
+    "file": "monitoring-full-view.png",
+    "frameName": "Monitoring / Full view",
+    "copyNodeId": "59:24999",
+    "width": 1456,
+    "height": 5526,
+    "group": "animation",
+    "note": "Full transaction page: reaction and triggered entities, payment, customer, device, merchant, sanctions, rules and history"
+  },
+  {
+    "file": "cross-check.png",
+    "frameName": "Cross-check",
+    "copyNodeId": "59:25285",
+    "width": 1456,
+    "height": 938,
+    "group": "animation",
+    "note": "Cross-check of an event: totals, matched parameters with AND/OR logic and related transactions with bulk actions"
+  },
+  {
+    "file": "partial-success-modal.png",
+    "frameName": "Modal",
+    "copyNodeId": "59:25380",
+    "width": 480,
+    "height": 826,
+    "group": "animation",
+    "note": "Partial success result after bulk blacklisting, per-parameter success and failure states",
+    "shadow": false
+  },
+  {
+    "file": "toasts.png",
+    "frameName": "Toasts",
+    "copyNodeId": "59:25584",
+    "width": 489,
+    "height": 336,
+    "group": "animation",
+    "note": "Success, error and partial-failure toast notifications",
+    "shadow": false
+  },
+  {
+    "file": "dictionaries-list.png",
+    "frameName": "Dictionaries / List",
+    "copyNodeId": "59:25588",
+    "width": 1440,
+    "height": 808,
+    "group": "animation",
+    "note": "Dictionaries list with filter chips, authors and update dates"
+  },
+  {
+    "file": "dictionaries-details-drawer.png",
+    "frameName": "Dictionaries / Details drawer",
+    "copyNodeId": "59:25702",
+    "width": 448,
+    "height": 808,
+    "group": "animation",
+    "note": "Dictionary drawer for quick editing of a country list with chips"
+  },
+  {
+    "file": "monitoring-filters-drawer.png",
+    "frameName": "Drawer",
+    "copyNodeId": "59:25841",
+    "width": 448,
+    "height": 2452,
+    "group": "wall",
+    "note": "Full filters drawer for the monitoring list"
+  },
+  {
+    "file": "transaction-details-drawer.png",
+    "frameName": "Drawer",
+    "copyNodeId": "59:26297",
+    "width": 448,
+    "height": 2512,
+    "group": "wall",
+    "note": "Transaction details drawer with reaction, overview, payment method, customer, device and sanctions sections"
+  },
+  {
+    "file": "download-csv.png",
+    "frameName": "Download CSV",
+    "copyNodeId": "59:26889",
+    "width": 320,
+    "height": 248,
+    "group": "wall",
+    "note": "CSV export options: current page or all pages with filters",
+    "shadow": false
+  },
+  {
+    "file": "columns-settings.png",
+    "frameName": "Settings List",
+    "copyNodeId": "59:26915",
+    "width": 320,
+    "height": 903,
+    "group": "wall",
+    "note": "Table column settings with shown and hidden columns and drag handles",
+    "shadow": false
+  },
+  {
+    "file": "sidebar-menu.png",
+    "frameName": "Menu",
+    "copyNodeId": "59:27045",
+    "width": 280,
+    "height": 808,
+    "group": "wall",
+    "note": "ScanFraud sidebar navigation with product logo"
+  },
+  {
+    "file": "blacklist-confirm-popup.png",
+    "frameName": "Notifications / Popups",
+    "copyNodeId": "59:27101",
+    "width": 400,
+    "height": 228,
+    "group": "wall",
+    "note": "Destructive confirmation before blacklisting selected rows",
+    "shadow": false
+  },
+  {
+    "file": "mark-viewed-confirm-popup.png",
+    "frameName": "Notifications / Popups",
+    "copyNodeId": "59:27118",
+    "width": 400,
+    "height": 220,
+    "group": "wall",
+    "note": "Confirmation before marking selected transactions as viewed",
+    "shadow": false
+  },
+  {
+    "file": "bulk-selection.png",
+    "frameName": "Bulk Selection",
+    "copyNodeId": "59:27135",
+    "width": 622,
+    "height": 72,
+    "group": "wall",
+    "note": "Floating bulk action bar for selected transactions",
+    "shadow": false
+  },
+  {
+    "file": "transaction-log-modal.png",
+    "frameName": "Payment details modal",
+    "copyNodeId": "59:27165",
+    "width": 480,
+    "height": 800,
+    "group": "wall",
+    "note": "Transaction log modal with raw JSON response body",
+    "shadow": false
+  },
+  {
+    "file": "operation-event-log-modal.png",
+    "frameName": "Product Attributes modal",
+    "copyNodeId": "59:27188",
+    "width": 480,
+    "height": 686,
+    "group": "wall",
+    "note": "Operation event log with request and response bodies",
+    "shadow": false
+  },
+  {
+    "file": "blacklist-compact-modal.png",
+    "frameName": "Product SKU modal",
+    "copyNodeId": "59:27245",
+    "width": 480,
+    "height": 578,
+    "group": "wall",
+    "note": "Compact blacklist modal: pick identifiers, blacklist and comment",
+    "shadow": false
+  },
+  {
+    "file": "post-auth-modal.png",
+    "frameName": "Response view modal",
+    "copyNodeId": "59:27388",
+    "width": 480,
+    "height": 640,
+    "group": "wall",
+    "note": "Post-auth responses per terminal with response codes",
+    "shadow": false
+  },
+  {
+    "file": "in-review-modal.png",
+    "frameName": "Operation modal",
+    "copyNodeId": "59:27442",
+    "width": 480,
+    "height": 266,
+    "group": "wall",
+    "note": "Send transaction to review with a comment",
+    "shadow": false
+  },
+  {
+    "file": "fraud-status-compact-modal.png",
+    "frameName": "Square transaction modal",
+    "copyNodeId": "59:27467",
+    "width": 480,
+    "height": 326,
+    "group": "wall",
+    "note": "Change fraud status with a comment",
+    "shadow": false
+  },
+  {
+    "file": "dictionaries-full-view.png",
+    "frameName": "Dictionaries / Full view",
+    "copyNodeId": "59:27503",
+    "width": 1440,
+    "height": 1144,
+    "group": "wall",
+    "note": "Dictionary page with details and a searchable country table"
+  },
+  {
+    "file": "dictionaries-filters-drawer.png",
+    "frameName": "Dictionaries / Filters drawer",
+    "copyNodeId": "59:27578",
+    "width": 448,
+    "height": 808,
+    "group": "wall",
+    "note": "Filters drawer for dictionaries"
+  },
+  {
+    "file": "dictionaries-add-modal.png",
+    "frameName": "Dictionaries / Add modal",
+    "copyNodeId": "59:27655",
+    "width": 480,
+    "height": 278,
+    "group": "wall",
+    "note": "Add dictionary modal",
+    "shadow": false
+  },
+  {
+    "file": "dictionaries-edit-modal.png",
+    "frameName": "Dictionaries / Edit modal",
+    "copyNodeId": "59:27690",
+    "width": 480,
+    "height": 280,
+    "group": "wall",
+    "note": "Edit dictionary modal with filled name and description",
+    "shadow": false
+  },
+  {
+    "file": "dictionaries-duplicate-modal.png",
+    "frameName": "Dictionaries / Duplicate modal",
+    "copyNodeId": "59:27725",
+    "width": 480,
+    "height": 278,
+    "group": "wall",
+    "note": "Duplicate dictionary modal",
+    "shadow": false
+  },
+  {
+    "file": "dictionaries-delete-confirm.png",
+    "frameName": "Dictionaries / Delete confirm",
+    "copyNodeId": "59:27760",
+    "width": 400,
+    "height": 220,
+    "group": "wall",
+    "note": "Delete dictionary confirmation",
+    "shadow": false
+  },
+  {
+    "file": "add-country-import.png",
+    "frameName": "Dictionaries / Add country modal · Import",
+    "copyNodeId": "59:27777",
+    "width": 480,
+    "height": 448,
+    "group": "wall",
+    "note": "Add countries by CSV import with divider choice",
+    "shadow": false
+  },
+  {
+    "file": "add-country-manual.png",
+    "frameName": "Dictionaries / Add country modal · Manual",
+    "copyNodeId": "59:27838",
+    "width": 480,
+    "height": 366,
+    "group": "wall",
+    "note": "Add countries manually as chips",
+    "shadow": false
+  },
+  {
+    "file": "add-country-analyze.png",
+    "frameName": "Dictionaries / Add country modal · Analyze",
+    "copyNodeId": "59:27962",
+    "width": 480,
+    "height": 366,
+    "group": "wall",
+    "note": "Paste free text to analyze, loading state",
+    "shadow": false
+  },
+  {
+    "file": "add-country-analyze-result.png",
+    "frameName": "Dictionaries / Add country modal · Analyze result",
+    "copyNodeId": "59:27993",
+    "width": 480,
+    "height": 314,
+    "group": "wall",
+    "note": "Countries recognized from pasted text, shown as chips",
+    "shadow": false
+  },
+  {
+    "file": "add-country-analyze-review.png",
+    "frameName": "Dictionaries / Add country modal · Analyze review",
+    "copyNodeId": "59:28102",
+    "width": 480,
+    "height": 834,
+    "group": "wall",
+    "note": "Review step: entries needing attention and countries to be added",
+    "shadow": false
+  },
+  {
+    "file": "parameter-filters.png",
+    "frameName": "Parameter Filters",
+    "copyNodeId": "59:28326",
+    "width": 1456,
+    "height": 136,
+    "group": "wall",
+    "note": "Cross-check parameter tabs with match counts"
+  },
+  {
+    "file": "blacklist-modal.png",
+    "frameName": "Modal",
+    "copyNodeId": "59:28337",
+    "width": 480,
+    "height": 978,
+    "group": "wall",
+    "note": "Blacklist modal with grouped identifiers, list choice and comment",
+    "shadow": false
+  },
+  {
+    "file": "fraud-status-modal.png",
+    "frameName": "Modal",
+    "copyNodeId": "59:28576",
+    "width": 480,
+    "height": 326,
+    "group": "wall",
+    "note": "Change fraud status with a comment (same content as fraud-status-compact-modal)",
+    "shadow": false
+  },
+  {
+    "file": "merchants-full-view.png",
+    "frameName": "Entities / Merchants / Full view",
+    "copyNodeId": "59:28612",
+    "width": 1440,
+    "height": 1352,
+    "group": "wall",
+    "note": "Merchant page with details and assigned groups"
+  },
+  {
+    "file": "merchants-list.png",
+    "frameName": "Merchants",
+    "copyNodeId": "59:28716",
+    "width": 1440,
+    "height": 808,
+    "group": "wall",
+    "note": "Merchants list with status tabs, filter chips and entity tabs"
+  },
+  {
+    "file": "merchants-filters-drawer.png",
+    "frameName": "Import",
+    "copyNodeId": "59:28888",
+    "width": 448,
+    "height": 808,
+    "group": "wall",
+    "note": "Filters drawer for merchants"
+  },
+  {
+    "file": "add-merchant-modal.png",
+    "frameName": "Filters",
+    "copyNodeId": "59:28986",
+    "width": 480,
+    "height": 818,
+    "group": "wall",
+    "note": "Add merchant form",
+    "shadow": false
+  },
+  {
+    "file": "edit-merchant-modal.png",
+    "frameName": "Edit Merchant",
+    "copyNodeId": "59:29113",
+    "width": 480,
+    "height": 818,
+    "group": "wall",
+    "note": "Edit merchant form with filled fields",
+    "shadow": false
+  },
+  {
+    "file": "merchants-import-modal.png",
+    "frameName": "Add Merchant",
+    "copyNodeId": "59:29240",
+    "width": 480,
+    "height": 396,
+    "group": "wall",
+    "note": "Import merchants from CSV",
+    "shadow": false
+  }
+]

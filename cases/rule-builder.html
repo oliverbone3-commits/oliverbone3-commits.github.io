@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anti-fraud rule builder — Dzmitry Kuzmiankou</title>
+<meta name="description" content="A visual builder on top of an engineers' rule language, so fraud analysts write anti-fraud rules themselves instead of queuing them for a developer.">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../assets/site.css?v=20261109b">
+<link rel="stylesheet" href="../assets/rule-demo.css?v=20261106e">
+<link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
+<script src="../assets/font-lab.js?v=20261106e"></script>
+<style>
+  /* Page-specific: real screens */
+  .fig .canvas.screens-canvas { padding: clamp(12px, 3vw, 32px); background: var(--primary-25); }
+  .fig .shot-link { display: block; border-radius: var(--r2); overflow: hidden; border: 1px solid var(--primary-100); background: #fff; box-shadow: 0 1px 2px var(--shadow-soft); margin: 0 auto; }
+  .fig .shot-link img { width: 100%; height: auto; }
+  .fig .shot-link:focus-visible { outline-offset: 4px; }
+  .fig .shot-link.bare { border: 0; background: #F5F5F5; box-shadow: none; }
+  .fig .narrow { max-width: 760px; }
+  .fig .x-narrow { max-width: 460px; }
+  .shot-pair { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: clamp(12px, 3vw, 32px); align-items: center; }
+  .shot-pair.even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .shot-pair .step-label { font: 500 11px/16px var(--mono); color: var(--primary-300); margin-bottom: var(--p2); }
+  .rule-code { font: 400 13px/22px var(--mono); background: var(--surface); border: 1px solid var(--primary-100); border-radius: var(--r2); padding: var(--p3) var(--p4); color: var(--primary); overflow-x: auto; white-space: pre; margin: var(--p4) 0; }
+  .zoom-hint { font-size: 12px; color: var(--primary-300); }
+  .state-labels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.93%; padding: 0 2.31%; margin-bottom: var(--p2); }
+  .state-labels span { font: 500 11px/16px var(--mono); color: var(--primary-300); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 720px) { .shot-pair, .shot-pair.even { grid-template-columns: 1fr; } }
+</style>
+<link rel="stylesheet" href="../assets/next.css?v=46">
+</head>
+<body class="nx" data-case="rules">
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-pic" src="../assets/avatar.jpg" alt="" width="32" height="32">Dzmitry Kuzmiankou</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a class="hide-sm" href="../index.html#ai">AI</a>
+      <a class="hide-sm" href="../index.html#about">About</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark theme">
+        <svg class="theme-light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="case-hero">
+    <div class="wrap">
+      <div class="hero-top"><a class="back" href="../index.html#work">← All work</a>
+      </div>
+      <div class="tags"><span class="tag own">My proposal</span><span class="tag">Live since mid-2026</span><span class="tag">Anti-fraud</span></div>
+      <h1>An anti-fraud rule builder analysts use without a developer</h1>
+      <p class="summary">Fraud rules were written in an engineers' language, in a code field, so every rule waited for a developer. I proposed a visual builder on top of that language, kept the code view for those who knew it, and made the finished rule readable later.</p>
+      <dl class="case-facts">
+        <div><dt>Role</dt><dd>Lead Product Designer; the visual builder was my proposal</dd></div>
+        <div><dt>Product</dt><dd><a href="https://scanfraud.com/" target="_blank" rel="noopener">ScanFraud</a>, a B2B anti-fraud platform for payment providers</dd></div>
+        <div><dt>Timeline</dt><dd>May – Jun 2026</dd></div>
+        <div><dt>Scale</dt><dd>Builder (visual + code) · rule pages with version history</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="case-body" data-mode="full">
+
+      <div class="read-mode">
+        <p class="read-q">How do you want to read the case?</p>
+        <div class="switch" data-read-switch role="group" aria-label="Reading mode">
+          <button type="button" data-mode="skim" aria-pressed="false">Skim · 60 sec</button>
+          <button type="button" data-mode="full" aria-pressed="true">Full story</button>
+        </div>
+      </div>
+
+      <section class="case-section skim-only">
+        <div class="prose tldr">
+          <p>Every anti-fraud rule was a small program in an internal language, typed into a code field, so analysts who knew what to catch had to wait for a developer. I proposed a visual builder on top of the same language instead of replacing it: each condition is a card that reads like a sentence, the code view stays one click away, and where a rule applies is a separate step. A rule page shows the rule as a tree and as text, with version history. The builder has been live since mid-2026, and analysts build rules themselves.</p>
+        </div>
+      </section>
+
+
+      <section class="case-section rd-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Walkthrough</p>
+          <h2>Watch a rule come together</h2><ul class="sec-chips"><li>14 steps</li><li>Live rule text</li></ul></header>
+          <p>One rule, built click by click in the visual builder: decline a large payment if the same card has already spent a lot today. The rule text on the right is written as the blocks fill in. Pause, step through, or jump to any step.</p>
+        </div>
+        <div class="rd" data-rule-demo role="region" aria-label="Rule builder walkthrough">
+          <div class="rd-stage" aria-hidden="true">
+            <div class="rd-top">
+              <svg class="rd-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              <div class="rd-title"><b>Create a new rule</b><span>Step 1</span></div>
+              <div class="rd-spacer"></div>
+              <div class="rd-viewseg"><span class="on">Visual</span><span>Code</span></div>
+              <span class="rd-continue">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            </div>
+            <div class="rd-body">
+              <div class="rd-builder"></div>
+              <div class="rd-codepane"><div class="rd-codehead">Rule text <span>written as you click</span></div><pre></pre></div>
+            </div>
+            <div class="rd-cursor"><svg viewBox="0 0 18 22"><path d="M1 1v17l4.5-4.2 3 6.7 3-1.4-3-6.6H15z" fill="#16161A" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="rd-ring"></span></div>
+          </div>
+          <div class="rd-controls">
+            <button class="rd-btn" type="button" data-rd="prev" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button class="rd-btn" type="button" data-rd="play"></button>
+            <button class="rd-btn" type="button" data-rd="next" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <div class="rd-progress" role="group" aria-label="Steps"></div>
+            <span class="rd-count"></span>
+          </div>
+          <p class="rd-caption" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">01 · Context</p>
+          <h2>Every rule went through a developer</h2><ul class="sec-chips"><li>Rules in code only</li><li>Ticket per change</li></ul></header>
+          <p>An anti-fraud rule is a small program: <em>if the total amount on this card today is above a limit, decline and notify.</em> The engineers built their own language for it, and the only way to write a rule was a code field:</p>
+          <pre class="rule-code">IF TOTAL_SUM(amount)
+     WHERE card_hash == tx.card_hash
+     INTERVAL calendar 24 hours &gt; 5000</pre>
+          <p>Analysts knew exactly what they wanted to catch, but couldn't write it themselves. Every new rule and every tweak became a ticket for a developer.</p>
+        </div>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">02 · Decision</p>
+          <h2>Add a visual view, keep the code</h2><ul class="sec-chips"><li>Visual</li><li>Code</li><li>Same rule, two views</li></ul></header>
+          <p>I proposed a visual builder on top of the language. The obvious move was to replace the code field. I kept it: people who had already learned the language shouldn't lose a tool that works for them.</p>
+          <div class="tradeoff">
+            <div><span>Rejected</span><p>Replace the code field with a form. Simpler on paper, but it takes a working tool away from the people who use the product most.</p></div>
+            <div class="chosen"><span>Chosen</span><p>Two views of the same rule, <strong>Visual</strong> and <strong>Code</strong>. The switch between them is the whole migration path.</p></div>
+          </div>
+          <p>One trade-off stayed: an unfinished draft can’t be carried from one view to the other, so switching views resets it. Rather than hide that, the product warns before it happens.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="shot-pair">
+              <div>
+                <div class="step-label">Code view</div>
+                <a class="shot-link" href="img/rule-builder/03-code-view.png" target="_blank" rel="noopener"><img src="img/rule-builder/03-code-view.png" width="1456" height="758" alt="Code view: the rule written in the internal language, with reaction, score and notification fields below" loading="lazy"></a>
+              </div>
+              <div>
+                <div class="step-label">Switching views</div>
+                <a class="shot-link bare" href="img/rule-builder/04-switch-view-warning.png" target="_blank" rel="noopener"><img src="img/rule-builder/04-switch-view-warning.png" width="440" height="240" alt="Confirmation: switching the view will lose progress, with Cancel and Switch view buttons" loading="lazy"></a>
+              </div>
+            </div>
+          </div>
+          <figcaption>The code view stays for those who know the language. A draft can’t move between views, so switching asks first.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">03 · Decision</p>
+          <h2>A rule made of blocks that read like a sentence</h2><ul class="sec-chips"><li>Function or parameter</li><li>Interval</li><li>WHERE</li><li>AND / OR</li></ul></header>
+          <p>Each condition is a card. Its summary line says in words what the card does, and the fields below it are how you change it:</p>
+          <ul>
+            <li><strong>Function or parameter</strong>: a plain comparison (amount &gt; 2500) or an aggregate (total sum of amount);</li>
+            <li><strong>Interval</strong>: a calendar or rolling window, with an optional percentage threshold;</li>
+            <li><strong>WHERE</strong>: which transactions count, such as the same card, the same customer, or a BIN country from a list;</li>
+            <li><strong>AND / OR</strong> between cards, and the final comparison at the end.</li>
+          </ul>
+          <p>Errors appear on the block that causes them, not in a banner above a long form. In a rule with five blocks, "something is wrong" is useless; "this interval needs a restriction" is not.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="state-labels" aria-hidden="true"><span>1 · Nothing selected</span><span>2 · Fields open</span><span>3 · Filled</span><span>4 · Error</span></div>
+            <a class="shot-link" href="img/rule-builder/02-visual-builder-states.png" target="_blank" rel="noopener"><img src="img/rule-builder/02-visual-builder-states.png" width="1728" height="1446" alt="Four states of the visual builder: empty, a filled comparison, a filled aggregate with interval and WHERE, and an error state highlighted in red on the block that needs a creation date restriction" loading="lazy"></a>
+          </div>
+          <figcaption>Four separate states of the same builder, side by side: nothing selected, fields open, filled, and an error shown on the block that causes it.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">04 · Decision</p>
+          <h2>What the rule does, separate from where it applies</h2><ul class="sec-chips"><li>Apply To</li><li>Merchants · services · terminals · providers</li></ul></header>
+          <p>Scope is a second step: merchants, services, terminals and providers, linked with AND. The two are easy to confuse: narrowing the scope doesn't narrow what an aggregate counts. "Total sum on this card" still counts the card's transactions everywhere.</p>
+          <p>So the screen says it directly: <strong>Apply To</strong> chooses who gets the reaction or score; it doesn't change how functions are calculated.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <a class="shot-link narrow" href="img/rule-builder/05-apply-to.png" target="_blank" rel="noopener"><img src="img/rule-builder/05-apply-to.png" width="1456" height="1616" alt="Step 2 of rule creation: rule details, then Rule Applies To with a note that it doesn't affect function calculation, and lists of selected merchants, services, terminals and providers linked with AND" loading="lazy"></a>
+          </div>
+          <figcaption>Step two: the note under "Rule Applies To" separates who gets the reaction from what the functions count.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section full-only">
+        <div class="prose">
+          <header class="sec-head"><p class="num">05 · Decision</p>
+          <h2>A rule you can read a month later</h2><ul class="sec-chips"><li>Condition tree</li><li>Plain rule text</li><li>Version history</li></ul></header>
+          <p>Rules outlive the people who wrote them. The rule page shows the conditions as a tree next to the plain rule text with a Copy button, the entities it applies to, and a version history with a log for every change. Details are read-only; changes go through Edit in the header.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <a class="shot-link narrow" href="img/rule-builder/06-rule-page.png" target="_blank" rel="noopener"><img src="img/rule-builder/06-rule-page.png" width="1456" height="1800" alt="Rule page: status, score and reaction, rule details with the rule text and a Copy button, entities by type, version history, and the conditions as a tree on the right" loading="lazy"></a>
+          </div>
+          <figcaption>The same rule three ways: summary at the top, text to copy, tree on the right.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">06 · Honest part</p>
+          <h2>One exception to my own rule</h2><ul class="sec-chips"><li>Active toggle</li><li>Requested by heavy users</li></ul><aside class="nx-note" style="--tilt:-2deg"><p>Conventions are defaults, not laws.</p><span>Note to self</span></aside></header>
+          <p>In money-moving back-office screens I treat toggles in tables as an anti-pattern: one stray click shouldn't change something important. Yet the rules list has an <strong>Active</strong> toggle in every row.</p>
+          <p>It was a direct request from the heaviest users of the list: they switch rules on and off often and wanted to do it without opening each rule. So the toggle is a shortcut, not a silent switch. It opens the same activate/deactivate confirmation as the rule page, and a rule never changes state by accident.</p>
+          <div class="insight">
+            <b>What I took from it</b>
+            <p>Conventions are defaults, not laws. This one was overridden by the people who use the screen most, and the risk it protects against is still covered.</p>
+          </div>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="shot-pair">
+              <div>
+                <div class="step-label">Rules list</div>
+                <a class="shot-link" href="img/rule-builder/07-rules-list.png" target="_blank" rel="noopener"><img src="img/rule-builder/07-rules-list.png" width="1440" height="840" alt="Rules list with filters, statuses, an Active toggle in every row and bulk actions for four selected rules" loading="lazy"></a>
+              </div>
+              <div>
+                <div class="step-label">Toggle opens a confirmation</div>
+                <a class="shot-link bare" href="img/rule-builder/08-deactivate-confirmation.png" target="_blank" rel="noopener"><img src="img/rule-builder/08-deactivate-confirmation.png" width="440" height="260" alt="Confirmation dialog to deactivate a rule, with Cancel and Deactivate buttons" loading="lazy"></a>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">07 · Result</p>
+          <h2>What changed after</h2><ul class="sec-chips"><li>Rules without a ticket</li><li>Live since mid-2026</li><li>Code view kept</li></ul></header>
+        </div>
+        <div class="results">
+          <div><b>Rules without a ticket</b><p>Analysts, and anyone who works with the system day to day, open the builder and click a rule together themselves.</p></div>
+          <div><b>Live since mid-2026</b><p>The builder and rule pages shipped in summer 2026 and have been working and in steady use since. The product is live at <a href="https://scanfraud.com/" target="_blank" rel="noopener">scanfraud.com</a>.</p></div>
+          <div><b>Nobody lost their tool</b><p>The code view is still there for those who prefer the language.</p></div>
+          <div><b>Rules stay readable</b><p>Tree, plain text and version history on every rule page.</p></div>
+        </div>
+      </section>
+
+    </article>
+
+    <a class="next-case" href="weatherwell.html">
+      <div><small>Next case</small><b>A weather app that research turned into a health tracker</b></div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Building something with a small team?</h2>
+        <p>I'm looking for a founding or first-designer role in a product team where design changes what ships. Telegram is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="https://t.me/dkuzmenkov">Message on Telegram</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:oliverbone3@gmail.com">oliverbone3@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Dzmitry Kuzmiankou</span>
+    <span>Built in code on my own design tokens, with AI.</span>
+  </footer>
+</div>
+<script src="../assets/site.js?v=20261109a"></script>
+<script src="../assets/rule-demo.js?v=20261106f"></script>
+</body>
+</html>

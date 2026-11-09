@@ -1,0 +1,76 @@
+/* Case card meta (Role / Team / Scale) as chips. Variants for comparison, set with ?chips=<name>
+   (side by side: site/lab/chips/). Default = "icons" with one random chip in the accent. Markup: .chip.chip--{role|team|scale} > b (label, first chip of a kind) + span (value). */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: auto 0 0; padding-top: var(--p5); }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: 13px; line-height: 18px; white-space: nowrap; max-width: 100%; }
+.chip span { white-space: normal; }
+.chip b { font-weight: 500; font-size: 11px; letter-spacing: .02em; }
+.bento .c-stack .chips { display: none; }
+
+/* site — hairline pills in the page greys (default) */
+.chip { background: transparent; color: var(--primary-400); box-shadow: inset 0 0 0 1px var(--primary-100); }
+.chip b { color: var(--primary-300); }
+
+/* bright — filled, one bright colour per kind */
+[data-chips="bright"] .chip { box-shadow: none; color: #16170F; }
+[data-chips="bright"] .chip b { color: rgba(22, 23, 15, .6); }
+[data-chips="bright"] .chip--role { background: #C8F25A; }
+[data-chips="bright"] .chip--team { background: #9CD3FF; }
+[data-chips="bright"] .chip--scale { background: #FFC59E; }
+
+/* mono — like the code tags already on the card visuals ("brand 1 / 10") */
+[data-chips="mono"] .chip { border-radius: 6px; padding: 4px 8px; font: 400 12px/16px var(--mono); background: var(--primary-50); box-shadow: inset 0 0 0 1px var(--primary-100); color: var(--primary-400); }
+[data-chips="mono"] .chip b { font: inherit; color: var(--primary-300); }
+[data-chips="mono"] .chip b::after { content: ":"; }
+
+/* badge — the status-badge style from the back-office (10px bold uppercase) */
+[data-chips="badge"] .chip { border-radius: 4px; padding: 4px 8px; font: 700 10px/14px var(--font); letter-spacing: .5px; text-transform: uppercase; background: var(--primary-50); box-shadow: none; color: var(--primary-400); }
+[data-chips="badge"] .chip b { font: inherit; color: var(--primary-300); }
+
+/* split — two-part label | value, like a shield */
+[data-chips="split"] .chip { padding: 0; border-radius: 8px; overflow: hidden; gap: 0; box-shadow: inset 0 0 0 1px var(--primary-100); color: var(--primary); }
+[data-chips="split"] .chip b { align-self: stretch; display: flex; align-items: center; padding: 6px 10px; background: var(--primary-100); color: var(--primary-400); font-size: 12px; }
+[data-chips="split"] .chip span { padding: 6px 12px; }
+
+/* icons — a line icon instead of the label */
+[data-chips="icons"] .chip { box-shadow: none; background: var(--primary-50); color: var(--primary); padding: 6px 12px 6px 10px; }
+[data-chips="icons"] .chip b { display: none; }
+[data-chips="icons"] .chip::before { content: ""; width: 14px; height: 14px; flex: none; background: var(--primary-300); -webkit-mask: var(--ic) center / contain no-repeat; mask: var(--ic) center / contain no-repeat; }
+
+/* icons by meaning (set by chips.js as data-ic) */
+[data-chips="icons"] .chip[data-ic="user"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21a8 8 0 0 1 16 0'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="users"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='8' r='3.5'/%3E%3Cpath d='M2 20a7 7 0 0 1 14 0'/%3E%3Cpath d='M16 4.5a3.5 3.5 0 0 1 0 7M18 13.5a7 7 0 0 1 4 6.5'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="code"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 18 6-6-6-6M8 6l-6 6 6 6'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="box"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 8 12 3 3 8v8l9 5 9-5z'/%3E%3Cpath d='m3 8 9 5 9-5M12 13v8'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="palette"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A4.7 4.7 0 0 0 22 9.7C22 6 17.5 3 12 3z'/%3E%3Ccircle cx='7.5' cy='10.5' r='1'/%3E%3Ccircle cx='11' cy='7' r='1'/%3E%3Ccircle cx='15.5' cy='8' r='1'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="languages"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="globe"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="file"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'/%3E%3Cpath d='M14 3v6h6'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="layout"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2'/%3E%3Cpath d='M3 9h18M9 21V9'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="blocks"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1'/%3E%3C/svg%3E"); }
+[data-chips="icons"] .chip[data-ic="layers"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 9 5-9 5-9-5 9-5z'/%3E%3Cpath d='m3 13 9 5 9-5'/%3E%3C/svg%3E"); }
+
+[data-chips="icons"] .chip[data-ic="history"] { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 9 0 1 0 3-6.7L3 8'/%3E%3Cpath d='M3 3v5h5M12 7v5l3 2'/%3E%3C/svg%3E"); }
+
+/* dots — no pill: a small coloured dot and plain text */
+[data-chips="dots"] .chips { gap: 6px 18px; }
+[data-chips="dots"] .chip { padding: 0; box-shadow: none; background: none; color: var(--primary-400); }
+[data-chips="dots"] .chip b { display: none; }
+[data-chips="dots"] .chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; flex: none; background: var(--primary-300); }
+[data-chips="dots"] .chip--role::before { background: #C8F25A; }
+[data-chips="dots"] .chip--team::before { background: #7FB8FF; }
+[data-chips="dots"] .chip--scale::before { background: #F2A27A; }
+
+/* accent — only the role is filled with the site accent, the rest stay quiet */
+[data-chips="accent"] .chip--role { background: var(--accent, #C8F25A); color: var(--on-accent, #16170F); box-shadow: none; }
+[data-chips="accent"] .chip--role b { color: color-mix(in srgb, var(--on-accent, #16170F) 60%, transparent); }
+
+/* soft — muted fills, one desaturated tint per kind */
+[data-chips="soft"] .chip { box-shadow: none; color: var(--primary); }
+[data-chips="soft"] .chip b { color: var(--primary-300); }
+[data-chips="soft"] .chip--role { background: color-mix(in srgb, #C8F25A 16%, transparent); }
+[data-chips="soft"] .chip--team { background: color-mix(in srgb, #7FB8FF 16%, transparent); }
+[data-chips="soft"] .chip--scale { background: color-mix(in srgb, #F2A27A 16%, transparent); }
+
+/* One random chip per card in the site accent (icons variant) */
+[data-chips="icons"] .chip--hl { background: var(--accent, #C8F25A); color: var(--on-accent, #16170F); }
+[data-chips="icons"] .chip--hl::before { background: color-mix(in srgb, var(--on-accent, #16170F) 70%, transparent); }

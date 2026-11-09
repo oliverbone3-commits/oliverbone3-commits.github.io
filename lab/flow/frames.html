@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flow Builder Frames</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* page scaffolding for viewing only */
+  body { margin: 0; background: #fff; display: flex; flex-direction: column; align-items: flex-start; gap: 40px; padding: 40px 0; }
+  body > .fb-modal { margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     04 · Flow canvas  (Figma 6:1478)
+     ============================================================ -->
+<div class="fb-frame" id="fb-flow">
+  <header class="fb-header">
+    <div class="fb-header__back"><img src="img/ic-arrow-left-20.svg" width="20" height="20" alt=""></div>
+    <div class="fb-header__info">
+      <p class="fb-t-h4">Demo merchant</p>
+      <p class="fb-t-c10">demo-merchant · 6 screens</p>
+    </div>
+    <div class="fb-header__actions">
+      <button class="fb-btn fb-btn--m fb-t-btn13" data-k="preview"><img src="img/ic-eye-20.svg" width="20" height="20" alt="">Preview</button>
+      <button class="fb-btn fb-btn--m fb-btn--pri fb-t-btn13"><img src="img/ic-save-20.svg" width="20" height="20" alt="">Save</button>
+    </div>
+  </header>
+
+  <div class="fb-toolbar">
+    <div class="fb-seg">
+      <button class="fb-seg__item fb-t-b13 is-on" data-k="mode-flow">Flow</button>
+      <button class="fb-seg__item fb-t-b13" data-k="mode-form">Form</button>
+      <span class="fb-seg__div"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+      <button class="fb-seg__item fb-t-b13">Component catalog</button>
+    </div>
+    <div class="fb-seg fb-seg--fill fb-seg--w220">
+      <button class="fb-seg__item fb-t-b13 is-on">Flowchart</button>
+      <button class="fb-seg__item fb-t-b13">Graph</button>
+    </div>
+    <button class="fb-btn fb-btn--m fb-t-btn13"><img src="img/ic-refresh-cw-20.svg" width="20" height="20" alt="">Re-layout</button>
+    <div class="fb-spacer"></div>
+    <div class="fb-valid fb-valid-ok"><img src="img/ic-circle-check-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">No errors</span></div>
+    <div class="fb-valid fb-valid-err fb-hidden"><img src="img/ic-circle-alert-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">1 error</span></div>
+  </div>
+
+  <div class="fb-body">
+    <!-- Screens panel -->
+    <aside class="fb-panel fb-panel--screens">
+      <div class="fb-panel__head fb-panel__head--32">
+        <p class="fb-t-b15e">Screens</p>
+        <button class="fb-btn fb-btn--s fb-t-btn10e"><img src="img/ic-plus-16.svg" width="16" height="16" alt="">Screen</button>
+      </div>
+      <div class="fb-search"><img src="img/ic-search-16.svg" width="16" height="16" alt=""><p class="fb-t-b13">Search screens</p></div>
+      <div class="fb-card">
+        <div class="fb-card__head"><p class="fb-t-b15e">Shared · 6</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+        <div class="fb-card__body">
+          <div class="fb-sitem is-sel"><span class="fb-dot fb-dot--blue"></span><div class="fb-sitem__text"><p class="fb-t-b13">payment</p><p class="fb-t-c10">Choose a payment method</p></div><p class="fb-t-c10 fb-sitem__tag">entry</p></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">pending</p><p class="fb-t-c10">Waiting for confirmation</p></div><p class="fb-t-c10 fb-sitem__tag">poll</p></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">success</p><p class="fb-t-c10">Payment complete</p></div></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">failure</p><p class="fb-t-c10">Payment failed</p></div></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">canceled</p><p class="fb-t-c10">Payment canceled</p></div></div>
+          <div class="fb-sitem"><span class="fb-dot"></span><div class="fb-sitem__text"><p class="fb-t-b13">expired</p><p class="fb-t-c10">Time ran out</p></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Canvas -->
+    <div class="fb-canvas">
+      <img class="fb-canvas__grid" src="img/imgFlowCanvasGrid.svg" width="1600" height="1000" alt="">
+
+      <!-- Edges (canvas coordinates from Figma; svg drawn at natural size, offset by half stroke) -->
+      <img class="fb-edge" src="img/imgStatusTDefaultExpired.svg" width="491" height="293" style="left:13px;top:542px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgStatusTSuccessSuccess.svg" width="94" height="363" style="left:463px;top:452px" alt="">
+      <img class="fb-edge" src="img/imgCancelOpOkCanceled.svg" width="481" height="287" style="left:17px;top:438px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgGlobalTimeoutStatusT.svg" width="78" height="55" style="left:215px;top:764px" alt="">
+      <img class="fb-edge" src="img/imgGlobalCancelCancelOp.svg" width="78" height="17" style="left:215px;top:728px" alt="">
+      <img class="fb-edge" src="img/imgStatusFailureFailure.svg" width="94" height="121" style="left:463px;top:280px" alt="">
+      <img class="fb-edge" src="img/imgStatusSuccessSuccess.svg" width="94" height="73" style="left:463px;top:380px" alt="">
+      <img class="fb-edge" src="img/imgStatusPendingPending.svg" width="471" height="87" style="left:21px;top:274px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgPendingPollStatus.svg" width="78" height="5" style="left:215px;top:364px" alt="">
+      <img class="fb-edge" src="img/imgFailureRetryPayment.svg" width="725" height="273" style="left:25px;top:28px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgSubmitDefaultFailure.svg" width="94" height="113" style="left:463px;top:168px" alt="">
+      <img class="fb-edge" id="edge-submit-failure" src="img/imgSubmitFailureFailure.svg" width="94" height="133" style="left:463px;top:148px" alt="">
+      <img class="fb-edge" src="img/imgSubmitPendingPending.svg" width="451" height="221" style="left:29px;top:128px;--dx:-0.5px" alt="">
+      <img class="fb-edge" src="img/imgSubmitSuccessSuccess.svg" width="94" height="345" style="left:463px;top:108px" alt="">
+      <img class="fb-edge" src="img/imgPaymentPaySubmit.svg" width="79" height="6" style="left:214px;top:112px" alt="">
+
+      <!-- Nodes -->
+      <div class="fb-node fb-node--sel" style="left:48px;top:48px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">payment</p><p class="fb-t-c10 fb-node__tag">entry</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">Choose a payment method</p></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">pay</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">cancel</p><p class="fb-t-c10 fb-node__tag">from any</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">report</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:64px">
+        <div class="fb-node__head"><p class="fb-t-s12e">submit</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">success</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">pending</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">failure</p><img class="fb-port" data-k="port-submit-failure" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">default</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:560px;top:232px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">failure</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">error</p></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">retry</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport" data-k="in-failure"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:300px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">pending</p><p class="fb-t-c10 fb-node__tag">poll</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">pending</p></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">poll</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:316px">
+        <div class="fb-node__head"><p class="fb-t-s12e">status</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">pending</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">success</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">failure</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:560px;top:404px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">success</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">success · no actions</p></div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:470px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">canceled</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">canceled · no actions</p></div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:580px">
+        <div class="fb-node__head"><span class="fb-dot"></span><p class="fb-t-s12e">expired</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__desc"><p class="fb-t-c10">expired · no actions</p></div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node" style="left:48px;top:700px">
+        <div class="fb-node__head"><span class="fb-dot fb-dot--gray"></span><p class="fb-t-s12e">From any screen</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">cancel</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">timeout</p><img class="fb-port" src="img/imgPort.svg" width="8" height="8" alt=""></div>
+        </div>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:680px">
+        <div class="fb-node__head"><p class="fb-t-s12e">cancel</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">ok</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <div class="fb-node fb-node--op" style="left:296px;top:770px">
+        <div class="fb-node__head"><p class="fb-t-s12e">status</p></div>
+        <div class="fb-node__div"></div>
+        <div class="fb-node__rows">
+          <div class="fb-node__row"><p class="fb-t-c10">success</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+          <div class="fb-node__row"><p class="fb-t-c10">default</p><img class="fb-port" src="img/imgPort1.svg" width="8" height="8" alt=""></div>
+        </div>
+        <span class="fb-inport"></span>
+      </div>
+
+      <!-- Edge labels -->
+      <div class="fb-elabel fb-t-c10" style="left:218px;top:107px">pay</div>
+      <div class="fb-elabel fb-t-c10" style="left:477px;top:410px">success</div>
+      <div class="fb-elabel fb-t-c10" style="left:228px;top:276px">pending</div>
+      <div class="fb-elabel fb-t-c10" id="label-submit-failure" style="left:488px;top:150px">failure</div>
+      <div class="fb-elabel fb-t-c10" style="left:494px;top:184px">default</div>
+      <div class="fb-elabel fb-t-c10" style="left:369px;top:18px">retry</div>
+      <div class="fb-elabel fb-t-c10" style="left:219px;top:358px">poll</div>
+      <div class="fb-elabel fb-t-c10" style="left:211px;top:734px">cancel</div>
+      <div class="fb-elabel fb-t-c10" style="left:229px;top:781px">timeout</div>
+      <div class="fb-elabel fb-t-c10" style="left:244px;top:428px">ok</div>
+      <div class="fb-elabel fb-t-c10" style="left:234px;top:532px">default</div>
+
+      <div class="fb-zoom">
+        <button class="fb-btn fb-btn--s"><img src="img/imgCirclePlus.svg" width="16" height="16" alt=""></button>
+        <button class="fb-btn fb-btn--s"><img src="img/imgCircleMinus.svg" width="16" height="16" alt=""></button>
+        <button class="fb-btn fb-btn--s"><img src="img/imgLayoutGrid.svg" width="16" height="16" alt=""></button>
+      </div>
+    </div>
+
+    <!-- Screen inspector -->
+    <aside class="fb-drawer">
+      <div class="fb-drawer__content">
+        <div class="fb-seg fb-seg--fill">
+          <button class="fb-seg__item fb-t-b13 is-on">Screen</button>
+          <button class="fb-seg__item fb-t-b13">Transition</button>
+          <span class="fb-seg__div"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+          <button class="fb-seg__item fb-t-b13">Operations</button>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-card__head"><p class="fb-t-b15e">General</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+          <div class="fb-card__body fb-card__body--fields">
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Screen id</p><p class="fb-t-b13 fb-input__value">payment</p></div></div>
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Kind</p><p class="fb-t-b13 fb-input__value">form — fields</p></div><img src="img/ic-chevron-down-input.svg" width="16" height="16" alt=""></div>
+            <div class="fb-input"><p class="fb-t-b13 fb-input__ph">Method (canvas group)</p></div>
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Extends screen</p><p class="fb-t-b13 fb-input__value">—</p></div><img src="img/ic-chevron-down-input.svg" width="16" height="16" alt=""></div>
+          </div>
+        </div>
+
+        <div class="fb-togrow"><p class="fb-t-s12e">Status polling</p><span class="fb-toggle"><span class="fb-toggle__knob"></span></span></div>
+
+        <div class="fb-card">
+          <div class="fb-card__head"><p class="fb-t-b15e">Texts</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+          <div class="fb-card__body fb-card__body--fields">
+            <div class="fb-input"><p class="fb-t-b13 fb-input__ph">Eyebrow</p></div>
+            <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">Title</p><p class="fb-t-b13 fb-input__value">Choose a payment method</p></div></div>
+            <div class="fb-input"><p class="fb-t-b13 fb-input__ph">Description</p></div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Actions (footer) · 3</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+          <div class="fb-card__body">
+            <div class="fb-pitem fb-pitem--soft"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Pay</p><p class="fb-t-c10">pay · primary</p></div></div>
+            <div class="fb-pitem fb-pitem--soft is-hover"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Cancel payment</p><p class="fb-t-c10">cancel · link</p></div><img src="img/ic-x-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-pitem fb-pitem--soft"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Can't pay</p><p class="fb-t-c10">report · modal</p></div></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============================================================
+     09 · Form mode — step  (Figma 17:3138)
+     ============================================================ -->
+<div class="fb-frame" id="fb-form">
+  <header class="fb-header">
+    <div class="fb-header__back"><img src="img/ic-arrow-left-20.svg" width="20" height="20" alt=""></div>
+    <div class="fb-header__info">
+      <p class="fb-t-h4">Demo merchant</p>
+      <p class="fb-t-c10">demo-merchant · 6 screens</p>
+    </div>
+    <div class="fb-header__actions">
+      <button class="fb-btn fb-btn--m fb-t-btn13" data-k="preview"><img src="img/ic-eye-20.svg" width="20" height="20" alt="">Preview</button>
+      <button class="fb-btn fb-btn--m fb-btn--pri fb-t-btn13"><img src="img/ic-save-20.svg" width="20" height="20" alt="">Save</button>
+    </div>
+  </header>
+
+  <div class="fb-toolbar">
+    <div class="fb-seg">
+      <button class="fb-seg__item fb-t-b13" data-k="mode-flow">Flow</button>
+      <button class="fb-seg__item fb-t-b13 is-on" data-k="mode-form">Form</button>
+      <span class="fb-seg__div" style="visibility:hidden"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+      <button class="fb-seg__item fb-t-b13">Component catalog</button>
+    </div>
+    <div class="fb-seg fb-seg--fill fb-seg--w300">
+      <button class="fb-seg__item fb-t-b13 is-on">All methods</button>
+      <button class="fb-seg__item fb-t-b13">Card</button>
+      <span class="fb-seg__div"><img src="img/ic-seg-divider.svg" width="12" height="1" alt=""></span>
+      <button class="fb-seg__item fb-t-b13">UPI</button>
+    </div>
+    <div class="fb-spacer"></div>
+    <div class="fb-valid fb-valid-ok"><img src="img/ic-circle-check-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">No errors</span></div>
+    <div class="fb-valid fb-valid-err fb-hidden"><img src="img/ic-circle-alert-16.svg" width="16" height="16" alt=""><span class="fb-t-tag10">1 error</span></div>
+  </div>
+
+  <div class="fb-screenbar">
+    <button class="fb-btn fb-btn--s fb-t-btn10e"><img src="img/ic-arrow-left-16.svg" width="16" height="16" alt="">Back to flow</button>
+    <p class="fb-t-b13e fb-c-500">Screen method-select</p>
+    <p class="fb-t-b13 fb-c-300">Choose a payment method</p>
+  </div>
+
+  <div class="fb-body">
+    <!-- Palette -->
+    <aside class="fb-panel fb-panel--palette">
+      <div class="fb-panel__head"><p class="fb-t-b15e">Palette</p><img src="img/ic-panel-left-close-16.svg" width="16" height="16" alt=""></div>
+      <div class="fb-card">
+        <div class="fb-card__head"><p class="fb-t-b15e">Ready-made blocks</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+        <div class="fb-card__body">
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Card</p><p class="fb-t-c10">number, expiry, CVC, name, e-mail</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Card without CVV</p><p class="fb-t-c10">same, without the security code</p></div></div>
+        </div>
+      </div>
+      <div class="fb-card">
+        <div class="fb-card__head"><p class="fb-t-b15e">Fields</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+        <div class="fb-card__body">
+          <div class="fb-prow" data-k="pal-phone"><div class="fb-prow__text"><p class="fb-t-b13">Phone</p><p class="fb-t-c10">number with mask and prefix</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Text input</p><p class="fb-t-c10">payment code, UTR etc.</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Multiline input</p><p class="fb-t-c10">«Report a problem»</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Copyable value</p><p class="fb-t-c10">payment details, account number</p></div></div>
+          <div class="fb-prow"><div class="fb-prow__text"><p class="fb-t-b13">Details card</p><p class="fb-t-c10">several rows + «Verified» badge</p></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Screen structure -->
+    <aside class="fb-panel fb-panel--structure">
+      <div class="fb-panel__head"><p class="fb-t-b15e">Screen structure</p><img src="img/ic-panel-left-close-16.svg" width="16" height="16" alt=""></div>
+      <div class="fb-card">
+        <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Header · shared</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+        <div class="fb-card__body">
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Amount</p><p class="fb-t-c10">amount</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Language switcher</p><p class="fb-t-c10">ru, en</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Timer</p><p class="fb-t-c10">900 s</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Payment ID</p><p class="fb-t-c10">ID</p></div></div>
+        </div>
+      </div>
+      <div class="fb-card" data-k="body-drop">
+        <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Body · steps</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+        <div class="fb-card__body" id="body-items">
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Choose a payment method · 3</p><p class="fb-t-c10">Step · 4 fields</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Bank list</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Text input</p><p class="fb-t-c10">Code</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Phone</p><p class="fb-t-c10">Phone number</p></div></div>
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">USSD code</p></div></div>
+        </div>
+      </div>
+      <div class="fb-card">
+        <div class="fb-card__head fb-card__head--add"><p class="fb-t-b15e">Footer · buttons</p><p class="fb-t-btn13e fb-card__add">Add</p><span class="fb-card__chev"><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></span></div>
+        <div class="fb-card__body">
+          <div class="fb-pitem"><img src="img/ic-draggable-16.svg" width="16" height="16" alt=""><div class="fb-pitem__text"><p class="fb-t-b13">Cancel payment</p><p class="fb-t-c10">link</p></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Checkout preview -->
+    <div class="fb-preview-area">
+      <div id="co-slot"></div>
+    </div>
+
+    <!-- Properties / Theme -->
+    <aside class="fb-drawer">
+      <div class="fb-drawer__content">
+        <div class="fb-seg fb-seg--fill">
+          <button class="fb-seg__item fb-t-b13 is-on" data-k="ptab-properties">Properties</button>
+          <button class="fb-seg__item fb-t-b13" data-k="ptab-theme">Theme</button>
+        </div>
+
+        <div id="ptab-properties-panel">
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Step title</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">RU</p><p class="fb-t-b13 fb-input__value">Choose a payment method</p></div></div>
+              <div class="fb-input"><div class="fb-input__content"><p class="fb-t-c10 fb-input__label">EN</p><p class="fb-t-b13 fb-input__value">Choose payment method</p></div></div>
+            </div>
+          </div>
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Step description</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-input"><p class="fb-t-b13 fb-input__ph">RU</p></div>
+              <div class="fb-input"><p class="fb-t-b13 fb-input__ph">EN</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="ptab-theme-panel" class="fb-hidden">
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Brand</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-theme-field">
+                <p class="fb-t-b13 fb-field-label">Accent colour</p>
+                <div class="fb-swatches">
+                  <button class="fb-swatch is-on" data-k="sw-blue" style="--sw:#3465FF" aria-label="Blue"></button>
+                  <button class="fb-swatch" data-k="sw-green" style="--sw:#17746C" aria-label="Green"></button>
+                  <button class="fb-swatch" data-k="sw-yellow" style="--sw:#F5C518" aria-label="Yellow"></button>
+                  <button class="fb-swatch" data-k="sw-purple" style="--sw:#6E4BD8" aria-label="Purple"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fb-card">
+            <div class="fb-card__head"><p class="fb-t-b15e">Mode</p><img src="img/ic-chevron-down-16.svg" width="16" height="16" alt=""></div>
+            <div class="fb-card__body fb-card__body--fields16">
+              <div class="fb-seg fb-seg--fill">
+                <button class="fb-seg__item fb-t-b13 is-on" data-k="th-light">Light</button>
+                <button class="fb-seg__item fb-t-b13" data-k="th-dark">Dark</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============================================================
+     14 · Preview — payment screen: modal only  (Figma 28:6373)
+     ============================================================ -->
+<div class="fb-modal" id="fb-modal">
+  <div class="fb-modal__head">
+    <p class="fb-t-h4">Preview</p>
+    <p class="fb-t-b13s">Click through the flow as a payer. Backend calls are simulated.</p>
+  </div>
+  <div class="fb-modal__content">
+    <div class="fb-modal__state">
+      <p class="fb-t-b13 fb-c-300 fb-nowrap">Screen</p>
+      <p class="fb-t-b13e" id="modal-screen">payment</p>
+      <span class="fb-entry"><span class="fb-t-tag10">entry</span></span>
+    </div>
+    <div id="co-modal-slot"></div>
+  </div>
+  <div class="fb-modal__foot">
+    <button class="fb-btn fb-btn--l fb-t-btn14e" data-k="modal-start-over"><img src="img/ic-refresh-cw-24.svg" width="24" height="24" alt="">Start over</button>
+    <button class="fb-btn fb-btn--l fb-btn--pri fb-t-btn14e" data-k="modal-close">Close preview</button>
+  </div>
+</div>
+
+</body>
+</html>

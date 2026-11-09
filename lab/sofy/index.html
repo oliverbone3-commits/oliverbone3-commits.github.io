@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sofy rework</title>
+<link rel="stylesheet" href="sofy.css">
+</head>
+<body>
+<!-- Icons: Lucide-style strokes standing in for SF Symbols. Photos and logo: the 2018–19 Sofy Figma file (Drunker). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="0 0 360 190"><path fill="currentColor" fill-rule="evenodd" d="M109.565 96.2542C109.565 87.0699 111.693 78.8764 115.949 71.6736C120.205 64.4708 125.879 58.9666 132.973 55.1608C140.066 51.3549 147.868 49.4521 156.38 49.4521C164.892 49.4521 172.71 51.3549 179.834 55.1608C186.959 58.9666 192.681 64.4708 197 71.6736C201.319 78.8764 203.478 87.0699 203.478 96.2542C203.478 105.439 201.319 113.648 197 120.882C192.681 128.116 186.959 133.636 179.834 137.442C172.71 141.248 164.892 143.151 156.38 143.151C147.868 143.151 140.066 141.248 132.973 137.442C125.879 133.636 120.205 128.132 115.949 120.929C111.693 113.726 109.565 105.501 109.565 96.2542ZM141.957 111.163C138.017 107.326 136.046 102.356 136.046 96.2542C136.046 90.2781 138.017 85.3715 141.957 81.5342C145.898 77.6969 150.705 75.7783 156.38 75.7783C162.117 75.7783 166.972 77.6969 170.944 81.5342C174.917 85.3715 176.903 90.2781 176.903 96.2542C176.903 102.419 174.932 107.404 170.992 111.21C167.051 115.016 162.181 116.919 156.38 116.919C150.705 116.919 145.898 115 141.957 111.163Z M360 68.9726V100.205V147.055C360 170.773 340.729 190 316.957 190C295.401 190 277.547 174.192 274.404 153.562H303.499C305.648 159.627 311.446 163.973 318.261 163.973C326.905 163.973 333.913 156.981 333.913 148.356V139.69C328.71 141.917 322.977 143.151 316.957 143.151C311.926 143.151 307.096 142.29 302.609 140.707C285.891 134.812 273.913 118.904 273.913 100.205V54.6575H302.609V101.507C302.609 110.132 309.616 117.123 318.261 117.123C326.905 117.123 333.913 110.132 333.913 101.507V54.6575H360V68.9726Z M240.394 143.151H213.913V96.2542V44.2466C213.913 39.5706 214.463 35.1999 215.562 31.1346C217.509 23.9324 221.182 17.6887 226.579 12.4032C235.023 4.13436 246.078 0 259.744 0H274.065V1.95752V27.0489L259.813 27.034L259.744 27.0339C253.956 27.0339 249.68 28.4136 246.093 31.9952C240.772 37.3093 240.575 43.6401 240.427 48.4123L240.427 48.4144L240.427 48.4169C240.416 48.7544 240.406 49.084 240.394 49.4049L240.394 54.6575H260.728L260.728 70.0695V75.7783L260.728 80.8894L240.394 80.8422L240.394 138.952V143.151Z M0 100.008H29.2475C29.4418 104.747 31.3365 108.729 34.9318 111.954C38.527 115.179 43.4663 116.791 49.7498 116.791C55.7095 116.791 60.5354 115.458 64.2278 112.793C67.9202 110.127 69.7988 106.557 69.8635 102.081C69.9931 98.593 68.8919 95.5654 66.5598 92.9986C64.2278 90.4317 59.8229 88.194 53.345 86.2853L36.8265 81.6453C13.1823 74.208 1.36035 60.8474 1.36035 41.5631C1.36035 29.3211 5.89479 19.3336 14.9638 11.6001C24.0328 3.86668 35.2394 0 48.5838 0C62.1226 0 73.232 3.85022 81.9123 11.5508C87.876 16.8413 91.7911 23.39 93.6575 31.197C94.5077 34.7532 94.9328 38.5706 94.9328 42.649H65.8797C65.8797 37.9102 64.3412 34.0929 61.2642 31.197C58.1872 28.301 53.8309 26.8531 48.1952 26.8531C43.0776 26.8531 38.8347 28.153 35.4662 30.7527C32.0977 33.3525 30.4135 36.6926 30.4135 40.7733C30.4135 47.4208 35.3366 52.1595 45.183 54.9896L61.5071 60.222C87.1595 67.7251 99.694 81.7439 99.111 102.279C99.0462 108.992 97.5725 115.014 94.6899 120.345C91.8072 125.676 88.0177 129.954 83.3213 133.179C78.6248 136.405 73.4102 138.873 67.6773 140.584C61.9443 142.295 55.9686 143.151 49.7498 143.151C34.9155 143.151 22.9154 139.119 13.7492 131.057C7.89019 125.903 3.90373 119.815 1.78981 112.793C0.596603 108.829 0 104.567 0 100.008Z"/></symbol>
+    <symbol id="i-today" viewBox="0 0 24 24"><path d="M12 3c.5 3.2 4.5 5.4 4.5 10a4.5 4.5 0 0 1-9 0c0-2 1-3.4 2-4.3.2 1.6 1 2.6 2 2.8-.7-3 .5-5.8.5-8.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6Z M9 4v14M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3.5 7.5A1.5 1.5 0 0 1 5 6h14a1.5 1.5 0 0 1 1.5 1.5V10a2 2 0 0 0 0 4v2.5A1.5 1.5 0 0 1 19 18H5a1.5 1.5 0 0 1-1.5-1.5V14a2 2 0 0 0 0-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14.5 6.5v11" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2.2"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M12 4c4.7 0 8.5 3.1 8.5 7s-3.8 7-8.5 7c-1 0-2-.1-2.9-.4L4.5 20l1.3-3.6C4.3 15.1 3.5 13.1 3.5 11c0-3.9 3.8-7 8.5-7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15.5 5.6a3 3 0 0 1 0 5.8M17.5 14.8c1.9.6 3.1 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-door" viewBox="0 0 24 24"><path d="M5 20.5h14M7 20.5V4.5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="12.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-d" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.9" fill="currentColor"/><circle cx="12" cy="12" r="1.9" fill="currentColor"/><circle cx="18.5" cy="12" r="1.9" fill="currentColor"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8.5h3l1.8-2.5h6.4L17 8.5h3v11H4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13.5" r="3.3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 16.5v-9h3a2.5 2.5 0 0 1 0 5h-3M8.5 10.5h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.9-.8-3.1-.8c-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3.1.7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.6ZM14.1 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-locate" viewBox="0 0 24 24"><path d="M20.5 3.5 3.5 10.5l7 3 3 7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8 7.5 9.5 4.3-1.5 7.5-4.9 7.5-9.5V6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 11V9.5A3.5 3.5 0 0 1 7.5 6H19M16 3l3 3-3 3M20 13v1.5a3.5 3.5 0 0 1-3.5 3.5H5M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flash" viewBox="0 0 24 24"><path d="M13 3 5.5 13.5H11L10 21l7.5-10.5H12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.8" fill="currentColor"/><path d="M4 17l4.5-4 3.5 3 3-2.5 5 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="board-head">
+  <h1>Sofy — rework</h1>
+  <p>Chapter 0 is the original 2018 Android version (copy translated to English). Chapters 1–4 rethink it for iOS 27, before Figma. iPhone 402 × 874, dark like the original, brand mint as the only accent. One story: a person picks what they'd go to, finds a plan for this afternoon, asks the host to let them in, posts their own plan and lets people in, then shows up, checks in and earns coins. People, places and photos come from the original file.</p>
+</header>
+
+<!-- ============ 0 · 2018 ============ -->
+<div class="chapter">0 · The original, 2018 — Android, Minsk, first version (copy translated)</div>
+<main class="board">
+<figure class="slot old"><figcaption><b>01</b> Sign in. One social login, one promise: go out, meet people, talk.</figcaption><img src="original-2018/1-signin.jpg" alt="" width="360"></figure>
+<figure class="slot old"><figcaption><b>02</b> Interests. Already the core: they shape the feed and the match score.</figcaption><img src="original-2018/2-interests.jpg" alt="" width="360"></figure>
+<figure class="slot old"><figcaption><b>03</b> Feed. Plans by when they start; a card says who, when, how far.</figcaption><img src="original-2018/3-feed.jpg" alt="" width="360"></figure>
+<figure class="slot old"><figcaption><b>04</b> Plan. Host, meeting point, a Telegram chat for the group, who is going.</figcaption><img src="original-2018/4-event.jpg" alt="" width="360"></figure>
+<figure class="slot old"><figcaption><b>05</b> Host view. Approve or decline each request; undo if you change your mind.</figcaption><img src="original-2018/5-approve.jpg" alt="" width="360"></figure>
+<figure class="slot old"><figcaption><b>06</b> New plan. Title, photo, place on the map, how many people, date and time.</figcaption><img src="original-2018/6-create.jpg" alt="" width="360"></figure>
+<figure class="slot old"><figcaption><b>07</b> Profile. Match %, plans, hosted, interests; plans you are waiting on.</figcaption><img src="original-2018/7-profile.jpg" alt="" width="360"></figure>
+</main>
+
+<!-- ============ 1 · START ============ -->
+<div class="chapter">1 · Start — plans, not profiles</div>
+<main class="board">
+
+<!-- 01 WELCOME -->
+<figure class="slot">
+  <figcaption><b>01</b> Welcome. Real plans for today are the pitch, so the first screen shows them, not people.</figcaption>
+  <div class="phone"><div class="screen s-welcome">
+    <div class="status" data-t="14:02"></div>
+    <div style="position:absolute;top:100px;left:0;right:0;height:430px">
+      <div class="plan" style="position:absolute;width:250px;left:-14px;top:40px;transform:rotate(-8deg);box-shadow:0 20px 40px rgb(0 0 0 / .5)">
+        <div class="ph" style="height:150px"><img src="img/cafe.jpg" alt=""></div>
+        <div class="bd" style="padding:12px 14px 14px"><div class="tm" style="width:62px"><div class="time" style="font-size:24px;line-height:26px">20:00</div></div><div class="tx"><div class="dp" style="font-size:17px;line-height:21px">Who wants coffee?</div><div class="fn l2" style="margin-top:2px">SoMa · 2 going</div></div></div>
+      </div>
+      <div class="plan" style="position:absolute;width:250px;right:-20px;top:-20px;transform:rotate(7deg);box-shadow:0 20px 40px rgb(0 0 0 / .5)">
+        <div class="ph" style="height:150px"><img src="img/concert.jpg" alt=""></div>
+        <div class="bd" style="padding:12px 14px 14px"><div class="tm" style="width:62px"><div class="time" style="font-size:24px;line-height:26px">22:00</div></div><div class="tx"><div class="dp" style="font-size:17px;line-height:21px">Rock at the Fillmore</div><div class="fn l2" style="margin-top:2px">Western Addition · 13 going</div></div></div>
+      </div>
+      <div class="plan" style="position:absolute;width:270px;left:66px;top:190px;transform:rotate(-1.5deg);box-shadow:0 24px 50px rgb(0 0 0 / .6)">
+        <div class="ph" style="height:160px"><img src="img/surf.jpg" alt=""></div>
+        <div class="bd" style="padding:12px 14px 14px"><div class="tm" style="width:62px"><div class="time" style="font-size:24px;line-height:26px">15:00</div></div><div class="tx"><div class="dp" style="font-size:17px;line-height:21px">Go surfing</div><div class="fn l2" style="margin-top:2px">Ocean Beach · 5 going</div><div class="seats" style="margin-top:8px"><i></i><i></i><i></i><i></i><i></i><i class="free"></i><i class="free"></i><i class="free"></i></div></div></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:24px;right:24px;top:556px">
+      <svg style="width:76px;height:40px;color:#fff"><use href="#logo"/></svg>
+      <div class="dp" style="font-size:38px;line-height:42px;margin-top:14px">Plans, not profiles.</div>
+      <div class="body l2" style="margin-top:8px">Join what people nearby are doing today, or post your own and choose who comes.</div>
+    </div>
+    <div class="bottom-cta">
+      <button class="btn primary"><svg><use href="#i-apple"/></svg>Continue with Apple</button>
+      <button class="btn plain">Use phone number</button>
+    </div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 02 INTERESTS -->
+<figure class="slot">
+  <figcaption><b>02</b> Interests. One choice does two jobs: it filters the feed and shows what you have in common with people.</figcaption>
+  <div class="phone"><div class="screen s-interests">
+    <div class="status" data-t="14:03"></div>
+    <div class="toolbar"><div class="circle-btn glass"><svg><use href="#i-chev-l"/></svg></div><div class="sp"></div><div class="fn l2" style="font-weight:590">2 of 3</div></div>
+    <div class="content" style="padding-top:124px">
+      <div class="lt">What would you<br>go to?</div>
+      <div class="body l2" style="margin-top:8px">Your feed starts here. You can change it any time.</div>
+      <div class="eyebrow" style="margin-top:28px">Outdoors</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="chip on">Surfing</span><span class="chip">Hiking</span><span class="chip on">Beach</span><span class="chip">Cycling</span><span class="chip on">Skiing</span><span class="chip">Running</span></div>
+      <div class="eyebrow" style="margin-top:24px">Evenings</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="chip on">Concerts</span><span class="chip">Bars</span><span class="chip">Pub quiz</span><span class="chip on">Coffee &amp; talk</span><span class="chip">Cinema</span><span class="chip">Dancing</span></div>
+      <div class="eyebrow" style="margin-top:24px">Culture</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="chip">Exhibitions</span><span class="chip">Theater</span><span class="chip on">Photo walks</span><span class="chip">Books</span></div>
+      <div class="eyebrow" style="margin-top:24px">Trips</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="chip">Weekend away</span><span class="chip on">Road trips</span><span class="chip">Camping</span></div>
+    </div>
+    <div class="scroll-edge" style="height:200px"></div>
+    <div class="bottom-cta"><button class="btn accent">Continue · 7 picked</button></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+</main>
+
+<!-- ============ 2 · FIND A PLAN ============ -->
+<div class="chapter">2 · Find a plan — what's on today, and who's going</div>
+<main class="board">
+
+<!-- 03 TODAY -->
+<figure class="slot">
+  <figcaption><b>03</b> Today. Grouped by when it starts. The time leads; seats show how full it is before you read a word.</figcaption>
+  <div class="phone"><div class="screen s-today">
+    <div class="status" data-t="14:20"></div>
+    <div class="toolbar"><div class="chip-btn glass"><svg><use href="#i-pin"/></svg>San Francisco<svg style="width:12px;height:12px;opacity:.6"><use href="#i-chev-d"/></svg></div><div class="sp"></div><div class="circle-btn prom"><svg><use href="#i-plus"/></svg></div><img class="av" src="img/me.jpg" alt="" style="width:44px;height:44px"></div>
+    <div class="content" style="padding-top:116px">
+      <div class="lt">Today</div>
+      <div style="display:flex;gap:8px;margin-top:12px"><span class="btn-s accent">For you</span><span class="btn-s">Everything</span><span class="btn-s">Weekend</span></div>
+      <div class="eyebrow" style="margin-top:22px;margin-bottom:10px">Starting soon</div>
+      <div class="plan">
+        <div class="ph"><img src="img/surf.jpg" alt=""><span class="tag glass lock" style="background:rgb(20 20 22 / .55)"><svg style="width:13px;height:13px;margin-right:4px"><use href="#i-door"/></svg>Host lets you in</span></div>
+        <div class="bd"><div class="tm"><div class="time">15:00</div><div class="c1">in 40 min</div></div>
+          <div class="tx"><div class="dp">Go surfing</div><div class="meta" style="margin-top:4px">Ocean Beach · 3.3 km</div>
+            <div class="ft"><div class="seats"><i></i><i></i><i></i><i></i><i></i><i class="free"></i><i class="free"></i><i class="free"></i></div><div class="stack"><img class="av s" src="img/ross.jpg" alt=""><img class="av s" src="img/mia.jpg" alt=""><img class="av s" src="img/jan.jpg" alt=""></div></div>
+            <div class="fn acc" style="margin-top:8px;font-weight:590">In your interests: Surfing, Beach</div>
+          </div></div>
+      </div>
+      <div class="eyebrow" style="margin-top:22px;margin-bottom:10px">This evening</div>
+      <div class="plan">
+        <div class="ph"><img src="img/cafe.jpg" alt=""></div>
+        <div class="bd"><div class="tm"><div class="time">20:00</div><div class="c1">open to all</div></div>
+          <div class="tx"><div class="dp">Who wants coffee?</div><div class="meta" style="margin-top:4px">Sightglass, SoMa · 900 m</div></div></div>
+      </div>
+    </div>
+    <div class="scroll-edge"></div>
+    <div class="tabs" data-on="today"></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 04 MAP -->
+<figure class="slot">
+  <figcaption><b>04</b> Map. Pins are start times. Mint ones match your interests; the card below is the one you tapped.</figcaption>
+  <div class="phone"><div class="screen s-map">
+    <div class="status" data-t="14:21"></div>
+    <img src="img/map-sf.png" alt="" style="position:absolute;inset:0;width:402px;height:874px">
+    <div style="position:absolute;left:22px;top:500px"><div class="pin on">15:00</div></div>
+    <div style="position:absolute;left:236px;top:250px"><div class="pin">19:30</div></div>
+    <div style="position:absolute;left:282px;top:430px"><div class="pin on">20:00</div></div>
+    <div style="position:absolute;left:180px;top:190px"><div class="pin on">22:00</div></div>
+    <div style="position:absolute;left:300px;top:150px"><div class="pin">18:00</div></div>
+    <div style="position:absolute;left:150px;top:520px"><div class="pin">21:00</div></div>
+    <div style="position:absolute;left:196px;top:356px;width:18px;height:18px;border-radius:50%;background:#0A84FF;box-shadow:0 0 0 4px #fff,0 0 0 14px rgb(10 132 255 / .18)"></div>
+    <div class="toolbar"><div class="chip-btn glass" style="background:var(--accent);color:var(--accent-ink)">Today</div><div class="chip-btn glass">Tonight</div><div class="chip-btn glass">Weekend</div><div class="sp"></div><div class="circle-btn glass"><svg><use href="#i-locate"/></svg></div></div>
+    <div style="position:absolute;left:16px;right:16px;bottom:104px;z-index:31" class="plan glass">
+      <div class="bd" style="align-items:center;padding:12px 12px 12px 12px">
+        <img src="img/surf.jpg" alt="" style="width:72px;height:72px;border-radius:16px;object-fit:cover">
+        <div class="tx"><div class="row" style="gap:8px"><span class="time acc" style="font-size:20px">15:00</span><span class="dp" style="font-size:18px">Go surfing</span></div><div class="meta" style="margin-top:2px">Ocean Beach · 3 seats left</div></div>
+        <svg class="chev" style="margin-right:4px"><use href="#i-chev-r"/></svg>
+      </div>
+    </div>
+    <div class="tabs" data-on="map"></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 05 PLAN -->
+<figure class="slot">
+  <figcaption><b>05</b> The plan. The host is a person with a record, not a star rating: plans hosted, how often they showed up. They choose who joins.</figcaption>
+  <div class="phone"><div class="screen s-plan">
+    <div class="status" data-t="14:22"></div>
+    <img src="img/surf.jpg" alt="" style="position:absolute;top:0;left:0;width:402px;height:330px;object-fit:cover">
+    <div style="position:absolute;top:200px;left:0;right:0;height:130px;background:linear-gradient(to bottom,transparent,var(--bg))"></div>
+    <div class="top-edge" style="height:110px;background:linear-gradient(to bottom,rgb(0 0 0 / .45),transparent)"></div>
+    <div class="toolbar"><div class="circle-btn glass"><svg><use href="#i-chev-l"/></svg></div><div class="sp"></div><div class="pill-group glass"><button><svg><use href="#i-share"/></svg></button><button><svg><use href="#i-more"/></svg></button></div></div>
+    <div class="content" style="padding-top:262px">
+      <div class="row" style="gap:8px"><span class="tag m">Surfing</span><span class="tag m">Beach</span><span class="tag">Beginners welcome</span></div>
+      <div class="dp" style="font-size:34px;line-height:38px;margin-top:10px">Go surfing</div>
+      <div class="row" style="margin-top:12px;gap:18px">
+        <div><div class="time acc" style="font-size:26px;line-height:28px">15:00</div><div class="fn l2">Today · in 40 min</div></div>
+        <div style="width:1px;height:36px;background:var(--sep)"></div>
+        <div><div class="hl">Ocean Beach</div><div class="fn l2">Stairwell 17 · 3.3 km</div></div>
+      </div>
+      <div class="group" style="margin-top:16px">
+        <div class="it" style="padding:12px 16px"><img class="av" src="img/ross.jpg" alt="" style="width:44px;height:44px"><div style="flex:1"><div class="hl">Ross Bradley <span class="fn l2" style="font-weight:400">· host</span></div><div class="fn l2">12 plans hosted · showed up to 31 of 32</div></div><svg class="chev"><use href="#i-chev-r"/></svg></div>
+        <div class="it" style="padding:12px 16px"><svg class="ic"><use href="#i-door"/></svg><div class="sub" style="flex:1">Ross lets people in. Ask, and you'll hear back before 14:45.</div></div>
+      </div>
+      <div class="row" style="justify-content:space-between;margin-top:18px"><div class="hl">Going · 5 of 8</div><div class="seats"><i></i><i></i><i></i><i></i><i></i><i class="free"></i><i class="free"></i><i class="free"></i></div></div>
+      <div class="row" style="margin-top:10px;gap:14px">
+        <div style="text-align:center"><img class="av l" src="img/ross.jpg" alt=""><div class="c1 l2" style="margin-top:4px">Ross</div></div>
+        <div style="text-align:center"><img class="av l" src="img/mia.jpg" alt=""><div class="c1 l2" style="margin-top:4px">Mia</div></div>
+        <div style="text-align:center"><img class="av l" src="img/jan.jpg" alt=""><div class="c1 l2" style="margin-top:4px">Jan</div></div>
+        <div style="text-align:center"><img class="av l" src="img/juana.jpg" alt=""><div class="c1 l2" style="margin-top:4px">Juana</div></div>
+        <div style="text-align:center"><img class="av l" src="img/leon.jpg" alt=""><div class="c1 l2" style="margin-top:4px">Leon</div></div>
+      </div>
+      <div class="body l2" style="margin-top:16px">Let's get together, ride, talk, and then… who knows. Two spare boards, bring a wetsuit.</div>
+    </div>
+    <div class="scroll-edge" style="height:170px"></div>
+    <div class="bottom-cta" style="grid-template-columns:auto 1fr;align-items:center;gap:14px"><div><div class="hl">3 seats left</div><div class="fn l2">Free</div></div><button class="btn accent"><svg><use href="#i-door"/></svg>Ask to join</button></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 06 ASK -->
+<figure class="slot">
+  <figcaption><b>06</b> Ask to join. You see exactly what the host will see about you before you send.</figcaption>
+  <div class="phone"><div class="screen s-ask">
+    <div class="status" data-t="14:23"></div>
+    <img src="img/surf.jpg" alt="" style="position:absolute;top:0;left:0;width:402px;height:330px;object-fit:cover">
+    <div class="dim"></div>
+    <div class="sheet" style="top:150px">
+      <div class="grabber"></div>
+      <div class="sheet-bar"><div class="circle-btn"><svg style="width:18px;height:18px"><use href="#i-x"/></svg></div><div class="ttl">Ask Ross</div><div style="width:44px"></div></div>
+      <div class="eyebrow" style="margin-top:4px">Ross will see</div>
+      <div class="group" style="margin-top:10px;background:var(--card2)">
+        <div class="it" style="padding:14px 16px"><img class="av" src="img/me.jpg" alt="" style="width:48px;height:48px"><div style="flex:1"><div class="hl">Dmitry</div><div class="fn l2">19 plans · showed up to 18 of 19</div></div></div>
+        <div class="it" style="padding:12px 16px;flex-wrap:wrap;gap:6px"><span class="fn l2" style="width:100%">In common with Ross</span><span class="tag m">Surfing</span><span class="tag m">Beach</span><span class="tag m">Road trips</span></div>
+        <div class="it" style="padding:12px 16px"><span class="fn l2" style="flex:1">Plans together</span><span class="sub">Beach day at Point Reyes</span></div>
+      </div>
+      <div class="eyebrow" style="margin-top:20px">A word to Ross <span style="text-transform:none;font-weight:400">(optional)</span></div>
+      <div style="margin-top:10px;background:var(--card2);border-radius:20px;padding:14px 16px;min-height:96px" class="body">First time on a board in a while. Happy to bring my own wetsuit.<span style="display:inline-block;width:2px;height:20px;background:var(--accent);vertical-align:-4px;margin-left:1px"></span></div>
+      <div class="row" style="margin-top:14px;gap:10px"><svg style="width:18px;height:18px;color:var(--label2)"><use href="#i-clock"/></svg><div class="fn l2">If Ross doesn't answer by 14:45, the request closes on its own.</div></div>
+      <button class="btn accent" style="margin-top:22px">Send request</button>
+    </div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+</main>
+
+<!-- ============ 3 · HOST ============ -->
+<div class="chapter">3 · Host — post a plan and choose who comes</div>
+<main class="board">
+
+<!-- 07 NEW PLAN -->
+<figure class="slot">
+  <figcaption><b>07</b> New plan. Four answers: what, when, where, how many. The last switch decides whether anyone can join or you let people in.</figcaption>
+  <div class="phone"><div class="screen s-create">
+    <div class="status" data-t="16:40"></div>
+    <div class="content" style="padding-top:116px;opacity:.5"><div class="lt">Today</div></div>
+    <div class="dim"></div>
+    <div class="sheet full">
+      <div class="grabber"></div>
+      <div class="sheet-bar"><div class="circle-btn"><svg style="width:18px;height:18px"><use href="#i-x"/></svg></div><div class="ttl">New plan</div><div class="circle-btn" style="background:var(--accent);color:var(--accent-ink)"><svg style="width:20px;height:20px"><use href="#i-check"/></svg></div></div>
+      <div style="position:relative;height:150px;border-radius:24px;overflow:hidden;margin-top:4px"><img src="img/bar.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgb(0 0 0 / .75),transparent 60%)"></div><div class="dp" style="position:absolute;left:16px;bottom:12px;font-size:26px;line-height:30px">Pub quiz at Zeitgeist</div><span class="btn-s glass" style="position:absolute;right:12px;top:12px"><svg><use href="#i-image"/></svg>Change</span></div>
+      <div class="group" style="margin-top:14px;background:var(--card2)">
+        <div class="it"><svg class="ic"><use href="#i-cal"/></svg><span class="k">When</span><span class="btn-s" style="background:var(--accent-soft);color:var(--accent)">Today</span><span class="btn-s time" style="font-weight:700">19:30</span></div>
+        <div class="it"><svg class="ic"><use href="#i-pin"/></svg><span class="k">Where</span><span class="v">Zeitgeist, Mission</span><svg class="chev"><use href="#i-chev-r"/></svg></div>
+        <div class="it"><svg class="ic"><use href="#i-people"/></svg><span class="k">Seats</span><span class="row" style="gap:0;background:var(--fill);border-radius:17px;height:34px"><span style="width:44px;display:grid;place-items:center"><svg style="width:16px;height:16px"><use href="#i-minus"/></svg></span><span class="hl" style="width:28px;text-align:center">6</span><span style="width:44px;display:grid;place-items:center"><svg style="width:16px;height:16px"><use href="#i-plus"/></svg></span></span></div>
+      </div>
+      <div class="row" style="justify-content:space-between;margin-top:6px;padding:0 4px"><span class="fn l2">You plus 5 people</span><div class="seats"><i class="you"></i><i class="free"></i><i class="free"></i><i class="free"></i><i class="free"></i><i class="free"></i></div></div>
+      <div class="eyebrow" style="margin-top:20px">Who can join</div>
+      <div class="seg" style="margin-top:10px"><span>Anyone</span><span class="on">I let people in</span></div>
+      <div class="fn l2" style="margin-top:8px;padding:0 4px">You'll see each person's record and what you have in common before you say yes.</div>
+      <div class="eyebrow" style="margin-top:20px">Shown to people into</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="chip on">Pub quiz</span><span class="chip on">Bars</span><span class="chip">Books</span><span class="chip">+ Add</span></div>
+      <button class="btn accent" style="position:absolute;left:20px;right:20px;bottom:24px;width:auto">Post plan</button>
+    </div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 08 REQUESTS -->
+<figure class="slot">
+  <figcaption><b>08</b> Requests. The host decides on facts: how often someone showed up, what you share, what they wrote.</figcaption>
+  <div class="phone"><div class="screen s-requests">
+    <div class="status" data-t="17:05"></div>
+    <div class="toolbar"><div class="circle-btn glass"><svg><use href="#i-chev-l"/></svg></div><div class="sp"></div><div class="circle-btn glass"><svg><use href="#i-more"/></svg></div></div>
+    <div class="content" style="padding-top:116px">
+      <div class="lt">Requests</div>
+      <div class="row" style="margin-top:6px;gap:10px"><span class="time acc" style="font-size:17px">19:30</span><span class="sub l2">Pub quiz at Zeitgeist</span></div>
+      <div class="row" style="margin-top:10px;gap:10px"><div class="seats"><i class="you"></i><i></i><i class="free"></i><i class="free"></i><i class="free"></i><i class="free"></i></div><span class="fn l2">1 in · 4 seats left</span></div>
+
+      <div class="group" style="margin-top:18px;padding:16px">
+        <div class="row"><img class="av" src="img/sara.jpg" alt="" style="width:48px;height:48px"><div style="flex:1"><div class="hl">Sara Boone</div><div class="fn l2">193 plans · showed up to 189</div></div><span class="c1 l3">4 min</span></div>
+        <div class="sub" style="margin-top:12px">"Team of one, decent at geography, terrible at sports."</div>
+        <div class="row" style="margin-top:10px;gap:6px"><span class="tag m">Pub quiz</span><span class="tag m">Books</span></div>
+        <div class="row" style="margin-top:14px;gap:10px"><button class="btn tinted" style="height:44px">Not this time</button><button class="btn accent" style="height:44px">Let in</button></div>
+      </div>
+      <div class="group" style="margin-top:12px;padding:16px">
+        <div class="row"><img class="av" src="img/harvey.jpg" alt="" style="width:48px;height:48px"><div style="flex:1"><div class="hl">Harvey Spencer</div><div class="fn l2">3 plans · showed up to 3</div></div><span class="c1 l3">12 min</span></div>
+        <div class="row" style="margin-top:12px;gap:6px"><span class="tag m">Bars</span><span class="fn l2">New to Sofy this month</span></div>
+        <div class="row" style="margin-top:14px;gap:10px"><button class="btn tinted" style="height:44px">Not this time</button><button class="btn accent" style="height:44px">Let in</button></div>
+      </div>
+      <div class="group" style="margin-top:12px;padding:14px 16px">
+        <div class="row"><img class="av" src="img/leon.jpg" alt="" style="width:40px;height:40px"><div style="flex:1"><div class="hl">Leon Bell</div><div class="fn l2">401 plans · showed up to 396</div></div><span class="row fn acc" style="gap:4px;font-weight:590"><svg style="width:16px;height:16px"><use href="#i-check"/></svg>In</span></div>
+      </div>
+    </div>
+    <div class="scroll-edge"></div>
+    <div class="tabs" data-on="plans"></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 09 PERSON -->
+<figure class="slot">
+  <figcaption><b>09</b> A person. The social rating is three plain numbers and what you share. No likes, no photos of the person beyond one.</figcaption>
+  <div class="phone"><div class="screen s-person">
+    <div class="status" data-t="17:06"></div>
+    <div class="toolbar"><div class="circle-btn glass"><svg><use href="#i-chev-l"/></svg></div><div class="sp"></div><div class="circle-btn glass"><svg><use href="#i-more"/></svg></div></div>
+    <div class="content" style="padding-top:120px;text-align:center">
+      <img class="av xl" src="img/sara.jpg" alt="" style="margin:0 auto">
+      <div class="t1" style="margin-top:14px">Sara Boone</div>
+      <div class="sub l2" style="margin-top:2px">San Francisco · on Sofy since 2018</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px" class="group">
+        <div style="padding:14px 0"><div class="time" style="font-size:26px">193</div><div class="fn l2">plans</div></div>
+        <div style="padding:14px 0;box-shadow:inset 1px 0 0 var(--sep),inset -1px 0 0 var(--sep)"><div class="time" style="font-size:26px">21</div><div class="fn l2">hosted</div></div>
+        <div style="padding:14px 0"><div class="time acc" style="font-size:26px">98%</div><div class="fn l2">showed up</div></div>
+      </div>
+      <div style="text-align:left">
+        <div class="eyebrow" style="margin-top:22px">You both go to</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="chip on">Pub quiz</span><span class="chip on">Books</span><span class="chip">Concerts</span><span class="chip">Cycling</span></div>
+        <div class="eyebrow" style="margin-top:22px">Recent plans</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px">
+          <div style="position:relative;height:120px;border-radius:18px;overflow:hidden"><img src="img/concert.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><div class="c1" style="position:absolute;left:8px;bottom:8px;font-weight:700;text-shadow:0 1px 6px #000">Fillmore</div></div>
+          <div style="position:relative;height:120px;border-radius:18px;overflow:hidden"><img src="img/cafe.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><div class="c1" style="position:absolute;left:8px;bottom:8px;font-weight:700;text-shadow:0 1px 6px #000">Coffee</div></div>
+          <div style="position:relative;height:120px;border-radius:18px;overflow:hidden"><img src="img/beach.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><div class="c1" style="position:absolute;left:8px;bottom:8px;font-weight:700;text-shadow:0 1px 6px #000">Point Reyes</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-cta" style="grid-template-columns:1fr 1fr;gap:10px"><button class="btn tinted">Message</button><button class="btn accent">Let in</button></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+</main>
+
+<!-- ============ 4 · ON THE DAY ============ -->
+<div class="chapter">4 · On the day — show up, check in, earn coins</div>
+<main class="board">
+
+<!-- 10 LOCK -->
+<figure class="slot">
+  <figcaption><b>10</b> You're in. A push when the host says yes, then a Live Activity counts down to the start and the distance.</figcaption>
+  <div class="phone"><div class="screen s-lock">
+    <img src="img/golden-gate.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)">
+    <div class="status" data-t=""></div>
+    <div style="position:absolute;top:96px;left:0;right:0;text-align:center"><div class="hl" style="opacity:.85">Saturday, June 14</div><div style="font-size:104px;line-height:104px;font-weight:700;letter-spacing:-2px;margin-top:4px">14:20</div></div>
+    <div style="position:absolute;left:12px;right:12px;bottom:300px" class="notif">
+      <div class="app-ic"><svg viewBox="0 0 360 190"><use href="#logo"/></svg></div>
+      <div style="flex:1"><div class="row" style="justify-content:space-between"><span class="hl">Sofy</span><span class="fn l2">now</span></div><div class="sub" style="margin-top:2px">You're in. Ross let you into <b>Go surfing</b> at 15:00. Meet at stairwell 17.</div></div>
+    </div>
+    <div style="position:absolute;left:12px;right:12px;bottom:112px;border-radius:26px;padding:16px;background:rgb(18 19 21 / .78);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)">
+      <div class="row" style="justify-content:space-between"><div class="row" style="gap:10px"><img src="img/surf.jpg" alt="" style="width:40px;height:40px;border-radius:12px;object-fit:cover"><div><div class="hl">Go surfing</div><div class="fn l2">Ocean Beach · 3.3 km</div></div></div><div style="text-align:right"><div class="time acc" style="font-size:30px;line-height:32px">40 min</div></div></div>
+      <div style="height:4px;border-radius:2px;background:var(--fill);margin-top:14px"><div style="width:62%;height:4px;border-radius:2px;background:var(--accent)"></div></div>
+      <div class="row" style="justify-content:space-between;margin-top:10px"><div class="stack"><img class="av s" src="img/ross.jpg" alt=""><img class="av s" src="img/mia.jpg" alt=""><img class="av s" src="img/jan.jpg" alt=""><img class="av s" src="img/me.jpg" alt=""></div><span class="fn l2">6 going · leave by 14:35</span></div>
+    </div>
+    <div style="position:absolute;left:44px;bottom:42px;width:50px;height:50px;border-radius:50%;background:rgb(0 0 0 / .35);display:grid;place-items:center"><svg style="width:22px;height:22px"><use href="#i-flash"/></svg></div>
+    <div style="position:absolute;right:44px;bottom:42px;width:50px;height:50px;border-radius:50%;background:rgb(0 0 0 / .35);display:grid;place-items:center"><svg style="width:22px;height:22px"><use href="#i-cam"/></svg></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 11 CHECK IN -->
+<figure class="slot">
+  <figcaption><b>11</b> Check in. Near the meeting point the plan turns into one button: a photo from the spot, and the coins land.</figcaption>
+  <div class="phone"><div class="screen s-checkin">
+    <img src="img/ocean.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgb(0 0 0 / .35),transparent 25%,transparent 45%,rgb(0 0 0 / .85))"></div>
+    <div class="status" data-t="15:04"></div>
+    <div class="toolbar"><div class="circle-btn glass"><svg><use href="#i-x"/></svg></div><div class="sp"></div><div class="chip-btn glass"><svg><use href="#i-pin"/></svg>You're at Ocean Beach</div><div class="sp"></div><div class="circle-btn glass"><svg><use href="#i-repeat"/></svg></div></div>
+    <div style="position:absolute;left:0;right:0;bottom:232px;text-align:center">
+      <div class="eyebrow" style="color:#fff;opacity:.8">Go surfing · 15:00</div>
+      <div class="dp" style="font-size:30px;line-height:34px;margin-top:6px">Snap the spot to check in</div>
+      <div class="row" style="justify-content:center;margin-top:10px;gap:6px"><span class="tag" style="height:28px;font-size:15px;background:var(--accent);color:var(--accent-ink)"><svg style="width:15px;height:15px;margin-right:4px"><use href="#i-coin"/></svg>+10 coins</span><span class="tag" style="height:28px;font-size:15px;background:rgb(255 255 255 / .16)">4 of 6 are here</span></div>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:92px;display:flex;align-items:center;justify-content:center;gap:48px">
+      <div style="width:48px;height:48px;border-radius:12px;overflow:hidden;box-shadow:0 0 0 2px #fff"><img src="img/surf.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="width:82px;height:82px;border-radius:50%;box-shadow:inset 0 0 0 4px #fff;display:grid;place-items:center"><div style="width:66px;height:66px;border-radius:50%;background:var(--accent)"></div></div>
+      <div class="stack"><img class="av" src="img/ross.jpg" alt="" style="box-shadow:0 0 0 2px #000"><img class="av" src="img/mia.jpg" alt="" style="box-shadow:0 0 0 2px #000"></div>
+    </div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 12 AFTER -->
+<figure class="slot">
+  <figcaption><b>12</b> After. Everyone's check-in photos make the plan's page, and one tap repeats it with the same people.</figcaption>
+  <div class="phone"><div class="screen s-after">
+    <div class="status" data-t="18:30"></div>
+    <div class="toolbar"><div class="circle-btn glass"><svg><use href="#i-chev-l"/></svg></div><div class="sp"></div><div class="circle-btn glass"><svg><use href="#i-share"/></svg></div></div>
+    <div class="content" style="padding-top:116px">
+      <div class="eyebrow">Today · 15:00 – 17:40</div>
+      <div class="dp" style="font-size:34px;line-height:38px;margin-top:4px">Go surfing</div>
+      <div class="row" style="margin-top:8px;gap:10px"><div class="seats"><i></i><i></i><i></i><i></i><i></i><i class="you"></i><i class="free"></i><i class="free"></i></div><span class="fn l2">6 checked in at Ocean Beach</span></div>
+      <div style="display:grid;grid-template-columns:2fr 1fr;grid-template-rows:150px 150px;gap:6px;margin-top:16px;border-radius:24px;overflow:hidden">
+        <div style="grid-row:span 2;position:relative"><img src="img/surf.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><img class="av s" src="img/ross.jpg" alt="" style="position:absolute;left:10px;bottom:10px;box-shadow:0 0 0 2px #fff"></div>
+        <div style="position:relative"><img src="img/surf-board.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><img class="av s" src="img/me.jpg" alt="" style="position:absolute;left:8px;bottom:8px;box-shadow:0 0 0 2px #fff"></div>
+        <div style="position:relative"><img src="img/beach.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><img class="av s" src="img/mia.jpg" alt="" style="position:absolute;left:8px;bottom:8px;box-shadow:0 0 0 2px #fff"></div>
+      </div>
+      <div class="group" style="margin-top:16px">
+        <div class="it"><svg class="ic"><use href="#i-coin"/></svg><span class="k">You earned</span><span class="hl acc">+10 coins</span></div>
+        <div class="it"><svg class="ic"><use href="#i-people"/></svg><span class="k">New people</span><div class="stack"><img class="av s" src="img/mia.jpg" alt=""><img class="av s" src="img/juana.jpg" alt=""><img class="av s" src="img/jan.jpg" alt=""></div></div>
+      </div>
+      <div class="eyebrow" style="margin-top:20px">Ross wrote</div>
+      <div class="body" style="margin-top:6px">Water was cold, waves were small, nobody cared. Same time next Saturday?</div>
+    </div>
+    <div class="bottom-cta" style="grid-template-columns:1fr 1fr;gap:10px"><button class="btn tinted"><svg><use href="#i-msg"/></svg>Group chat</button><button class="btn accent"><svg><use href="#i-repeat"/></svg>Again next week</button></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+
+<!-- 13 COINS -->
+<figure class="slot">
+  <figcaption><b>13</b> Coins. Earned only by showing up and hosting, spent on nothing yet: a city leaderboard is the whole reward.</figcaption>
+  <div class="phone"><div class="screen s-coins">
+    <div class="status" data-t="18:32"></div>
+    <div class="toolbar"><div class="chip-btn glass"><svg><use href="#i-pin"/></svg>San Francisco<svg style="width:12px;height:12px;opacity:.6"><use href="#i-chev-d"/></svg></div><div class="sp"></div><img class="av" src="img/me.jpg" alt="" style="width:44px;height:44px"></div>
+    <div class="content" style="padding-top:116px">
+      <div class="lt">Coins</div>
+      <div class="group" style="margin-top:14px;padding:18px 18px 16px;background:linear-gradient(135deg,#123B2C,#1B1D20 70%)">
+        <div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="fn l2">Your coins</div><div class="time acc" style="font-size:48px;line-height:52px">846</div></div><div style="text-align:right"><div class="hl">#14 in the city</div><div class="fn l2">this month</div></div></div>
+        <div class="row" style="margin-top:14px;gap:8px"><span class="tag">Show up +10</span><span class="tag">Host +25</span><span class="tag">Full plan +15</span></div>
+      </div>
+      <div class="seg" style="margin-top:16px"><span class="on">This month</span><span>All time</span><span>Friends</span></div>
+      <div class="group" style="margin-top:12px">
+        <div class="it"><span class="time l2" style="width:20px;font-size:15px">1</span><img class="av" src="img/marco.jpg" alt=""><div style="flex:1"><div class="hl">Marco Diaz</div><div class="fn l2">38 plans · 9 hosted</div></div><span class="row hl" style="gap:4px"><svg style="width:16px;height:16px;color:var(--accent)"><use href="#i-coin"/></svg>1 573</span></div>
+        <div class="it"><span class="time l2" style="width:20px;font-size:15px">2</span><img class="av" src="img/leon.jpg" alt=""><div style="flex:1"><div class="hl">Leon Bell</div><div class="fn l2">31 plans · 6 hosted</div></div><span class="row hl" style="gap:4px"><svg style="width:16px;height:16px;color:var(--accent)"><use href="#i-coin"/></svg>1 266</span></div>
+        <div class="it"><span class="time l2" style="width:20px;font-size:15px">3</span><img class="av" src="img/lorraine.jpg" alt=""><div style="flex:1"><div class="hl">Lorraine Clarke</div><div class="fn l2">29 plans · 4 hosted</div></div><span class="row hl" style="gap:4px"><svg style="width:16px;height:16px;color:var(--accent)"><use href="#i-coin"/></svg>1 106</span></div>
+        <div class="it"><span class="time l2" style="width:20px;font-size:15px">4</span><img class="av" src="img/ross.jpg" alt=""><div style="flex:1"><div class="hl">Ross Bradley</div><div class="fn l2">24 plans · 12 hosted</div></div><span class="row hl" style="gap:4px"><svg style="width:16px;height:16px;color:var(--accent)"><use href="#i-coin"/></svg>962</span></div>
+        <div class="it" style="background:var(--accent-soft)"><span class="time acc" style="width:20px;font-size:15px">14</span><img class="av" src="img/me.jpg" alt=""><div style="flex:1"><div class="hl">You</div><div class="fn l2">19 plans · 2 hosted</div></div><span class="row hl acc" style="gap:4px"><svg style="width:16px;height:16px"><use href="#i-coin"/></svg>846</span></div>
+      </div>
+    </div>
+    <div class="scroll-edge"></div>
+    <div class="tabs" data-on="plans"></div>
+    <div class="home"></div>
+  </div></div>
+</figure>
+</main>
+
+<script src="chrome.js"></script>
+<script>
+// ?shot=<key>: one screen alone at 0,0 for export (keys = .s-<key>)
+(function () {
+  var m = location.search.match(/[?&]shot=([\w-]+)/); if (!m) return;
+  var s = document.querySelector('.screen.s-' + m[1]); if (!s) return;
+  var defs = document.querySelector('body > svg');
+  document.body.innerHTML = ''; document.body.style.background = '#000';
+  document.body.appendChild(defs); document.body.appendChild(s);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anti-fraud back-office — Dzmitry Kuzmiankou</title>
+<meta name="description" content="The back-office of an anti-fraud platform, designed around the analyst's path: monitoring, the transaction, cross-check and the blacklist.">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../assets/site.css?v=20261109a">
+<link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
+<script src="../assets/font-lab.js?v=20261106e"></script>
+<link rel="stylesheet" href="../assets/rule-demo.css?v=20261106e">
+<link rel="stylesheet" href="../assets/antifraud-demo.css?v=5">
+<link rel="stylesheet" href="../assets/next.css?v=46">
+</head>
+<body class="nx" data-case="backoffice">
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-pic" src="../assets/avatar.jpg" alt="" width="32" height="32">Dzmitry Kuzmiankou</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a class="hide-sm" href="../index.html#ai">AI</a>
+      <a class="hide-sm" href="../index.html#about">About</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark theme">
+        <svg class="theme-light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back" href="../index.html#work">← All work</a>
+      <div class="tags"><span class="tag own">Only designer</span><span class="tag">Anti-fraud</span><span class="tag">B2B back-office</span></div>
+      <h1>An anti-fraud back-office built around the analyst's loop</h1>
+      <p class="summary">Rules decide on every payment in milliseconds. What they can't decide goes to people, and what people find goes back into the rules through the <a href="rule-builder.html">rule builder</a>. I designed the back-office of <a href="https://scanfraud.com/" target="_blank" rel="noopener">ScanFraud</a> so that this is one continuous path: from the payment stream, to the transaction, to everything connected to it, to the blacklist.</p>
+      <dl class="case-facts">
+        <div><dt>Role</dt><dd>Lead Product Designer, the only designer on the product</dd></div>
+        <div><dt>Product</dt><dd>B2B anti-fraud platform for payment providers</dd></div>
+        <div><dt>Timeline</dt><dd>2026</dd></div>
+        <div><dt>Scale</dt><dd>Monitoring, transactions, cross-check, lists, dictionaries, merchants · 24 screens and states below</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="case-body" data-mode="full">
+
+      <section class="case-section rd-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Walkthrough</p>
+          <h2>Follow one suspicious payment through the loop</h2><ul class="sec-chips"><li>Monitoring</li><li>Drawer</li><li>Full page</li></ul></header>
+          <p>From the payment stream to the transaction drawer, and from there to the full transaction page.</p>
+        </div>
+        <div class="rd af-demo" data-af-demo data-base="img/antifraud/" role="region" aria-label="Anti-fraud analyst loop walkthrough">
+          <div class="af-viewport" aria-hidden="true"></div>
+          <div class="rd-controls">
+            <button class="rd-btn" type="button" data-rd="prev" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button class="rd-btn" type="button" data-rd="play"></button>
+            <button class="rd-btn" type="button" data-rd="next" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <div class="rd-progress" role="group" aria-label="Steps"></div>
+            <span class="rd-count"></span>
+          </div>
+          <p class="rd-caption" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">01 · Context</p>
+          <h2>Rules handle the volume. People handle the rest, and teach the rules</h2><ul class="sec-chips"><li>Approve · decline · review</li><li>Analyst loop</li><li>Back into the rules</li></ul></header>
+          <p>ScanFraud scores every payment of a payment provider's merchants and returns a reaction: approve, decline, send for review. Most payments never need a person. The ones that do land in the back-office, where a risk analyst has to answer two questions quickly: is this fraud, and what else is connected to it?</p>
+          <p>The second answer matters more. A blocked card stops one payment; a blocked phone, device or customer stops the whole ring behind it. So the back-office isn't a set of separate admin pages. It is one path: <strong>Monitoring → transaction → Cross-check → blacklist</strong>.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">02 · Monitoring</p>
+          <h2>A stream of two million events, narrowed to the ones that need a person</h2><ul class="sec-chips"><li>All · For review · Viewed</li><li>Filters as chips</li><li>2M events</li></ul></header>
+          <p>Monitoring opens on the live stream with three views: <strong>All</strong>, <strong>For review</strong> and <strong>Viewed</strong>. Filters stay visible as removable chips above the table, so an analyst always sees what the list is narrowed to: status, fraud flag, method, merchant, amount, score, list. Rows can be selected for bulk actions, columns can be configured, and any slice exports to CSV.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">03 · Transaction</p>
+          <h2>The decision first, the evidence after</h2><ul class="sec-chips"><li>Drawer over the list</li><li>Reaction first</li><li>Section index</li></ul></header>
+          <p>The eye in a Monitoring row opens the transaction in a drawer over the list, so an analyst can go through payments one by one without losing their place. <strong>Details</strong> in the drawer opens the full page.</p>
+          <p>Both answer "why" before "what". The full page opens on <strong>Reaction &amp; Triggered Entities</strong>: the reaction, its description, and which rule fired on which merchant, service, terminal or provider. Then come the overview, payment method, customer, device, entities, sanctions matches, the rules that ran, and the history of what analysts did with it. A section index on the left gets to any of them in one click.</p>
+          <p>Values that are already on a blacklist are marked in place, so the analyst sees the connection without leaving the card. The actions that move the case on sit in the header: <strong>Reopen, Viewed, Crosscheck, Blacklist, Fraud status</strong>.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">04 · Cross-check</p>
+          <h2>From one payment to everything that shares its details</h2><ul class="sec-chips"><li>8 parameters</li><li>All or any</li><li>Exclude a parameter</li></ul></header>
+          <p>Cross-check takes the parameters of the payment (card, customer, email, phone, device, IP, fingerprint, cardholder) and shows how many other transactions share each one. The analyst matches on all of them or any of them, can exclude a parameter from the search, and sees approved and declined totals at the top. Selected transactions get a fraud status or go onto a blacklist in bulk, and a partial-success dialog lists exactly which values were added and which weren't.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><a class="af-shot" href="img/antifraud/cross-check.png" target="_blank" rel="noopener"><img src="img/antifraud/cross-check.png" alt="Cross-check: approved and declined totals, the payment's parameters with match counts, AND/OR matching and four transactions selected for a bulk action" loading="lazy" decoding="async"></a></div>
+          <figcaption>Each parameter shows how many transactions share it; the customer ID is excluded from this search.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">05 · Dictionaries</p>
+          <h2>Reference lists, and imports that don't drop values silently</h2><ul class="sec-chips"><li>Reference lists</li><li>Analyze step</li><li>Needs attention</li></ul></header>
+          <p>Dictionaries are plain reference lists, such as sets of countries. Countries can be added by hand or by import, and imports go through an <strong>Analyze</strong> step: values the system recognises are matched, and the ones it doesn't are collected under "Needs attention" instead of being dropped without a word.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">06 · Scale</p>
+          <h2>The loop is a few screens. The product around it is many more</h2><ul class="sec-chips"><li>24 screens</li><li>Open full size</li></ul></header>
+          <p>Drawers, detail views, modals, imports and confirmations from the same back-office. Open any of them full size.</p>
+        </div>
+        <div class="af-wall">
+          <a href="img/antifraud/merchants-list.png" target="_blank" rel="noopener"><img width="1440" height="808" src="img/antifraud/merchants-list.png" alt="Merchants list with filters and pagination" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/antifraud/transaction-details-drawer.png" target="_blank" rel="noopener"><img width="448" height="2512" src="img/antifraud/transaction-details-drawer.png" alt="Transaction details drawer" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/add-country-analyze-review.png" target="_blank" rel="noopener"><img width="480" height="834" src="img/antifraud/add-country-analyze-review.png" alt="Add countries: review of analysed values" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/dictionaries-full-view.png" target="_blank" rel="noopener"><img width="1440" height="1144" src="img/antifraud/dictionaries-full-view.png" alt="Dictionary full view" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/blacklist-modal.png" target="_blank" rel="noopener"><img width="480" height="978" src="img/antifraud/blacklist-modal.png" alt="Blacklist modal for several parameters" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/download-csv.png" target="_blank" rel="noopener"><img width="320" height="248" src="img/antifraud/download-csv.png" alt="Download CSV popover" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/merchants-full-view.png" target="_blank" rel="noopener"><img width="1440" height="1352" src="img/antifraud/merchants-full-view.png" alt="Merchant full view, read-only" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/transaction-log-modal.png" target="_blank" rel="noopener"><img width="480" height="800" src="img/antifraud/transaction-log-modal.png" alt="Transaction log modal" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/antifraud/monitoring-filters-drawer.png" target="_blank" rel="noopener"><img width="448" height="2452" src="img/antifraud/monitoring-filters-drawer.png" alt="Monitoring filters drawer" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/add-country-import.png" target="_blank" rel="noopener"><img width="480" height="448" src="img/antifraud/add-country-import.png" alt="Add countries: import step" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/bulk-selection.png" target="_blank" rel="noopener"><img width="622" height="72" src="img/antifraud/bulk-selection.png" alt="Bulk selection bar" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/operation-event-log-modal.png" target="_blank" rel="noopener"><img width="480" height="686" src="img/antifraud/operation-event-log-modal.png" alt="Operation event log modal" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/edit-merchant-modal.png" target="_blank" rel="noopener"><img width="480" height="818" src="img/antifraud/edit-merchant-modal.png" alt="Edit merchant modal" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/dictionaries-filters-drawer.png" target="_blank" rel="noopener"><img width="448" height="808" src="img/antifraud/dictionaries-filters-drawer.png" alt="Dictionaries filters drawer" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/add-country-analyze-result.png" target="_blank" rel="noopener"><img width="480" height="314" src="img/antifraud/add-country-analyze-result.png" alt="Add countries: analyse result" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/blacklist-confirm-popup.png" target="_blank" rel="noopener"><img width="400" height="228" src="img/antifraud/blacklist-confirm-popup.png" alt="Blacklist confirmation" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/post-auth-modal.png" target="_blank" rel="noopener"><img width="480" height="640" src="img/antifraud/post-auth-modal.png" alt="Post-auth review modal" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/columns-settings.png" target="_blank" rel="noopener"><img width="320" height="903" src="img/antifraud/columns-settings.png" alt="Column settings" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/merchants-import-modal.png" target="_blank" rel="noopener"><img width="480" height="396" src="img/antifraud/merchants-import-modal.png" alt="Merchants import" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/in-review-modal.png" target="_blank" rel="noopener"><img width="480" height="266" src="img/antifraud/in-review-modal.png" alt="Move to review modal" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/dictionaries-add-modal.png" target="_blank" rel="noopener"><img width="480" height="278" src="img/antifraud/dictionaries-add-modal.png" alt="Add dictionary modal" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/add-country-manual.png" target="_blank" rel="noopener"><img width="480" height="366" src="img/antifraud/add-country-manual.png" alt="Add countries manually" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/dictionaries-delete-confirm.png" target="_blank" rel="noopener"><img width="400" height="220" src="img/antifraud/dictionaries-delete-confirm.png" alt="Delete dictionary confirmation" loading="lazy" decoding="async"></a>
+          <a href="img/antifraud/fraud-status-modal.png" target="_blank" rel="noopener"><img width="480" height="326" src="img/antifraud/fraud-status-modal.png" alt="Fraud status modal" loading="lazy" decoding="async"></a>
+        </div>
+      </section>
+
+    </article>
+
+    <a class="next-case" href="rule-builder.html">
+      <div><small>Next case</small><b>An anti-fraud rule builder analysts use without a developer</b></div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Building something with a small team?</h2>
+        <p>I'm looking for a founding or first-designer role in a product team where design changes what ships. Telegram is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="https://t.me/dkuzmenkov">Message on Telegram</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:oliverbone3@gmail.com">oliverbone3@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Dzmitry Kuzmiankou</span>
+    <span>Built in code on my own design tokens, with AI.</span>
+  </footer>
+</div>
+<script src="../assets/antifraud-demo.js"></script>
+<script src="../assets/wall.js?v=4"></script>
+<script src="../assets/site.js?v=20261109a"></script>
+</body>
+</html>

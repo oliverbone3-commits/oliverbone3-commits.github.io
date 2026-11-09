@@ -1,0 +1,162 @@
+/* Sofy rework — iOS 27 structure (Apple kit 27.1.4).
+   Dark like the 2018 original (evenings out), brand mint as the only accent.
+   Motifs: time first (big numerals), spots as a row of seats, the host lets you in, ratings as plain facts. */
+:root {
+  --font: -apple-system, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+}
+.screen {
+  --label: #fff; --label2: rgb(235 235 245 / .62); --label3: rgb(235 235 245 / .32);
+  --bg: #0E0F11; --card: #1B1D20; --card2: #262A2E; --sep: rgb(84 84 88 / .5);
+  --fill: rgb(118 118 128 / .24); --fill2: rgb(118 118 128 / .36);
+  --glass: rgb(34 36 40 / .55); --glass-edge: rgb(255 255 255 / .14); --shade: rgb(0 0 0 / .45);
+  --accent: #2EF0AE; --accent-ink: #00261A; --accent-soft: rgb(46 240 174 / .16);
+  --red: #FF4245; --orange: #FF9230;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: #E6E8E7; color: #000; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+svg { width: 24px; height: 24px; flex: none; }
+img { display: block; }
+
+/* Board */
+.board-head { padding: 48px 56px 8px; max-width: 1000px; }
+.board-head h1 { font-size: 28px; line-height: 34px; font-weight: 700; }
+.board-head p { margin-top: 6px; font-size: 15px; line-height: 21px; color: rgb(60 60 67 / .7); }
+.chapter { padding: 40px 56px 0; font-size: 13px; font-weight: 590; letter-spacing: .06em; text-transform: uppercase; color: rgb(60 60 67 / .6); }
+.board { display: flex; flex-wrap: wrap; gap: 56px 48px; padding: 24px 56px 32px; align-items: flex-start; }
+.slot figcaption { min-height: 36px; font-size: 13px; line-height: 18px; color: rgb(60 60 67 / .7); margin: 0 0 12px 4px; max-width: 402px; }
+.slot figcaption b { color: #000; font-weight: 590; margin-right: 6px; font-variant-numeric: tabular-nums; }
+.phone { width: 402px; height: 874px; border-radius: 56px; overflow: hidden; box-shadow: 0 0 0 1px rgb(0 0 0 / .1), 0 30px 60px -20px rgb(0 0 0 / .4); }
+.screen { position: relative; width: 402px; height: 874px; overflow: hidden; background: var(--bg); color: var(--label); }
+
+/* Type — iOS 27 Dynamic Type, Large */
+.lt { font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: .4px; }
+.t1 { font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: .38px; }
+.t2 { font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: -.26px; }
+.t3 { font-size: 20px; line-height: 25px; font-weight: 590; letter-spacing: -.45px; }
+.hl { font-size: 17px; line-height: 22px; font-weight: 590; letter-spacing: -.43px; }
+.body { font-size: 17px; line-height: 23px; letter-spacing: -.43px; }
+.sub { font-size: 15px; line-height: 20px; letter-spacing: -.23px; }
+.fn { font-size: 13px; line-height: 18px; letter-spacing: -.08px; }
+.c1 { font-size: 12px; line-height: 16px; }
+.l2 { color: var(--label2); } .l3 { color: var(--label3); } .acc { color: var(--accent); }
+.eyebrow { font-size: 13px; line-height: 18px; font-weight: 590; letter-spacing: .02em; text-transform: uppercase; color: var(--label2); }
+/* Heavy display — the voice of the 2019 launch slides, kept for plan titles and times */
+.dp { font-family: "SF Pro Display", var(--font); font-weight: 800; letter-spacing: -.6px; }
+.time { font-family: "SF Pro Display", var(--font); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.8px; }
+
+/* System chrome */
+.status { position: absolute; z-index: 40; top: 0; left: 0; right: 0; height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 6px 36px 0 50px; font-size: 17px; font-weight: 590; color: var(--label); }
+.status .sb { width: 78px; height: 13px; }
+.home { position: absolute; z-index: 50; bottom: 8px; left: 50%; width: 140px; height: 5px; margin-left: -70px; border-radius: 3px; background: var(--label); }
+
+/* Liquid Glass — navigation layer only */
+.glass { background: var(--glass); -webkit-backdrop-filter: blur(16px) saturate(180%); backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 0 0 1px var(--glass-edge), 0 6px 20px var(--shade); color: var(--label); }
+.toolbar { position: absolute; z-index: 30; top: 62px; left: 16px; right: 16px; height: 44px; display: flex; gap: 8px; align-items: center; }
+.toolbar .sp { flex: 1; }
+.toolbar .title { position: absolute; left: 60px; right: 60px; text-align: center; font-size: 17px; font-weight: 590; letter-spacing: -.43px; pointer-events: none; }
+.circle-btn { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.circle-btn svg { width: 20px; height: 20px; }
+.circle-btn.prom { background: var(--accent); color: var(--accent-ink); box-shadow: 0 6px 20px rgb(46 240 174 / .25); }
+.pill-group { height: 44px; border-radius: 22px; display: flex; align-items: center; }
+.pill-group button { width: 44px; height: 44px; display: grid; place-items: center; }
+.pill-group svg { width: 20px; height: 20px; }
+.chip-btn { height: 44px; border-radius: 22px; padding: 0 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 590; letter-spacing: -.23px; }
+.chip-btn svg { width: 16px; height: 16px; }
+
+/* Tab bar — glass pill of tabs + separate search circle */
+.tabs { position: absolute; z-index: 30; left: 16px; right: 16px; bottom: 25px; height: 62px; display: flex; gap: 10px; }
+.tabs .pill { flex: 1; height: 62px; border-radius: 31px; display: flex; align-items: center; padding: 0 4px; }
+.tabs .tab { flex: 1; height: 54px; border-radius: 27px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; font-size: 10px; font-weight: 590; color: var(--label); position: relative; }
+.tabs .tab svg { width: 24px; height: 24px; }
+.tabs .tab.on { background: var(--fill); color: var(--accent); }
+.tabs .tab .badge { position: absolute; top: 5px; left: 50%; margin-left: 6px; min-width: 17px; height: 17px; padding: 0 5px; border-radius: 9px; background: var(--red); color: #fff; font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; }
+.tabs .search { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; }
+.tabs .search svg { width: 22px; height: 22px; }
+.scroll-edge { position: absolute; z-index: 29; left: 0; right: 0; bottom: 0; height: 140px; background: linear-gradient(to top, rgb(14 15 17 / .95), transparent); pointer-events: none; }
+.top-edge { position: absolute; z-index: 29; left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(to bottom, rgb(14 15 17 / .9), transparent); pointer-events: none; }
+
+/* Buttons — iOS 27 sizes 50 / 34 */
+.btn { height: 50px; border-radius: 25px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 17px; font-weight: 590; letter-spacing: -.43px; width: 100%; }
+.btn.primary { background: #fff; color: #000; }
+.btn.accent { background: var(--accent); color: var(--accent-ink); }
+.btn.tinted { background: var(--fill); color: var(--label); }
+.btn.plain { color: var(--label); }
+.btn svg { width: 20px; height: 20px; }
+.btn-s { height: 34px; border-radius: 17px; padding: 0 14px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 15px; font-weight: 590; letter-spacing: -.23px; background: var(--fill); }
+.btn-s.accent { background: var(--accent); color: var(--accent-ink); }
+.btn-s svg { width: 16px; height: 16px; }
+.bottom-cta { position: absolute; z-index: 30; left: 16px; right: 16px; bottom: 34px; display: grid; gap: 8px; }
+
+/* Content */
+.content { position: absolute; left: 0; right: 0; top: 0; bottom: 0; padding: 0 16px; }
+.av { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex: none; background: var(--card2); }
+.av.l { width: 56px; height: 56px; } .av.s { width: 28px; height: 28px; } .av.xl { width: 104px; height: 104px; }
+.stack { display: flex; }
+.stack .av { box-shadow: 0 0 0 2.5px var(--bg); }
+.stack .av + .av { margin-left: -10px; }
+.stack .more { width: 28px; height: 28px; border-radius: 50%; margin-left: -10px; background: var(--card2); box-shadow: 0 0 0 2.5px var(--bg); display: grid; place-items: center; font-size: 11px; font-weight: 700; color: var(--label2); }
+.tag { height: 24px; padding: 0 9px; border-radius: 12px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 590; letter-spacing: -.08px; background: var(--fill); color: var(--label); }
+.tag.m { background: var(--accent-soft); color: var(--accent); }
+.chip { height: 40px; padding: 0 16px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 510; letter-spacing: -.3px; background: var(--card); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .06); }
+.chip.on { background: var(--accent); color: var(--accent-ink); font-weight: 590; box-shadow: none; }
+.chip svg { width: 16px; height: 16px; }
+.row { display: flex; align-items: center; gap: 12px; }
+.meta { display: flex; align-items: center; gap: 6px; font-size: 15px; letter-spacing: -.23px; color: var(--label2); }
+.meta svg { width: 16px; height: 16px; }
+.group { background: var(--card); border-radius: 26px; overflow: hidden; }
+.group .it { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 16px; position: relative; }
+.group .it + .it::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--sep); transform: scaleY(.5); }
+.group .it .k { flex: 1; font-size: 17px; letter-spacing: -.43px; }
+.group .it .v { font-size: 17px; letter-spacing: -.43px; color: var(--label2); }
+.group .it svg.ic { width: 22px; height: 22px; color: var(--accent); }
+.chev { width: 14px !important; height: 14px !important; color: var(--label3); }
+
+/* Seats — spots as a row of seats: filled = going, ring = free */
+.seats { display: flex; gap: 4px; align-items: center; }
+.seats i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); display: block; }
+.seats i.free { background: none; box-shadow: inset 0 0 0 1.5px var(--label3); }
+.seats i.you { background: #fff; }
+
+/* Plan card */
+.plan { background: var(--card); border-radius: 26px; overflow: hidden; }
+.plan .ph { position: relative; height: 168px; }
+.plan .ph img { width: 100%; height: 100%; object-fit: cover; }
+.plan .ph .lock { position: absolute; left: 12px; top: 12px; }
+.plan .bd { display: flex; gap: 14px; padding: 14px 16px 16px; }
+.plan .tm { width: 76px; flex: none; }
+.plan .tm .time { font-size: 30px; line-height: 32px; color: var(--accent); }
+.plan .tm .c1 { margin-top: 3px; color: var(--label2); font-weight: 590; }
+.plan .tx { flex: 1; min-width: 0; }
+.plan .tx .dp { font-size: 21px; line-height: 25px; }
+.plan .ft { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+
+/* Sheets */
+.dim { position: absolute; inset: 0; z-index: 35; background: rgb(0 0 0 / .5); }
+.sheet { position: absolute; z-index: 36; left: 8px; right: 8px; bottom: 8px; border-radius: 38px; background: #1C1E21; box-shadow: 0 -10px 40px rgb(0 0 0 / .5), inset 0 0 0 1px rgb(255 255 255 / .06); padding: 10px 20px 24px; }
+.sheet.full { top: 70px; }
+.grabber { width: 36px; height: 5px; border-radius: 3px; background: var(--fill2); margin: 0 auto 10px; }
+.sheet-bar { display: flex; align-items: center; justify-content: space-between; height: 44px; margin-bottom: 8px; }
+.sheet-bar .ttl { font-size: 17px; font-weight: 590; letter-spacing: -.43px; }
+.sheet .circle-btn { background: var(--fill); }
+
+/* Segmented control — large (iOS 27) */
+.seg { height: 40px; border-radius: 20px; background: var(--fill); display: flex; padding: 3px; }
+.seg span { flex: 1; border-radius: 17px; display: grid; place-items: center; font-size: 15px; font-weight: 590; color: var(--label2); }
+.seg span.on { background: #5A5D63; color: #fff; box-shadow: 0 2px 8px rgb(0 0 0 / .3); }
+
+/* Notifications & live activity */
+.notif { border-radius: 26px; padding: 14px 16px; display: flex; gap: 12px; background: rgb(40 40 44 / .62); -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .1); }
+.app-ic { width: 38px; height: 38px; border-radius: 10px; background: #0E0F11; display: grid; place-items: center; flex: none; box-shadow: inset 0 0 0 1px rgb(255 255 255 / .12); }
+.app-ic svg { width: 28px; height: 15px; color: var(--accent); }
+
+/* Map pins — start times */
+.pin { height: 30px; padding: 0 10px; border-radius: 15px; display: inline-flex; align-items: center; font-family: "SF Pro Display", var(--font); font-weight: 800; font-size: 14px; font-variant-numeric: tabular-nums; background: #3A3D42; color: #fff; box-shadow: 0 4px 12px rgb(0 0 0 / .5); position: relative; }
+.pin::after { content: ""; position: absolute; left: 50%; bottom: -5px; margin-left: -5px; border: 5px solid transparent; border-bottom: 0; border-top-color: #3A3D42; }
+.pin.on { background: var(--accent); color: var(--accent-ink); }
+.pin.on::after { border-top-color: var(--accent); }
+
+/* Original 2018 screens */
+.slot.old img { width: 360px; height: auto; border-radius: 24px; box-shadow: 0 0 0 1px rgb(0 0 0 / .1), 0 20px 40px -20px rgb(0 0 0 / .4); }
+.slot.old figcaption { max-width: 360px; }

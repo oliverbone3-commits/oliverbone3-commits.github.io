@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zam — Dzmitry Kuzmiankou</title>
+<meta name="description" content="Zam turns a construction crew's chats, voice notes and receipt photos into sorted paperwork. My own product: research, design and a working v1 built with AI.">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../assets/site.css?v=20261109b">
+<link rel="stylesheet" href="../assets/rule-demo.css?v=20261106e">
+<link rel="stylesheet" href="../assets/antifraud-demo.css?v=5">
+<link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
+<script src="../assets/font-lab.js?v=20261106e"></script>
+<style>
+  /* Phone screens in a row, top-aligned, each opens full size */
+  .phones { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: clamp(10px, 2vw, 24px); align-items: start; }
+  .phones .ph { margin: 0; }
+  .phones .ph a { display: block; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgb(20 20 15 / .08), 0 18px 40px rgb(20 20 15 / .12); aspect-ratio: 402 / 874; background: #fff; }
+  .phones .ph img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .ph-label { display: block; margin-top: 10px; font: 500 11px/16px var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--primary-300); text-align: center; }
+  .phones.six { --n: 6; }
+  .phones.three { --n: 3; max-width: 820px; margin: 0 auto; }
+  .phones.two { --n: 2; max-width: 540px; margin: 0 auto; }
+  @media (max-width: 720px) { .phones, .phones.six { --n: 3; } .phones.two { --n: 2; } }
+  .stack { display: grid; gap: clamp(12px, 2vw, 24px); }
+  .stack .af-shot { box-shadow: 0 1px 2px rgb(20 20 15 / .08), 0 18px 40px rgb(20 20 15 / .12); }
+.th-dk { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .th-dk { display: block; } :root:not([data-theme="light"]) .th-lt { display: none; } }
+:root[data-theme="dark"] .th-dk { display: block; } :root[data-theme="dark"] .th-lt { display: none; }
+.desk { display: grid; gap: clamp(12px, 2vw, 24px); }
+  .desk a { display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgb(20 20 15 / .08), 0 18px 40px rgb(20 20 15 / .12); background: #fff; }
+  .desk img { width: 100%; height: auto; display: block; }
+  .desk.two { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .desk.two { grid-template-columns: 1fr; } }
+.sp-flow iframe { display: block; width: 100%; height: 820px; border: 0; }
+  @media (max-width: 700px) { .sp-flow iframe { height: 700px; } }
+  .zam-hero { display: grid; grid-template-columns: minmax(0, 3.2fr) minmax(0, 1fr); gap: clamp(12px, 2vw, 24px); align-items: end; }
+  .zam-hero .ph a { aspect-ratio: 390 / 844; }
+  @media (max-width: 720px) { .zam-hero { grid-template-columns: 1fr; } .zam-hero .phones { width: 60%; max-width: 230px; margin: 0 auto; } }
+</style>
+<link rel="stylesheet" href="../assets/next.css?v=46">
+</head>
+<body class="nx" data-case="zam">
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-pic" src="../assets/avatar.jpg" alt="" width="32" height="32">Dzmitry Kuzmiankou</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a class="hide-sm" href="../index.html#ai">AI</a>
+      <a class="hide-sm" href="../index.html#about">About</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark theme">
+        <svg class="theme-light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="case-hero">
+    <div class="wrap">
+      <div class="hero-top"><a class="back" href="../index.html#more">← All work</a>
+      </div>
+      <div class="tags"><span class="tag own">Own product</span><span class="tag">Telegram bot</span><span class="tag">Web app</span><span class="tag">AI</span></div>
+      <h1>Paperwork for a construction crew, straight from the chats they already use</h1>
+      <p class="summary">A foreman with a small crew spends around ten hours a week on paperwork and carries every site’s documents in a backpack. Zam is a bot that sits in the crew’s Telegram chats and files photos, receipts, estimates and shopping lists by site, and an app where the foreman finds all of it. I did the research, the product and the design, and built a working v1 with AI in about a week. The pilot stalled, and that taught me more than the build did.</p>
+      <dl class="case-facts"><div><dt>Role</dt><dd>Research, product, design; code written with AI</dd></div><div><dt>Team</dt><dd>Me, a foreman as the expert and first user</dd></div><div><dt>Product</dt><dd>Telegram bot, Mini App and web app</dd></div><div><dt>Status</dt><dd>v1 live on a server · pilot stalled · testing a new market</dd></div></dl>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="case-body" data-mode="full">
+
+      <div class="read-mode">
+        <p class="read-q">How do you want to read the case?</p>
+        <div class="switch" data-read-switch role="group" aria-label="Reading mode">
+          <button type="button" data-mode="skim" aria-pressed="false">Skim · 60 sec</button>
+          <button type="button" data-mode="full" aria-pressed="true">Full story</button>
+        </div>
+      </div>
+
+      <section class="case-section skim-only">
+        <div class="prose tldr">
+          <p>Zam is my own product for small construction crews. The crew keeps writing in its Telegram chats; a bot sorts photos, receipts, estimates and purchases by site and stays silent, and the foreman sees everything in an app on his phone or laptop. Money is never saved without a tap. I built v1 with AI in about a week, before the first user had sent me a single real file. The pilot stalled: the foreman didn’t pay and the crew didn’t change its habits. Now I talk to crews before I write code.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="zam-hero"><div class="desk"><a href="img/zam/desk-home-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-home-light.jpg" width="2880" height="1800" alt="Zam on a laptop: sites, what to buy, what the bot wasn’t sure about" loading="lazy" decoding="async"></a></div><div class="phones" style="--n:1"><figure class="ph"><a href="img/zam/phone-chat-group.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-group.jpg" width="1170" height="2532" alt="The crew chat: the bot only reacts" loading="lazy" decoding="async"></a><span class="ph-label">Crew chat</span></figure></div></div></div>
+          <figcaption>The foreman’s evening in the app, and the crew’s chat where it all comes from.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section rd-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Walkthrough</p>
+          <h2>From a receipt in the crew chat to the evening summary</h2><ul class="sec-chips"><li>Crew chat</li><li>Cards to confirm</li><li>Questions</li><li>The app</li></ul></header>
+          <p>One day of a foreman: the crew writes as usual, the bot files and asks, the app holds the structure.</p>
+        </div>
+        <div class="rd sp-flow">
+          <iframe src="../lab/zam/flow.html?embed" title="Zam walkthrough: crew chat, receipt and voice note as cards, questions to the bot, the app, the evening summary" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">01 · The problem</p>
+          <h2>Ten hours a week and a ten-kilo backpack</h2><ul class="sec-chips"><li>Interview</li><li>10 h → 2 h a week</li><li>Word and Excel</li></ul></header>
+          <p>I started with an interview with a foreman who runs three or four sites at once. Paperwork took him about ten hours a week: two on Monday, one on Tuesday, three on Thursday and Saturday morning. His own target was two hours: one on Tuesday, one on Friday. That became the main metric of the pilot.</p>
+          <p>He carried the documents of every site in a backpack, five to ten kilos, because “you never know which site will call today”. It was heavy enough to set off the passenger-seat belt alarm in his car. To find who said what, he scrolled through every chat. Estimates and contracts lived in Word and Excel, which break when you edit them on a phone.</p>
+          <p>Big construction tools, from Procore to PlanRadar, are sold to companies with someone whose job is to run the system. A foreman with five workers has no such person, and every form he fills in is time the product was supposed to save.</p>
+        </div>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">02 · The bet</p>
+          <h2>The crew changes nothing</h2><ul class="sec-chips"><li>Existing chats</li><li>Silent bot</li><li>Site = chat</li></ul></header>
+          <p>The crew already lived in Telegram, so the riskiest thing would have been asking them to move. The bot joins the chats they already have, one per site, and stays silent. It reacts to a message with 👌 when it filed something and 🤔 when it isn’t sure. Questions and confirmations go to the foreman in a private chat, never to the group.</p>
+          <p>A site’s chat tells the bot the site in most cases. When it doesn’t, the bot uses the names people actually use: “the plant”, “at Sergei’s”. If it is still unsure, the message waits in a To sort list instead of being guessed.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="phones three"><figure class="ph"><a href="img/zam/phone-chat-group.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-group.jpg" width="1170" height="2532" alt="Crew chat with the bot’s reactions" loading="lazy" decoding="async"></a><span class="ph-label">Crew chat</span></figure><figure class="ph"><a href="img/zam/phone-chat-cards.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-cards.jpg" width="1170" height="2532" alt="A receipt and a voice note as cards to confirm" loading="lazy" decoding="async"></a><span class="ph-label">Confirm</span></figure><figure class="ph"><a href="img/zam/phone-chat-ask.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-ask.jpg" width="1170" height="2532" alt="Asking the bot what to buy and who wrote what" loading="lazy" decoding="async"></a><span class="ph-label">Ask</span></figure></div></div>
+          <figcaption>The crew writes as before; the foreman confirms and asks in a private chat.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">03 · Trust</p>
+          <h2>Money is never saved without a tap</h2><ul class="sec-chips"><li>Save or Fix</li><li>Original kept</li><li>Second reading</li></ul></header>
+          <p>One rule decided most of the bot’s behaviour. Documents and photos are filed straight away, with a Fix button. Money and purchases always come as a card the foreman saves or fixes, and a receipt a worker sends goes to the foreman to confirm. A wrong amount is worse than an empty field.</p>
+          <p>Voice notes come back with what the bot heard, because “forty” and “fourteen” sound alike on a building site. The original message is always kept, so nothing is lost even when the bot is wrong. At night the bot reads every new document a second time and checks that receipt lines add up to the total; whatever doesn’t match lands in Check.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="desk"><a href="img/zam/desk-inbox-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-inbox-light.jpg" width="2880" height="1800" alt="To sort and Check: what the bot wasn’t sure about" loading="lazy" decoding="async"></a></div></div>
+          <figcaption>To sort: one tap to pick a site or a type. Check: amounts that didn’t add up.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">04 · Structure</p>
+          <h2>“Like Total Commander”</h2><ul class="sec-chips"><li>Site → section → record</li><li>Laptop in the evening</li><li>Originals, not editors</li></ul></header>
+          <p>The foreman put it plainly: a chat bot you throw everything at “is still a mess. You need structure.” He described it as a file manager: sites are drives, inside each are sections for documents, purchases, expenses and photos, and inside those the records. The app is built exactly that way.</p>
+          <p>He does paperwork in the evening, mostly on a laptop, so the app works in Telegram on the phone and as a normal web app on a big screen. It doesn’t try to edit Word or Excel: it keeps the originals, shows their contents and opens them in the apps made for them.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="desk two"><a href="img/zam/desk-site-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-site-light.jpg" width="2880" height="1800" alt="A site with its sections" loading="lazy" decoding="async"></a><a href="img/zam/desk-doc-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-doc-light.jpg" width="2880" height="1800" alt="An estimate with the search term highlighted" loading="lazy" decoding="async"></a></div><div class="phones three" style="margin-top:clamp(12px,2vw,24px)"><figure class="ph"><a href="img/zam/phone-home-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-home-light.jpg" width="1170" height="2532" alt="Sites on the phone" loading="lazy" decoding="async"></a><span class="ph-label">Sites</span></figure><figure class="ph"><a href="img/zam/phone-site-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-site-light.jpg" width="1170" height="2532" alt="A site on the phone" loading="lazy" decoding="async"></a><span class="ph-label">Site</span></figure><figure class="ph"><a href="img/zam/phone-purchases-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-purchases-light.jpg" width="1170" height="2532" alt="Purchases on the phone" loading="lazy" decoding="async"></a><span class="ph-label">Purchases</span></figure></div></div>
+          <figcaption>The same structure on the laptop in the evening and on the phone at the site.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">05 · Ask, don’t dig</p>
+          <h2>Answers with the source, or “not found”</h2><ul class="sec-chips"><li>Search</li><li>Questions</li><li>5 a day, max</li></ul></header>
+          <p>Instead of scrolling chats, the foreman asks: what do I need to buy by Friday, who wrote about the bedroom windows. The bot answers only from saved records and links to the message or document it used. If it finds nothing, it says so; it never makes up a number.</p>
+          <p>The bot also has questions of its own, and they could easily become noise. They come once a day in the evening summary, no more than five, the most useful first, and “not important” counts as an answer.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="desk two"><a href="img/zam/desk-search-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-search-light.jpg" width="2880" height="1800" alt="Search across documents, messages and purchases" loading="lazy" decoding="async"></a><a href="img/zam/desk-purchases-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-purchases-light.jpg" width="2880" height="1800" alt="Purchases across all sites" loading="lazy" decoding="async"></a></div><div class="phones two" style="margin-top:clamp(12px,2vw,24px)"><figure class="ph"><a href="img/zam/phone-chat-digest.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-digest.jpg" width="1170" height="2532" alt="The evening summary with two questions" loading="lazy" decoding="async"></a><span class="ph-label">Evening</span></figure><figure class="ph"><a href="img/zam/phone-search-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-search-light.jpg" width="1170" height="2532" alt="Search on the phone" loading="lazy" decoding="async"></a><span class="ph-label">Search</span></figure></div></div>
+          <figcaption>One search for documents, messages and purchases; the bot’s questions wait for the evening.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">06 · Cost as design</p>
+          <h2>AI cost shaped the product</h2><ul class="sec-chips"><li>$20 a month</li><li>Cents per message</li><li>Night batch</li></ul></header>
+          <p>The foreman named the price himself: twenty dollars a month, “even if you’re doing one apartment”. Then I measured. A message cost 0.4¢ to sort, a page of a document 3.2¢, an answer 0.7¢. Without limits that came to ten to twenty dollars a month per crew, so at twenty dollars the margin was zero.</p>
+          <p>So cost became a design decision. Text in group chats isn’t sent to AI in real time; small talk is filtered out without AI; only the first photo of a batch is classified. The private chat is sorted at once, while files from groups wait for the night run at half price. A cheap model handles simple steps and a stronger one handles documents. A daily cap stops runaway spend, and I see where every cent goes.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="desk"><a href="img/zam/desk-ai-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-ai-light.jpg" width="2880" height="1800" alt="AI cost by day and by step" loading="lazy" decoding="async"></a></div></div>
+          <figcaption>An internal screen: AI spend by day and by step, and the daily cap.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">07 · Honest part</p>
+          <h2>I built it before the habit was there</h2><ul class="sec-chips"><li>Pilot stalled</li><li>Trust</li><li>Talk first</li></ul><aside class="nx-note" style="--tilt:-2deg"><p>Fast code doesn’t buy trust. Talk first, then build.</p><span>Note to self</span></aside></header>
+          <p>Building was fast: with AI writing the code, v1 was running on a server in about a week. That speed was the trap. The product was ready before the foreman had sent me a single real voice note, photo or chat export, and the pilot never really started. He didn’t pay, and the crew didn’t change how it worked.</p>
+          <p>My bet was that sending a voice note or a receipt photo to a chat is simpler than two hours of paperwork. It hasn’t been proven. Builders don’t trust new tools easily, and things that feel simple to me feel complicated to them. Fast code didn’t fix that; only time on site with people would.</p>
+          <p>Now I’m testing a new market, Poland, where I live, and I talk before I build: eight to ten conversations with foremen first, then code. Polish crews mostly use WhatsApp, where a bot can’t join an existing group, so the plan is a hybrid: a messenger for workers, an app for the foreman. The decision point is January: paying crews, or a clear reason why not.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Scale</p>
+          <h2>Zam, screen by screen</h2><ul class="sec-chips"><li>18 screens</li><li>Telegram, web, phone</li></ul></header>
+          <p>The bot in Telegram, the app on a laptop and on a phone. Open any of them full size.</p>
+        </div>
+        <div class="af-wall">
+          <a href="img/zam/desk-home-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-home-light.jpg" width="2880" height="1800" alt="Sites" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-site-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-site-light.jpg" width="2880" height="1800" alt="A site" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-doc-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-doc-light.jpg" width="2880" height="1800" alt="Documents" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-inbox-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-inbox-light.jpg" width="2880" height="1800" alt="To sort and Check" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-search-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-search-light.jpg" width="2880" height="1800" alt="Search" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-purchases-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-purchases-light.jpg" width="2880" height="1800" alt="Purchases" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-expenses-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-expenses-light.jpg" width="2880" height="1800" alt="Expenses and receipts" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-messages-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-messages-light.jpg" width="2880" height="1800" alt="Site messages" loading="lazy" decoding="async"></a>
+          <a href="img/zam/desk-ai-light.jpg" target="_blank" rel="noopener"><img src="img/zam/desk-ai-light.jpg" width="2880" height="1800" alt="AI cost" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-chat-group.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-group.jpg" width="1170" height="2532" alt="Crew chat" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-chat-cards.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-cards.jpg" width="1170" height="2532" alt="Cards to confirm" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-chat-ask.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-ask.jpg" width="1170" height="2532" alt="Questions to the bot" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-chat-digest.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-chat-digest.jpg" width="1170" height="2532" alt="Evening summary" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-home-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-home-light.jpg" width="1170" height="2532" alt="Sites on the phone" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-site-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-site-light.jpg" width="1170" height="2532" alt="A site on the phone" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-purchases-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-purchases-light.jpg" width="1170" height="2532" alt="Purchases on the phone" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-inbox-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-inbox-light.jpg" width="1170" height="2532" alt="To sort on the phone" loading="lazy" decoding="async"></a>
+          <a href="img/zam/phone-search-light.jpg" target="_blank" rel="noopener"><img src="img/zam/phone-search-light.jpg" width="1170" height="2532" alt="Search on the phone" loading="lazy" decoding="async"></a>
+        </div>
+      </section>
+
+    </article>
+
+    <a class="next-case" href="smartpill.html">
+      <div><small>Next case</small><b>A medication reminder built with one engineer</b></div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Building something with a small team?</h2>
+        <p>I'm looking for a founding or first-designer role in a product team where design changes what ships. Telegram is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="https://t.me/dkuzmenkov">Message on Telegram</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:oliverbone3@gmail.com">oliverbone3@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Dzmitry Kuzmiankou</span>
+    <span>Built in code on my own design tokens, with AI.</span>
+  </footer>
+</div>
+<script src="../assets/wall.js?v=4"></script>
+<script>
+(function () {
+  var f = document.querySelector('.sp-flow iframe'); if (!f || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (f.contentWindow) f.contentWindow.postMessage({ ww: e.isIntersecting && e.intersectionRatio >= .5 ? 'play' : 'pause' }, '*'); });
+  }, { threshold: [0, .5] }).observe(f);
+  function dark() { var m = getComputedStyle(document.body).backgroundColor.match(/\d+/g) || [255, 255, 255]; return (+m[0] * .3 + +m[1] * .59 + +m[2] * .11) < 128; }
+  function theme() { if (f.contentWindow) f.contentWindow.postMessage({ ww: 'theme', dark: dark(), scheme: getComputedStyle(f).colorScheme }, '*'); }
+  new MutationObserver(function () { setTimeout(theme, 50); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { setTimeout(theme, 50); });
+  f.addEventListener('load', function () { theme(); var r = f.getBoundingClientRect(); if (r.top < innerHeight * .5 && r.bottom > innerHeight * .5) f.contentWindow.postMessage({ ww: 'play' }, '*'); });
+})();
+</script>
+<script src="../assets/site.js?v=20261109a"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* SmartPill rework — iOS 27 structure, own soft brand.
+   Motif: the capsule. Buttons, chips, progress and tab bar are capsules; type is SF Pro Rounded.
+   One accent (jade) = brand and "taken". Coral = "due now". Pastel pills carry the colour. */
+:root {
+  --round: "SF Pro Rounded", ui-rounded, -apple-system, system-ui, sans-serif;
+  --text: -apple-system, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+}
+.screen {
+  --ink: #14211B; --ink2: rgb(20 33 27 / .58); --ink3: rgb(20 33 27 / .32);
+  --bg: #F3F5F1; --card: #fff; --sep: rgb(20 33 27 / .08); --fill: rgb(20 33 27 / .06); --fill2: rgb(20 33 27 / .1);
+  --jade: #0F8A63; --jade-ink: #0B6A4C; --jade-soft: #DDF1E8; --jade-tint: #EEF7F2;
+  --coral: #F2643D; --coral-soft: #FFE6DD;
+  --glass: rgb(255 255 255 / .6); --glass-edge: rgb(255 255 255 / .8); --shade: rgb(20 33 27 / .1);
+  --on-jade: #fff;
+  --hero: #0F8A63;
+}
+.screen.dark {
+  --ink: #F1F5F2; --ink2: rgb(235 245 239 / .62); --ink3: rgb(235 245 239 / .3);
+  --bg: #0C110E; --card: #18201B; --sep: rgb(235 245 239 / .1); --fill: rgb(235 245 239 / .08); --fill2: rgb(235 245 239 / .14);
+  --jade: #34C08E; --jade-ink: #6BD9B0; --jade-soft: rgb(52 192 142 / .2); --jade-tint: rgb(52 192 142 / .1);
+  --coral: #FF7A55; --coral-soft: rgb(255 122 85 / .18);
+  --glass: rgb(30 38 33 / .55); --glass-edge: rgb(255 255 255 / .12); --shade: rgb(0 0 0 / .4);
+  --on-jade: #04140D;
+  --hero: #0E4F3A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--text); color: #14211B; background: #E4E7E2; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+.ic { width: 24px; height: 24px; flex: none; display: block; }
+.pill { width: 44px; height: 44px; flex: none; display: block; }
+.s12 { width: 12px; height: 12px; } .s14 { width: 14px; height: 14px; } .s16 { width: 16px; height: 16px; } .s18 { width: 18px; height: 18px; } .s20 { width: 20px; height: 20px; } .s22 { width: 22px; height: 22px; }
+.p28 { width: 28px; height: 28px; } .p32 { width: 32px; height: 32px; } .p36 { width: 36px; height: 36px; } .p56 { width: 56px; height: 56px; } .p72 { width: 72px; height: 72px; } .p120 { width: 120px; height: 120px; } .p160 { width: 160px; height: 160px; }
+
+/* Board */
+.board-head { padding: 48px 56px 8px; max-width: 960px; }
+.board-head h1 { font: 700 28px/34px var(--round); }
+.board-head p { margin-top: 6px; font-size: 15px; line-height: 21px; color: rgb(20 33 27 / .6); }
+.board { display: flex; flex-wrap: wrap; gap: 56px 48px; padding: 32px 56px 80px; }
+.slot figcaption { font-size: 13px; line-height: 18px; color: rgb(20 33 27 / .6); margin: 0 0 12px 4px; }
+.slot figcaption b { color: #14211B; font-weight: 600; margin-right: 6px; font-variant-numeric: tabular-nums; }
+.phone { width: 402px; height: 874px; border-radius: 56px; overflow: hidden; box-shadow: 0 0 0 1px rgb(0 0 0 / .08), 0 30px 60px -20px rgb(20 33 27 / .35); }
+.screen { position: relative; width: 402px; height: 874px; overflow: hidden; background: var(--bg); color: var(--ink); font-family: var(--text); }
+body.flat .phone { box-shadow: none; }
+
+/* Type */
+.r { font-family: var(--round); }
+.lt { font: 700 34px/41px var(--round); letter-spacing: .2px; }
+.t1 { font: 700 28px/34px var(--round); letter-spacing: .2px; }
+.t2 { font: 700 22px/28px var(--round); }
+.t3 { font: 600 20px/25px var(--round); }
+.hl { font-size: 17px; line-height: 22px; font-weight: 600; letter-spacing: -.43px; }
+.body { font-size: 17px; line-height: 22px; letter-spacing: -.43px; }
+.sub { font-size: 15px; line-height: 20px; letter-spacing: -.23px; }
+.fn { font-size: 13px; line-height: 18px; letter-spacing: -.08px; }
+.c1 { font-size: 12px; line-height: 16px; }
+.cap { font: 600 13px/18px var(--round); letter-spacing: .1px; }
+.i2 { color: var(--ink2); } .i3 { color: var(--ink3); }
+.num { font-variant-numeric: tabular-nums; }
+.jade { color: var(--jade); } .coral { color: var(--coral); }
+
+/* System chrome */
+.status { position: absolute; z-index: 40; top: 0; left: 0; right: 0; height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 6px 36px 0 50px; font: 600 17px var(--text); color: var(--ink); }
+.status .i-statusbar { width: 78px; height: 13px; }
+.status.light { color: #fff; }
+.home-ind { position: absolute; z-index: 40; bottom: 8px; left: 50%; width: 140px; height: 5px; margin-left: -70px; border-radius: 3px; background: var(--ink); }
+.home-ind.light { background: #fff; }
+
+/* Content */
+.content { position: absolute; inset: 0; padding: 62px 16px 0; overflow: hidden; }
+.nav { height: 54px; display: flex; align-items: center; justify-content: space-between; }
+.gbtn { width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--glass); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); box-shadow: inset 0 0 0 1px var(--glass-edge), 0 4px 14px var(--shade); color: var(--ink); }
+.gbtn.txt { width: auto; padding: 0 16px; font-weight: 600; font-size: 17px; }
+.card { background: var(--card); border-radius: 26px; }
+.sec { display: flex; align-items: center; gap: 8px; margin: 22px 4px 10px; }
+.sec .ic { color: var(--ink2); }
+.sec .t { font: 600 15px/20px var(--round); }
+.sec .m { margin-left: auto; font-size: 15px; color: var(--ink2); font-variant-numeric: tabular-nums; }
+
+/* Capsule buttons */
+.btn { height: 54px; border-radius: 27px; display: flex; align-items: center; justify-content: center; gap: 8px; font: 600 17px/22px var(--round); width: 100%; }
+.btn.pri { background: var(--jade); color: var(--on-jade); }
+.btn.sec2 { background: var(--fill); color: var(--ink); }
+.btn.ghost { color: var(--jade-ink); height: 44px; }
+.btn.sm { height: 40px; border-radius: 20px; font-size: 15px; width: auto; padding: 0 18px; }
+.cta { position: absolute; left: 24px; right: 24px; bottom: 42px; display: grid; gap: 6px; }
+
+/* Rows */
+.row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; min-height: 64px; }
+.row + .row { box-shadow: inset 0 1px 0 var(--sep); }
+.row .grow { flex: 1; min-width: 0; }
+.row .ttl { font-size: 17px; line-height: 22px; font-weight: 600; letter-spacing: -.4px; }
+.row .meta { font-size: 14px; line-height: 19px; color: var(--ink2); margin-top: 1px; }
+.row .val { color: var(--ink2); font-size: 17px; letter-spacing: -.4px; font-variant-numeric: tabular-nums; }
+.row .chev { color: var(--ink3); width: 16px; height: 16px; }
+.pbox { width: 52px; height: 52px; border-radius: 18px; display: grid; place-items: center; flex: none; }
+.pbox .pill { width: 38px; height: 38px; }
+.bg-peach { background: #FFF0E8; } .bg-lilac { background: #F1EEFF; } .bg-sky { background: #E9F5FF; } .bg-butter { background: #FFF7D6; } .bg-rose { background: #FFEDF1; } .bg-mint { background: #E5F7EE; } .bg-white { background: #F0F2EE; }
+.dark .bg-peach, .dark .bg-lilac, .dark .bg-sky, .dark .bg-butter, .dark .bg-rose, .dark .bg-mint, .dark .bg-white { background: rgb(255 255 255 / .07); }
+.ibox { width: 32px; height: 32px; border-radius: 11px; display: grid; place-items: center; flex: none; background: var(--jade-soft); color: var(--jade-ink); }
+.ibox .ic { width: 18px; height: 18px; }
+
+/* Status marks */
+.done { width: 32px; height: 32px; border-radius: 16px; background: var(--jade); color: var(--on-jade); display: grid; place-items: center; flex: none; }
+.done .ic { width: 18px; height: 18px; }
+.todo { width: 32px; height: 32px; border-radius: 16px; box-shadow: inset 0 0 0 2px var(--fill2); flex: none; }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px; border-radius: 14px; font: 600 13px/1 var(--round); background: var(--fill); color: var(--ink2); white-space: nowrap; }
+.chip.jade { background: var(--jade-soft); color: var(--jade-ink); }
+.chip.coral { background: var(--coral-soft); color: var(--coral); }
+.chip .ic { width: 14px; height: 14px; }
+
+/* Tab bar — one solid capsule split evenly: three tabs (icon over label) and "+" as the fourth slot; the active tab is a jade pill as tall as the "+" button */
+.tabbar { position: absolute; z-index: 30; left: 16px; right: 16px; bottom: 28px; height: 72px; padding: 0 8px; border-radius: 36px;
+  display: grid; grid-template-columns: repeat(3, 1fr) 64px; align-items: center;
+  background: var(--card); box-shadow: 0 0 0 1px var(--sep), 0 14px 34px -8px rgb(20 33 27 / .22); }
+.tabbar .tb { height: 56px; margin: 0 2px; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--ink2); font: 600 11px/13px var(--round); }
+.tabbar .tb i { display: grid; place-items: center; }
+.tabbar .tb .ic { width: 24px; height: 24px; }
+.tabbar .tb.on { color: var(--jade-ink); }
+.tabbar .tb.on { background: var(--jade-soft); }
+.tabbar .add { justify-self: end; width: 56px; height: 56px; border-radius: 28px; display: grid; place-items: center; background: var(--jade); color: var(--on-jade); }
+.tabbar .add .ic { width: 26px; height: 26px; }
+.scrim-b { position: absolute; z-index: 20; left: 0; right: 0; bottom: 0; height: 130px; background: linear-gradient(to top, var(--bg) 35%, transparent); pointer-events: none; }
+
+/* Progress ring */
+.ring { position: relative; width: 84px; height: 84px; flex: none; }
+.ring svg { width: 84px; height: 84px; transform: rotate(-90deg); }
+.ring .lbl { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font: 700 22px/1 var(--round); }
+.ring .lbl small { display: block; font: 600 11px/1 var(--round); color: var(--ink2); margin-top: 3px; }
+
+/* Segmented */
+.seg { display: flex; padding: 3px; border-radius: 22px; background: var(--fill); height: 44px; }
+.seg span { flex: 1; display: grid; place-items: center; border-radius: 19px; font: 600 14px/1 var(--round); color: var(--ink2); }
+.seg span.on { background: var(--card); color: var(--ink); box-shadow: 0 2px 8px rgb(20 33 27 / .1); }
+.dark .seg span.on { background: #2A342E; }
+
+/* Switch */
+.sw { width: 52px; height: 32px; border-radius: 16px; background: var(--fill2); position: relative; flex: none; }
+.sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 28px; height: 28px; border-radius: 14px; background: #fff; box-shadow: 0 2px 6px rgb(0 0 0 / .18); }
+.sw.on { background: var(--jade); }
+.sw.on::after { left: 22px; }
+.p3d { object-fit: contain; }

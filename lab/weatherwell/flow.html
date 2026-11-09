@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>WeatherWell flow</title>
+<link rel="stylesheet" href="ww.css">
+<link rel="stylesheet" href="flow.css">
+</head>
+<body class="fl-body">
+<main class="fl">
+  <div class="fl-viewport">
+    <div class="fl-fit">
+      <div class="fl-phone" id="stage">
+        <div class="fl-cursor"><span class="fl-ring"></span></div>
+        <div class="fl-toast glass"><svg class="s16"><use href="#i-check"/></svg>Check-in saved · 17 to go</div>
+      </div>
+    </div>
+  </div>
+  <div class="fl-controls">
+    <p class="fl-caption" aria-live="polite"></p>
+    <div class="fl-bar">
+      <button type="button" class="fl-btn" data-fl="prev" aria-label="Previous step"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="fl-btn fl-play" data-fl="play"></button>
+      <button type="button" class="fl-btn" data-fl="next" aria-label="Next step"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="fl-progress"></div>
+      <span class="fl-count"></span>
+    </div>
+  </div>
+</main>
+<script src="screens.js"></script>
+<script src="flow.js"></script>
+</body>
+</html>

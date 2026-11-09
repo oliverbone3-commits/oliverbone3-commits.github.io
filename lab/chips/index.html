@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chip variants — lab</title><meta name="robots" content="noindex">
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../../assets/site.css?v=20261106e">
+<link rel="stylesheet" href="../../assets/next.css?v=12">
+<link rel="stylesheet" href="../../assets/chips.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; padding: 32px 0 80px; }
+  .cv { background: var(--surface); border-radius: 26px; padding: 28px; display: flex; flex-direction: column; min-height: 300px; }
+  .cv-name { margin: 0; font: 500 12px/16px var(--mono); color: var(--primary-300); }
+  .cv-desc { margin: 4px 0 20px; font-size: 13px; color: var(--primary-400); }
+  .cv h3 { margin: 0; font-size: 22px; line-height: 1.2; font-weight: 500; letter-spacing: -0.02em; }
+  .cv .chips { padding-top: 24px; }
+  .cv-try { margin-top: 20px; font-size: 13px; color: var(--primary-400); }
+  h1 { font-size: 28px; font-weight: 500; margin: 48px 0 0; }
+</style>
+</head>
+<body class="nx">
+<main class="wrap">
+  <h1>Role / Team / Scale: chip variants</h1>
+  <div class="grid">
+    <div class="cv" data-chips="site">
+      <p class="cv-name">1 · site</p><p class="cv-desc">Hairline pills in the page greys</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=site">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="bright">
+      <p class="cv-name">2 · bright</p><p class="cv-desc">Filled, one bright colour per kind</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=bright">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="mono">
+      <p class="cv-name">3 · mono</p><p class="cv-desc">Code tags, like "brand 1 / 10" on the card visuals</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=mono">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="badge">
+      <p class="cv-name">4 · badge</p><p class="cv-desc">Status badges from the back-office UI</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=badge">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="split">
+      <p class="cv-name">5 · split</p><p class="cv-desc">Label | value, like a shield</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=split">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="icons">
+      <p class="cv-name">6 · icons</p><p class="cv-desc">Line icon instead of the label</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=icons">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="dots">
+      <p class="cv-name">7 · dots</p><p class="cv-desc">No pill: coloured dot and plain text</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=dots">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="accent">
+      <p class="cv-name">8 · accent</p><p class="cv-desc">Only the role in the site accent</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=accent">Try on the home page</a>
+    </div>
+    <div class="cv" data-chips="soft">
+      <p class="cv-name">9 · soft</p><p class="cv-desc">Muted tint per kind</p>
+      <h3>A checkout builder that grew from blocks into a payment-flow editor</h3>
+      <div class="chips"><span class="chip chip--role" data-ic="user"><b>Role</b><span>Lead Product Designer</span></span><span class="chip chip--team" data-ic="users"><b>Team</b><span>1 checkout engineer, product, analytics</span></span><span class="chip chip--scale" data-ic="palette"><b>Scale</b><span>10 brands × light/dark</span></span><span class="chip chip--scale" data-ic="languages"><span>5+ languages</span></span><span class="chip chip--scale" data-ic="globe"><span>4+ regions</span></span></div>
+      <a class="cv-try" href="../../index.html?chips=soft">Try on the home page</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>

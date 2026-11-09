@@ -1,0 +1,1 @@
+Coin icons: spothq/cryptocurrency-icons (CC0-1.0), npm cryptocurrency-icons@0.18.1, svg/color.

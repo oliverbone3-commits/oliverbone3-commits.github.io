@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Quote options</title>
+<link rel="preload" href="../../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../../assets/site.css?v=20261109a">
+<link rel="stylesheet" href="../../assets/gallery.css?v=20261106e">
+<link rel="stylesheet" href="../../assets/next.css?v=38">
+<style>
+  /* Lab-only chrome */
+  .q-bar { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 12px var(--gutter); background: var(--bg); border-bottom: 1px solid var(--primary-100); font: 500 13px/1 var(--font); }
+  .q-bar button { font: inherit; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--primary-200); background: none; color: var(--primary); cursor: pointer; }
+  .q-opt { padding: clamp(72px, 9vw, 120px) 0; border-bottom: 1px solid var(--primary-100); }
+  .q-tag { font: 500 12px/16px var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--primary-300); margin: 0 0 var(--p6); }
+
+  /* Shared quote type */
+  .q-text { margin: 0; font: 500 clamp(26px, 3.2vw, 40px)/1.12 var(--display); letter-spacing: -0.03em; color: inherit; text-wrap: balance; }
+  .q-by { display: flex; align-items: center; gap: 10px; margin-top: 22px; font: 500 14px/1.2 var(--font); }
+  .q-by img { width: 32px; height: 32px; border-radius: 50%; }
+  .q-by span { opacity: .6; font-weight: 400; }
+
+  /* A — lime note taped to the page */
+  .qa { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .qa-side { max-width: 34ch; color: var(--primary-400); }
+  .qa-side b { display: block; color: var(--primary); font: 500 clamp(24px, 2.4vw, 30px)/1.1 var(--display); letter-spacing: -0.025em; margin-bottom: 12px; }
+  .qa-note { position: relative; padding: clamp(28px, 3.4vw, 44px); background: var(--accent); color: var(--on-accent); border-radius: 4px; rotate: -3deg;
+    box-shadow: 0 1px 0 rgb(0 0 0 / .06), 0 24px 40px -24px rgb(40 50 10 / .45); transition: rotate .4s var(--ease); }
+  .qa-note:hover { rotate: -1.5deg; }
+  .qa-note::before { content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 28px; translate: -50% 0; rotate: 2deg; background: color-mix(in srgb, var(--bg) 70%, transparent); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+  .qa-note .q-text { font-size: clamp(26px, 2.8vw, 36px); }
+
+  /* B — big quote, words carry tiny tilted snapshots */
+  .qb .q-text { font-size: clamp(34px, 5.4vw, 76px); line-height: 1.04; letter-spacing: -0.04em; max-width: 18ch; }
+  .qb .w { white-space: nowrap; }
+  .qb .w img { display: inline-block; height: .9em; width: auto; margin: 0 .12em 0 .18em; vertical-align: -0.1em; border-radius: .14em; box-shadow: 0 8px 18px -8px rgb(20 20 15 / .45); outline: 1px solid var(--primary-100); outline-offset: -1px; transition: rotate .3s var(--ease), scale .3s var(--ease); }
+  .qb .w:nth-child(1) img { rotate: -8deg; } .qb .w:nth-child(2) img { rotate: 6deg; } .qb .w:nth-child(3) img { rotate: -4deg; }
+  .qb .w:hover img { rotate: 0deg; scale: 1.6; }
+  .qb .muted { color: var(--primary-300); }
+  .qb-sign { display: flex; align-items: center; gap: 16px; margin-top: clamp(28px, 3vw, 40px); }
+  .qb-pola { width: 84px; padding: 6px 6px 18px; background: #fff; border-radius: 3px; rotate: 5deg; box-shadow: 0 14px 30px -14px rgb(20 20 15 / .4); }
+  .qb-pola img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 1px; }
+  .qb-sign p { margin: 0; font: 500 15px/1.35 var(--font); } .qb-sign p span { display: block; color: var(--primary-400); font-weight: 400; }
+
+  /* C — polaroid + paper card pinned together, both tilted */
+  .qc { position: relative; max-width: 860px; margin: 0 auto; padding-left: clamp(0px, 9vw, 120px); }
+  .qc-card { position: relative; padding: clamp(32px, 4vw, 56px) clamp(28px, 4vw, 56px) clamp(28px, 3vw, 40px) clamp(28px, 11vw, 150px); background: var(--surface); border-radius: 6px; rotate: 1.5deg;
+    background-image: repeating-linear-gradient(to bottom, transparent 0 39px, var(--primary-100) 39px 40px); background-position: 0 20px;
+    box-shadow: 0 1px 0 var(--primary-100), 0 30px 50px -30px rgb(20 20 15 / .35); }
+  .qc-card .q-text { line-height: 1.25; font-size: clamp(24px, 2.8vw, 34px); }
+  .qc-pola { position: absolute; left: 0; top: -28px; width: clamp(120px, 16vw, 180px); padding: 8px 8px 30px; background: #fff; border-radius: 3px; rotate: -7deg; z-index: 1; box-shadow: 0 20px 40px -18px rgb(20 20 15 / .45); }
+  .qc-pola img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .qc-pola figcaption { position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; font: 500 11px/1 var(--font); color: #14140F; opacity: .6; }
+  .qc-pin { position: absolute; top: -8px; left: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 2px 4px rgb(0 0 0 / .25); translate: -50% 0; }
+
+  @media (max-width: 760px) {
+    .qa { grid-template-columns: 1fr; }
+    .qa-note { rotate: -2deg; }
+    .qc { padding-left: 0; padding-top: 120px; }
+    .qc-pola { top: 0; left: 8px; }
+    .qc-card { padding-left: clamp(24px, 6vw, 40px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .qa-note, .qb .w img { transition: none; } }
+</style>
+</head>
+<body class="nx">
+  <div class="q-bar"><span>Quote on the home page · 3 options</span><button type="button" id="th">Light / dark</button></div>
+
+  <!-- A -->
+  <section class="q-opt"><div class="wrap">
+    <p class="q-tag">A · Lime note taped to the page</p>
+    <div class="qa">
+      <div class="qa-side"><b>Why these products</b>Payments, a medication reminder, a storm radar, an art app. Different markets, one idea.</div>
+      <figure class="qa-note" style="margin:0">
+        <blockquote class="q-text">I design the everyday parts of life — money, health, weather — so they take less of your attention.</blockquote>
+        <figcaption class="q-by"><img src="../../assets/avatar.jpg" alt="">Dzmitry <span>· product designer</span></figcaption>
+      </figure>
+    </div>
+  </div></section>
+
+  <!-- B -->
+  <section class="q-opt qb"><div class="wrap">
+    <p class="q-tag">B · Big quote, each word carries a screen</p>
+    <blockquote class="q-text">I design the everyday parts of life — <span class="w">money<img src="../../assets/works/snap-money-insights.jpg" alt="" width="375" height="812"></span>, <span class="w">health<img src="../../assets/works/snap-smartpill-today.jpg" alt="" width="420" height="909"></span>, <span class="w">weather<img src="../../assets/works/snap-radar-hurricane.jpg" alt="" width="420" height="909"></span> — <span class="muted">so they take less of your attention.</span></blockquote>
+    <div class="qb-sign"><div class="qb-pola"><img src="dmitry.jpg" alt=""></div><p>Dzmitry Kuzmiankou<span>Product designer, Poznań</span></p></div>
+  </div></section>
+
+  <!-- C -->
+  <section class="q-opt"><div class="wrap">
+    <p class="q-tag">C · Polaroid pinned to a ruled card</p>
+    <div class="qc">
+      <figure class="qc-pola"><span class="qc-pin" aria-hidden="true"></span><img src="dmitry.jpg" alt="Dzmitry"><figcaption>Poznań, 2026</figcaption></figure>
+      <div class="qc-card">
+        <blockquote class="q-text">I design the everyday parts of life — money, health, weather — so they take less of your attention.</blockquote>
+        <p class="q-by">Dzmitry Kuzmiankou <span>· product designer</span></p>
+      </div>
+    </div>
+  </div></section>
+
+<script>
+  document.getElementById('th').onclick = () => {
+    const r = document.documentElement, dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    r.dataset.theme = dark ? 'light' : 'dark';
+  };
+</script>
+</body>
+</html>

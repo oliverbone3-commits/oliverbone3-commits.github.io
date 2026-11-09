@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartPill — Dzmitry Kuzmiankou</title>
+<meta name="description" content="A medication reminder with alerts that ring through silent mode, built with one engineer: around 1,000 users and most of the money back.">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../assets/site.css?v=20261109b">
+<link rel="stylesheet" href="../assets/rule-demo.css?v=20261106e">
+<link rel="stylesheet" href="../assets/antifraud-demo.css?v=5">
+<link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
+<script src="../assets/font-lab.js?v=20261106e"></script>
+<style>
+  /* Phone screens in a row, top-aligned, each opens full size */
+  .phones { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: clamp(10px, 2vw, 24px); align-items: start; }
+  .phones .ph { margin: 0; }
+  .phones .ph a { display: block; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgb(20 20 15 / .08), 0 18px 40px rgb(20 20 15 / .12); aspect-ratio: 402 / 874; background: #fff; }
+  .phones .ph img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .ph-label { display: block; margin-top: 10px; font: 500 11px/16px var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--primary-300); text-align: center; }
+  .phones.six { --n: 6; }
+  .phones.three { --n: 3; max-width: 820px; margin: 0 auto; }
+  .phones.two { --n: 2; max-width: 540px; margin: 0 auto; }
+  @media (max-width: 720px) { .phones, .phones.six { --n: 3; } .phones.two { --n: 2; } }
+  .stack { display: grid; gap: clamp(12px, 2vw, 24px); }
+  .stack .af-shot { box-shadow: 0 1px 2px rgb(20 20 15 / .08), 0 18px 40px rgb(20 20 15 / .12); }
+.th-dk { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .th-dk { display: block; } :root:not([data-theme="light"]) .th-lt { display: none; } }
+:root[data-theme="dark"] .th-dk { display: block; } :root[data-theme="dark"] .th-lt { display: none; }
+.sp-flow iframe { display: block; width: 100%; height: 820px; border: 0; }
+@media (max-width: 700px) { .sp-flow iframe { height: 700px; } }
+</style>
+<link rel="stylesheet" href="../assets/next.css?v=46">
+</head>
+<body class="nx" data-case="smartpill">
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-pic" src="../assets/avatar.jpg" alt="" width="32" height="32">Dzmitry Kuzmiankou</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a class="hide-sm" href="../index.html#ai">AI</a>
+      <a class="hide-sm" href="../index.html#about">About</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark theme">
+        <svg class="theme-light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="case-hero">
+    <div class="wrap">
+      <div class="hero-top"><a class="back" href="../index.html#more">← All work</a>
+      </div>
+      <div class="tags"><span class="tag own">Own product</span><span class="tag">iOS</span><span class="tag">Health</span></div>
+      <h1>A medication reminder built with one engineer</h1>
+      <p class="summary">SmartPill reminds people to take their medication with alerts that ring through silent mode, and lets them mark each dose in one tap. I built it for myself first and owned the product, the design and the tracking plan; one engineer built it. It reached around 1,000 users and earned back most of what we put in.</p>
+      <dl class="case-facts"><div><dt>Role</dt><dd>Product, design and the tracking plan in Amplitude</dd></div><div><dt>Team</dt><dd>Me and one engineer</dd></div><div><dt>Product</dt><dd>SmartPill, an iOS medication reminder</dd></div><div><dt>Scale</dt><dd>~1,000 users · earned back most of ~$700 invested</dd></div></dl>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="case-body" data-mode="full">
+
+      <div class="read-mode">
+        <p class="read-q">How do you want to read the case?</p>
+        <div class="switch" data-read-switch role="group" aria-label="Reading mode">
+          <button type="button" data-mode="skim" aria-pressed="false">Skim · 60 sec</button>
+          <button type="button" data-mode="full" aria-pressed="true">Full story</button>
+        </div>
+      </div>
+
+      <section class="case-section skim-only">
+        <div class="prose tldr">
+          <p>SmartPill is a medication reminder I built for myself first, with one engineer. Critical alerts ring through silent mode and a dose is marked from the lock screen; adding a medication takes two short steps; Today groups doses by time of day and History shows the month. It reached around 1,000 users and earned back most of the roughly $700 we put in. When Apple added medication reminders to Health I stopped the project, and that was a mistake: dedicated apps in this space are still doing well.</p>
+        </div>
+      </section>
+
+      <section class="case-section rd-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Walkthrough</p>
+          <h2>From the first screen to the first dose taken</h2><ul class="sec-chips"><li>Onboarding</li><li>Critical alerts</li><li>Today</li><li>History</li></ul></header>
+          <p>One afternoon with the app: set up, add the first medication, get a reminder that rings through silent mode, mark the dose from the lock screen.</p>
+        </div>
+        <div class="rd sp-flow">
+          <iframe src="../lab/smartpill/flow.html?embed" title="SmartPill walkthrough: onboarding, Plus, the first medication, a critical alert, Today, history" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">01 · What it was</p>
+          <h2>A reminder people actually kept</h2><ul class="sec-chips"><li>Built for myself</li><li>Product + design</li><li>Tracking plan</li><li>~1,000 users</li></ul></header>
+          <p>I built SmartPill for myself first: a reminder that gets through and a record of what I took. I owned the product, the design and the tracking plan in Amplitude: every event, where it fires and what it should tell us. One engineer built it. It reached around 1,000 users and earned back most of the roughly $700 we put in.</p>
+        </div>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">02 · Reminders</p>
+          <h2>A reminder that rings through silent mode</h2><ul class="sec-chips"><li>Critical alerts</li><li>Lock screen</li><li>One tap</li></ul></header>
+          <p>A missed reminder is a missed dose, and a regular notification stays quiet when the phone is on silent or in Focus. SmartPill uses critical alerts, which ring the way an alarm clock does. Onboarding asks for this one permission and says why; you choose which doses get it, so vitamins can stay quiet.</p>
+          <p>The alert says what to take, how much and when, and the dose can be marked as taken right from the lock screen. Today is already up to date when you open the app.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="phones three"><figure class="ph"><a href="img/smartpill/new-alerts.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-alerts.png" width="804" height="1748" alt="Onboarding: why critical alerts" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-alerts.png" width="804" height="1748" alt="Onboarding: why critical alerts" loading="lazy" decoding="async"></a><span class="ph-label">Permission</span></figure><figure class="ph"><a href="img/smartpill/new-lock.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-lock.png" width="804" height="1748" alt="Critical alert with Taken and Snooze" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-lock.png" width="804" height="1748" alt="Critical alert with Taken and Snooze" loading="lazy" decoding="async"></a><span class="ph-label">Alert</span></figure><figure class="ph"><a href="img/smartpill/new-today-taken.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-today-taken.png" width="804" height="1748" alt="Today after the dose is marked as taken" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-today-taken.png" width="804" height="1748" alt="Today after the dose is marked as taken" loading="lazy" decoding="async"></a><span class="ph-label">Marked</span></figure></div></div>
+          <figcaption>From the permission to the alert, and the dose marked in one tap.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">03 · Adding a medication</p>
+          <h2>Two short steps: what, then when</h2><ul class="sec-chips"><li>Form and colour</li><li>Schedule</li><li>Course</li></ul></header>
+          <p>First what: a name, a strength, a form and a colour, so the pill on screen looks like the one in your hand. Then when: every day, some days or every few hours, each time with its dose, before or after food, how long the course lasts and whether the reminder is critical.</p>
+          <p>Save, and the medication is on Today with its next dose.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="phones three"><figure class="ph"><a href="img/smartpill/new-add.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-add.png" width="804" height="1748" alt="New medication: name, strength, form, colour" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-add.png" width="804" height="1748" alt="New medication: name, strength, form, colour" loading="lazy" decoding="async"></a><span class="ph-label">What</span></figure><figure class="ph"><a href="img/smartpill/new-schedule.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-schedule.png" width="804" height="1748" alt="Schedule: times, food, course, critical alert" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-schedule.png" width="804" height="1748" alt="Schedule: times, food, course, critical alert" loading="lazy" decoding="async"></a><span class="ph-label">When</span></figure><figure class="ph"><a href="img/smartpill/new-today-added.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-today-added.png" width="804" height="1748" alt="Today with the new medication next at 14:00" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-today-added.png" width="804" height="1748" alt="Today with the new medication next at 14:00" loading="lazy" decoding="async"></a><span class="ph-label">Next dose</span></figure></div></div>
+          <figcaption>Two steps, and the new medication is on Today.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">04 · Today and history</p>
+          <h2>The day by morning, afternoon and evening</h2><ul class="sec-chips"><li>Due now</li><li>Per-medication record</li><li>Month at a glance</li></ul></header>
+          <p>Today groups doses by time of day. The dose that is due now stands out with two actions: take it, or snooze for ten minutes. Everything else is one tap to mark.</p>
+          <p>Each medication keeps its own record: how often it was taken on time, how many pills are left, a photo of the box so you buy the right one, and a note. History shows the month: green when every dose was taken, light when some were missed, and the day as a list.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="phones three"><figure class="ph"><a href="img/smartpill/new-today.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-today.png" width="804" height="1748" alt="Today with the dose due now" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-today.png" width="804" height="1748" alt="Today with the dose due now" loading="lazy" decoding="async"></a><span class="ph-label">Today</span></figure><figure class="ph"><a href="img/smartpill/new-medication.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-medication.png" width="804" height="1748" alt="Medication: on-time rate, pills left, last 30 days" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-medication.png" width="804" height="1748" alt="Medication: on-time rate, pills left, last 30 days" loading="lazy" decoding="async"></a><span class="ph-label">Medication</span></figure><figure class="ph"><a href="img/smartpill/new-history.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-history.png" width="804" height="1748" alt="History: the month and one day as a list" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-history.png" width="804" height="1748" alt="History: the month and one day as a list" loading="lazy" decoding="async"></a><span class="ph-label">History</span></figure></div></div>
+          <figcaption>Today, one medication, and the month.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">05 · Look and Plus</p>
+          <h2>Friendly, not clinical</h2><ul class="sec-chips"><li>3D characters</li><li>Plus in onboarding</li><li>No countdowns</li></ul></header>
+          <p>Users liked the 3D characters, so they stayed: on the welcome screen, next to the first alert and on the paywall. The pills are drawn in the same style, so the colour and shape you pick look like the real thing.</p>
+          <p>Plus appears once, in onboarding, right after the alerts: three free days, then a yearly or a monthly price. It unlocks unlimited medications, your own photos and colours, and flexible schedules. No timers and no fake discounts.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas"><div class="phones two"><figure class="ph"><a href="img/smartpill/new-welcome.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-welcome.png" width="804" height="1748" alt="Welcome with the 3D character" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-welcome.png" width="804" height="1748" alt="Welcome with the 3D character" loading="lazy" decoding="async"></a><span class="ph-label">Welcome</span></figure><figure class="ph"><a href="img/smartpill/new-plus.png" target="_blank" rel="noopener"><img class="th-lt" src="img/smartpill/new-plus.png" width="804" height="1748" alt="SmartPill Plus: trial, yearly and monthly price" loading="lazy" decoding="async"><img class="th-dk" src="img/smartpill/dark-plus.png" width="804" height="1748" alt="SmartPill Plus: trial, yearly and monthly price" loading="lazy" decoding="async"></a><span class="ph-label">Plus</span></figure></div></div>
+          <figcaption>The welcome screen and Plus.</figcaption>
+        </figure>
+      </section>
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">06 · Honest part</p>
+          <h2>The decision I regret</h2><ul class="sec-chips"><li>Apple Health</li><li>Stopped too early</li></ul><aside class="nx-note" style="--tilt:-3deg"><p>When a giant arrives, watch what users do before you quit.</p><span>Note to self</span></aside></header>
+          <p>Things were going well until Apple added medication reminders to Health. I decided we couldn't compete with Apple and stopped. That was a mistake: dedicated apps in this space are still doing well, and Apple's feature never replaced them. Now when a big player enters my space, I look at what users actually do before deciding.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Scale</p>
+          <h2>SmartPill, screen by screen</h2><ul class="sec-chips"><li>17 screens</li><li>Light and dark</li><li>Open full size</li></ul></header>
+          <p>The whole story in light, from the welcome screen to history, and the main screens in dark. Open any of them full size.</p>
+        </div>
+        <div class="af-wall">
+          <a href="img/smartpill/new-welcome.png" target="_blank" rel="noopener"><img src="img/smartpill/new-welcome.png" width="804" height="1748" alt="Welcome" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-alerts.png" target="_blank" rel="noopener"><img src="img/smartpill/new-alerts.png" width="804" height="1748" alt="Critical alerts" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-plus.png" target="_blank" rel="noopener"><img src="img/smartpill/new-plus.png" width="804" height="1748" alt="SmartPill Plus" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-add.png" target="_blank" rel="noopener"><img src="img/smartpill/new-add.png" width="804" height="1748" alt="New medication" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-schedule.png" target="_blank" rel="noopener"><img src="img/smartpill/new-schedule.png" width="804" height="1748" alt="Schedule" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-today-added.png" target="_blank" rel="noopener"><img src="img/smartpill/new-today-added.png" width="804" height="1748" alt="Today, next dose" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-lock.png" target="_blank" rel="noopener"><img src="img/smartpill/new-lock.png" width="804" height="1748" alt="Critical alert" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-today-taken.png" target="_blank" rel="noopener"><img src="img/smartpill/new-today-taken.png" width="804" height="1748" alt="Today, dose taken" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-today.png" target="_blank" rel="noopener"><img src="img/smartpill/new-today.png" width="804" height="1748" alt="Today, dose due" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-medication.png" target="_blank" rel="noopener"><img src="img/smartpill/new-medication.png" width="804" height="1748" alt="Medication" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/new-history.png" target="_blank" rel="noopener"><img src="img/smartpill/new-history.png" width="804" height="1748" alt="History" loading="lazy" decoding="async"></a>
+                  <a href="img/smartpill/dark-welcome.png" target="_blank" rel="noopener"><img src="img/smartpill/dark-welcome.png" width="804" height="1748" alt="Welcome, dark" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/dark-alerts.png" target="_blank" rel="noopener"><img src="img/smartpill/dark-alerts.png" width="804" height="1748" alt="Critical alerts, dark" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/dark-plus.png" target="_blank" rel="noopener"><img src="img/smartpill/dark-plus.png" width="804" height="1748" alt="SmartPill Plus, dark" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/dark-today-taken.png" target="_blank" rel="noopener"><img src="img/smartpill/dark-today-taken.png" width="804" height="1748" alt="Today, dark" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/dark-medication.png" target="_blank" rel="noopener"><img src="img/smartpill/dark-medication.png" width="804" height="1748" alt="Medication, dark" loading="lazy" decoding="async"></a>
+          <a href="img/smartpill/dark-history.png" target="_blank" rel="noopener"><img src="img/smartpill/dark-history.png" width="804" height="1748" alt="History, dark" loading="lazy" decoding="async"></a>
+        </div>
+      </section>
+
+    </article>
+
+    <a class="next-case" href="amo.html">
+      <div><small>Next case</small><b>A daily dose of art: five paintings a day, and a widget people kept on their home screen</b></div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Building something with a small team?</h2>
+        <p>I'm looking for a founding or first-designer role in a product team where design changes what ships. Telegram is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="https://t.me/dkuzmenkov">Message on Telegram</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:oliverbone3@gmail.com">oliverbone3@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Dzmitry Kuzmiankou</span>
+    <span>Built in code on my own design tokens, with AI.</span>
+  </footer>
+</div>
+<script src="../assets/wall.js?v=4"></script>
+<script>
+(function () {
+  var f = document.querySelector('.sp-flow iframe'); if (!f || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (f.contentWindow) f.contentWindow.postMessage({ ww: e.isIntersecting && e.intersectionRatio >= .5 ? 'play' : 'pause' }, '*'); });
+  }, { threshold: [0, .5] }).observe(f);
+  function dark() { var m = getComputedStyle(document.body).backgroundColor.match(/\d+/g) || [255, 255, 255]; return (+m[0] * .3 + +m[1] * .59 + +m[2] * .11) < 128; }
+  function theme() { if (f.contentWindow) f.contentWindow.postMessage({ ww: 'theme', dark: dark(), scheme: getComputedStyle(f).colorScheme }, '*'); }
+  new MutationObserver(function () { setTimeout(theme, 50); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { setTimeout(theme, 50); });
+  f.addEventListener('load', function () { theme(); var r = f.getBoundingClientRect(); if (r.top < innerHeight * .5 && r.bottom > innerHeight * .5) f.contentWindow.postMessage({ ww: 'play' }, '*'); });
+})();
+</script>
+<script src="../assets/site.js?v=20261109a"></script>
+</body>
+</html>

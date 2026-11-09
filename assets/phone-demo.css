@@ -1,0 +1,17 @@
+/* Phone walkthrough (phone-demo.js): one phone on the demo well, screens crossfade and scroll inside it */
+.pd-viewport { display: grid; place-items: center; padding: clamp(20px, 4vw, 48px) 0; }
+.pd-phone { width: min(320px, 72vw); padding: 10px; border-radius: 46px; background: #111; box-shadow: 0 1px 2px rgb(20 20 15 / .1), 0 30px 70px rgb(20 20 15 / .22); }
+.pd-stage { position: relative; aspect-ratio: 375 / 812; border-radius: 36px; overflow: hidden; background: #fff; }
+.pd-screen { position: absolute; inset: 0; opacity: 0; transition: opacity .4s ease; }
+.pd-screen.on { opacity: 1; }
+.pd-screen img { display: block; width: 100%; height: auto; max-width: none; transition: transform .9s cubic-bezier(.45, .05, .25, 1); will-change: transform; }
+.pd-cursor { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: rgb(12 12 12 / .18); border: 2px solid rgb(255 255 255 / .9); box-shadow: 0 2px 8px rgb(0 0 0 / .25); opacity: 0; z-index: 3; pointer-events: none; transition: transform .5s cubic-bezier(.3, .7, .3, 1), opacity .25s; }
+.pd-cursor.show { opacity: 1; }
+.pd-ring { position: absolute; inset: -2px; border-radius: 50%; border: 2px solid #fff; opacity: 0; }
+.pd-cursor.click .pd-ring { animation: pd-ring .45s ease-out; }
+@keyframes pd-ring { from { opacity: .9; transform: scale(.6); } to { opacity: 0; transform: scale(1.9); } }
+@media (prefers-reduced-motion: reduce) { .pd-screen, .pd-screen img, .pd-cursor { transition: none !important; } }
+/* Desktop screens: no phone bezel, a framed browser-sized stage */
+.pd-desktop .pd-viewport { padding: clamp(16px, 3vw, 40px); }
+.pd-desktop .pd-phone { width: 100%; max-width: 1100px; padding: 0; border-radius: 12px; background: none; box-shadow: 0 1px 2px rgb(20 20 15 / .08), 0 24px 60px rgb(20 20 15 / .14); }
+.pd-desktop .pd-stage { border-radius: 12px; }

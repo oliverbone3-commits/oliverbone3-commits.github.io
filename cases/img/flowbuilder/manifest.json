@@ -1,0 +1,258 @@
+[
+  {
+    "file": "01-flows-list.png",
+    "frameName": "01 · Flows list",
+    "copyNodeId": "6609:9378",
+    "width": 1440,
+    "height": 985,
+    "note": "Flows list: table of checkout flows with entry screen, screen count and validation status"
+  },
+  {
+    "file": "02-add-flow-empty.png",
+    "frameName": "02 · Add flow — empty",
+    "copyNodeId": "6609:9456",
+    "width": 480,
+    "height": 278,
+    "note": "New flow modal with an empty name field and Create disabled"
+  },
+  {
+    "file": "03-add-flow-filled.png",
+    "frameName": "03 · Add flow — filled",
+    "copyNodeId": "6609:9481",
+    "width": 480,
+    "height": 278,
+    "note": "New flow modal with a name entered and Create enabled"
+  },
+  {
+    "file": "04-flow-canvas.png",
+    "frameName": "04 · Flow canvas",
+    "copyNodeId": "6609:9507",
+    "width": 1600,
+    "height": 1000,
+    "note": "Flow editor: screen list, flowchart canvas of screens and transitions, screen properties"
+  },
+  {
+    "file": "05-action-modal-editor.png",
+    "frameName": "05 · Action → modal editor",
+    "copyNodeId": "6609:9603",
+    "width": 1600,
+    "height": 1000,
+    "note": "Footer action configured to open a modal: title, text, buttons and post-send message"
+  },
+  {
+    "file": "07-transition-tab.png",
+    "frameName": "07 · Transition tab",
+    "copyNodeId": "6609:9724",
+    "width": 1600,
+    "height": 1000,
+    "note": "Transition tab: outgoing and incoming transitions of the payment screen by outcome"
+  },
+  {
+    "file": "08-operations-tab.png",
+    "frameName": "08 · Operations tab",
+    "copyNodeId": "6609:9810",
+    "width": 1600,
+    "height": 1000,
+    "note": "Operations tab: backend contract with required fields, outcomes and provided values"
+  },
+  {
+    "file": "09-form-mode-step.png",
+    "frameName": "09 · Form mode — step",
+    "copyNodeId": "6609:9947",
+    "width": 1600,
+    "height": 1000,
+    "note": "Form mode: palette, screen structure, preview and properties of a form step"
+  },
+  {
+    "file": "10-form-mode-field-bank-list.png",
+    "frameName": "10 · Form mode — field (Bank list)",
+    "copyNodeId": "6609:10018",
+    "width": 1600,
+    "height": 1000,
+    "note": "Form mode with the Bank list field selected and its bilingual properties"
+  },
+  {
+    "file": "11-form-mode-columns-collapsed.png",
+    "frameName": "11 · Form mode — columns collapsed",
+    "copyNodeId": "6609:10104",
+    "width": 1600,
+    "height": 1000,
+    "note": "Form mode with palette and structure columns collapsed to widen the preview"
+  },
+  {
+    "file": "12-form-settings-languages.png",
+    "frameName": "12 · Form settings — languages",
+    "copyNodeId": "6609:10159",
+    "width": 1600,
+    "height": 1000,
+    "note": "Form-wide settings: active languages with drag to reorder and default language"
+  },
+  {
+    "file": "13-form-settings-texts.png",
+    "frameName": "13 · Form settings — texts",
+    "copyNodeId": "6609:10229",
+    "width": 1600,
+    "height": 1000,
+    "note": "Form-wide settings: result screen texts edited per language"
+  },
+  {
+    "file": "14-preview-payment-screen.png",
+    "frameName": "14 · Preview — payment screen",
+    "copyNodeId": "6609:10313",
+    "width": 1600,
+    "height": 1000,
+    "note": "Preview modal over the editor showing the payment screen as the payer sees it"
+  },
+  {
+    "file": "15-preview-footer-actions.png",
+    "frameName": "15 · Preview — footer actions",
+    "copyNodeId": "6609:10419",
+    "width": 1600,
+    "height": 1000,
+    "note": "Preview scrolled to the footer actions of the payment screen"
+  },
+  {
+    "file": "16-preview-modal-open.png",
+    "frameName": "16 · Preview — modal open",
+    "copyNodeId": "6609:10525",
+    "width": 1600,
+    "height": 1000,
+    "note": "Preview with the report-a-problem modal opened over the payment screen"
+  },
+  {
+    "file": "17-preview-modal-filled.png",
+    "frameName": "17 · Preview — modal filled",
+    "copyNodeId": "6609:10631",
+    "width": 1600,
+    "height": 1000,
+    "note": "Preview with the payer's message typed and Send enabled"
+  },
+  {
+    "file": "18-preview-modal-sent.png",
+    "frameName": "18 · Preview — modal sent",
+    "copyNodeId": "6609:10737",
+    "width": 1600,
+    "height": 1000,
+    "note": "Preview after sending: thank-you message confirms the report reached the backend"
+  },
+  {
+    "file": "19-drag-field-before.png",
+    "frameName": "19 · Drag field — before",
+    "copyNodeId": "6609:10843",
+    "width": 1600,
+    "height": 1000,
+    "note": "Screen structure before reordering a field by drag and drop"
+  },
+  {
+    "file": "20-drag-field-dragging.png",
+    "frameName": "20 · Drag field — dragging",
+    "copyNodeId": "6609:10915",
+    "width": 1600,
+    "height": 1000,
+    "note": "Field being dragged with a drop indicator in the screen structure"
+  },
+  {
+    "file": "21-drag-field-after.png",
+    "frameName": "21 · Drag field — after",
+    "copyNodeId": "6609:10989",
+    "width": 1600,
+    "height": 1000,
+    "note": "Screen structure after the field was dropped in its new position"
+  },
+  {
+    "file": "22-action-ask-for-confirmation.png",
+    "frameName": "22 · Action → ask for confirmation",
+    "copyNodeId": "6609:11061",
+    "width": 1600,
+    "height": 1000,
+    "note": "Footer action set to ask for confirmation, with dialog title, text and buttons"
+  },
+  {
+    "file": "23-confirmation-dialog-fields.png",
+    "frameName": "23 · Confirmation — dialog fields",
+    "copyNodeId": "6609:11174",
+    "width": 1600,
+    "height": 1000,
+    "note": "Confirmation dialog with a field the payer fills in before confirming"
+  },
+  {
+    "file": "24-component-catalog.png",
+    "frameName": "24 · Component catalog",
+    "copyNodeId": "6609:11289",
+    "width": 1600,
+    "height": 1000,
+    "note": "Component catalog: list of form components with an isolated preview and props"
+  },
+  {
+    "file": "25-graph-view.png",
+    "frameName": "25 · Graph view",
+    "copyNodeId": "6609:11334",
+    "width": 1600,
+    "height": 1000,
+    "note": "Graph view of the flow showing screens and transitions as a node graph"
+  },
+  {
+    "file": "screen-drawer-1.png",
+    "frameName": "Screen drawer",
+    "copyNodeId": "6609:11431",
+    "width": 448,
+    "height": 942,
+    "note": "Screen properties drawer: general settings, texts and footer actions"
+  },
+  {
+    "file": "screen-drawer-2.png",
+    "frameName": "Screen drawer",
+    "copyNodeId": "6609:11583",
+    "width": 448,
+    "height": 1175,
+    "note": "Screen drawer with an action expanded into its modal window settings"
+  },
+  {
+    "file": "screen-drawer-3.png",
+    "frameName": "Screen drawer",
+    "copyNodeId": "6609:11811",
+    "width": 448,
+    "height": 1416,
+    "note": "Screen drawer with transitions and operations sections expanded"
+  },
+  {
+    "file": "palette.png",
+    "frameName": "Palette",
+    "copyNodeId": "6609:12105",
+    "width": 272,
+    "height": 814,
+    "note": "Palette panel: ready-made blocks and field types to add to a form"
+  },
+  {
+    "file": "structure.png",
+    "frameName": "Structure",
+    "copyNodeId": "6609:12120",
+    "width": 320,
+    "height": 814,
+    "note": "Screen structure panel: header, body steps, footer buttons and modal buttons"
+  },
+  {
+    "file": "properties-drawer.png",
+    "frameName": "Properties drawer",
+    "copyNodeId": "6609:12142",
+    "width": 448,
+    "height": 1155,
+    "note": "Properties drawer for a selected form field with per-language values"
+  },
+  {
+    "file": "warnings-panel.png",
+    "frameName": "Warnings + Edit name / Warnings",
+    "copyNodeId": "6609:12307",
+    "width": 1600,
+    "height": 1000,
+    "note": "Form editor with the validation warnings panel expanded at the bottom"
+  },
+  {
+    "file": "edit-name-modal.png",
+    "frameName": "Warnings + Edit name / 03 · Add flow — filled",
+    "copyNodeId": "6609:12354",
+    "width": 480,
+    "height": 234,
+    "note": "Edit name modal for renaming an existing flow"
+  }
+]
