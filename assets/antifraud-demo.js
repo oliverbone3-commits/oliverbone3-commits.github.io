@@ -1,5 +1,5 @@
 // Anti-fraud analyst loop: Monitoring → transaction → Cross-check → blacklist → Dictionaries.
-// Screens are 2× exports of the Figma frames (fictional data); coordinates below are in 1× design px.
+// Screens are 2× exports of the Figma frames; coordinates below are in 1× design px.
 (function () {
   var root = document.querySelector('[data-af-demo]');
   if (!root) return;
@@ -32,7 +32,7 @@
   var FLAGS = [{ x: 330, y: 92, w: 790, h: 30 }, { x: 330, y: 236, w: 790, h: 30 }];
   function initial() { return { screen: 'monitoring', drawer: false, dscroll: 0, scroll: 0, hl: false }; }
   var steps = [
-    { cap: 'Monitoring: every payment the rules scored, as it happens. Filters narrow two million events down to the ones that need a person.',
+    { cap: 'Monitoring: every payment the rules scored, as it happens. Filters narrow the stream down to the ones that need a person.',
       act: { at: [145, 260], apply: function (s) { s.drawer = true; } } },
     { cap: 'The eye opens the transaction in a drawer over the list: the reaction first, then the payment, customer, device and sanctions. Enough to judge it without leaving the stream.',
       act: { dscroll: 760, apply: function (s) { s.dscroll = 760; } } },
