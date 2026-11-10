@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" data-look="gallery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment gateway back-office — Dzmitry Kuzmiankou</title>
+<meta name="description" content="The back-office of a payment gateway: payments as intent, transaction and operation, terminals and routing rules, balances that move on a schedule, and no money flow that changes on one click.">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="../assets/site.css?v=20261109a">
+<link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
+<script src="../assets/font-lab.js?v=20261106e"></script>
+<link rel="stylesheet" href="../assets/rule-demo.css?v=20261110a">
+<link rel="stylesheet" href="../assets/antifraud-demo.css?v=6">
+<link rel="stylesheet" href="../assets/next.css?v=47">
+</head>
+<body class="nx" data-case="gate">
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-pic" src="../assets/avatar.jpg" alt="" width="32" height="32">Dzmitry Kuzmiankou</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a class="hide-sm" href="../index.html#ai">AI</a>
+      <a class="hide-sm" href="../index.html#about">About</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark theme">
+        <svg class="theme-light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back" href="../index.html#work">← All work</a>
+      <div class="tags"><span class="tag own">Only designer</span><span class="tag">Payment gateway</span><span class="tag">B2B back-office</span></div>
+      <h1>A payment gateway back-office where money never changes course on one click</h1>
+      <p class="summary">The operators of a payment gateway connect merchants to providers, decide which payments go where and when the money moves between balances. I designed the gateway's back-office: payments as intent, transaction and operation, terminals and their routing rules, balances that transfer on a schedule, and the mapping of provider errors, all on one design system.</p>
+      <dl class="case-facts">
+        <div><dt>Role</dt><dd>Lead Product Designer, the only designer on the product</dd></div>
+        <div><dt>Product</dt><dd>Operational back-office of a payment gateway: merchants, providers, terminals, balances</dd></div>
+        <div><dt>Timeline</dt><dd>2025 – 2026</dd></div>
+        <div><dt>Scale</dt><dd>Payments, entities, terminals, balances, events, error mapping, lists, reports, limits · 16 screens and states below</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="case-body" data-mode="full">
+
+      <div class="read-mode">
+        <p class="read-q">How do you want to read the case?</p>
+        <div class="switch" data-read-switch role="group" aria-label="Reading mode">
+          <button type="button" data-mode="skim" aria-pressed="false">Skim · 60 sec</button>
+          <button type="button" data-mode="full" aria-pressed="true">Full story</button>
+        </div>
+      </div>
+
+      <section class="case-section skim-only">
+        <div class="prose tldr">
+          <p>I was the only designer on a payment gateway's back-office, the tool its operators use to connect merchants to providers and move money between balances. Payments are shown as they work in the system: an intent, the transactions it took, the operations on them. Terminals are read-only until you press Edit, and routing restrictions are one canvas of allowed and restricted values instead of a list of single rules. Automatic transfers between balances dropped the toggle in the table for three named modes, a modal and a confirmation that says what will happen to the money. The rule behind all of it: changing where money goes must be explicit and confirmed; everything else should be quick and quiet.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">01 · Context</p>
+          <h2>Operators decide where merchants' money goes</h2><ul class="sec-chips"><li>Merchants</li><li>Providers</li><li>Terminals</li><li>Balances</li></ul></header>
+          <p>A payment gateway sits between merchants and the providers that actually process their payments. Its back-office is where operators set that up: which merchant terminal talks to which provider terminal, under what contract, with which routing rules, and when money moves from one balance to another.</p>
+          <p>Most of that is everyday admin work. A few settings are not: in them an operator's mistake isn't a typo, it changes where a merchant's money goes. The back-office had to keep the first kind fast and make the second kind impossible to change by accident.</p>
+          <div class="insight">
+            <p class="label">The principle</p>
+            <p>Changing a money flow must be explicit and confirmed. Everything else should be quick and quiet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">02 · Payments</p>
+          <h2>A payment as the system sees it: intent, transaction, operation</h2><ul class="sec-chips"><li>Intents</li><li>Transactions</li><li>Operations</li><li>Drawer over the list</li></ul></header>
+          <p>A buyer's attempt to pay is an <strong>intent</strong>. Behind it are the <strong>transactions</strong> it went through and the <strong>operations</strong> on them, such as a refund. The back-office shows payments in that order, with a tab for each, so an operator can start from what the merchant asked about and go down to what actually happened.</p>
+          <p>Lists open on status counters (success, pending, declined, refunded, action required), and active filters stay above the table as removable chips. A row opens in a drawer over the list: overview first, then additional parameters, anti-fraud result, payment instrument, customer and device. The payment log and a refund sit in the drawer's header.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="gt-pair">
+              <a href="img/gate/intents-list.png" target="_blank" rel="noopener"><img src="img/gate/intents-list.png" width="1440" height="808" alt="Intents list: status counters, filter chips and a table of payments with merchant, terminal and provider" loading="lazy" decoding="async"></a>
+              <a class="gt-tall" href="img/gate/intent-drawer.png" target="_blank" rel="noopener"><img src="img/gate/intent-drawer.png" width="448" height="2336" alt="Intent drawer: overview, additional parameters, anti-fraud, payment instrument, customer and device" loading="lazy" decoding="async"></a>
+            </div>
+          </div>
+          <figcaption>The intents list and the drawer for one intent. Transactions and operations follow the same pattern.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">03 · Balances</p>
+          <h2>No toggles for money: named modes and a confirmation</h2><ul class="sec-chips"><li>Manual · Instant · Scheduled</li><li>Badge in the table</li><li>10+ states</li></ul><aside class="nx-note" style="--tilt:-2deg"><p>A toggle in a row is a money flow switched by a stray click.</p><span>Note to self</span></aside></header>
+          <p>Money from a merchant's payments lands on one balance and has to move to the balance it's paid out from. The first idea was a toggle in the terminals table. It looked efficient, and that was the problem: one click in a row would switch a merchant's money flow.</p>
+          <p>The table only shows the mode as a badge and the next transfer time. Settings open in a modal, where technical names became three modes people understand: <strong>Manual</strong>, <strong>Instant</strong> and <strong>Scheduled</strong>, as radio cards with a line on what each one does. Scheduled takes run hours, a timezone, a threshold that flags unusually large transfers and a balance that always stays put, and the modal states when the next transfer will run.</p>
+          <p>The main button is always <strong>Save</strong>: a label that changed with the selection confused people. The meaning moved into the confirmation instead, and confirmations appear only when the money flow changes. Editing run hours doesn't ask "are you sure"; switching from Instant to Scheduled does, and says what happens to incoming payments in the meantime.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <a class="af-shot" href="img/gate/transit-list.png" target="_blank" rel="noopener"><img src="img/gate/transit-list.png" width="1440" height="816" alt="Balance list: each merchant terminal shows its transfer mode as a badge and the next transfer time" loading="lazy" decoding="async"></a>
+            <div class="gt-row" style="--n:3; margin-top: clamp(12px, 2vw, 24px)">
+              <a href="img/gate/transit-setup-scheduled.png" target="_blank" rel="noopener"><img src="img/gate/transit-setup-scheduled.png" width="480" height="750" alt="Transfer settings: Manual, Instant and Scheduled as radio cards; Scheduled with run hours, timezone, alert threshold and minimum balance" loading="lazy" decoding="async"></a>
+              <div>
+                <a href="img/gate/transit-confirm-scheduled.png" target="_blank" rel="noopener"><img src="img/gate/transit-confirm-scheduled.png" width="480" height="222" alt="Confirmation: switch to Scheduled, with what happens to incoming payments and when the next transfer runs" loading="lazy" decoding="async"></a>
+                <p class="gt-cap">Only a change of money flow asks for confirmation.</p>
+                <a href="img/gate/transit-turn-off.png" target="_blank" rel="noopener" style="margin-top:16px"><img src="img/gate/transit-turn-off.png" width="480" height="182" alt="Confirmation: turn off transfers, with what happens to the current balance" loading="lazy" decoding="async"></a>
+              </div>
+              <a href="img/gate/transit-save-error.png" target="_blank" rel="noopener"><img src="img/gate/transit-save-error.png" width="480" height="837" alt="Save error state, with a separate action to turn off automatic transfers" loading="lazy" decoding="async"></a>
+            </div>
+          </div>
+          <figcaption>The list shows the mode; the modal changes it. Setup, confirmations and the save error are a few of the 10+ states drawn for this feature.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">04 · Routing</p>
+          <h2>One canvas of restrictions instead of rules one by one</h2><ul class="sec-chips"><li>Allowed · Restricted</li><li>10 parameters</li><li>Priority and weight</li></ul></header>
+          <p>Routing decides which provider terminal a payment goes to. The first version was a table of single rules: add one, edit one, delete one. In review with the product manager it became one canvas of restrictions grouped by type. For each type an operator picks <strong>Allowed</strong> or <strong>Restricted</strong> and fills the list: payment system, issuer, BIN country, BIN, customer email, card number, billing country, IP country, merchant customer ID. An amount range comes first, priority and weight close it.</p>
+          <p>Long lists stay manageable: values are chips, and "copy all" and "delete all" handle a whole list in one action. The modal wasn't drawn from scratch either. It was assembled from the existing rule-creation modal, and at the product manager's request the block moved into the main terminal screen instead of a separate section.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="gt-row" style="--n:3">
+              <a class="gt-tall" href="img/gate/routing-create.png" target="_blank" rel="noopener"><img src="img/gate/routing-create.png" width="480" height="3150" alt="Create routing rule: amount range, then Allowed or Restricted lists for payment system, issuer, BIN country, BIN and more" loading="lazy" decoding="async"></a>
+              <a href="img/gate/api-keys.png" target="_blank" rel="noopener"><img src="img/gate/api-keys.png" width="480" height="644" alt="Terminal authentication: API key IDs and secrets" loading="lazy" decoding="async"></a>
+              <a href="img/gate/transit-edit-instant.png" target="_blank" rel="noopener"><img src="img/gate/transit-edit-instant.png" width="480" height="426" alt="Transfer settings in Instant mode, Save disabled until something changes" loading="lazy" decoding="async"></a>
+            </div>
+          </div>
+          <figcaption>Restrictions by type, each with its own mode and list. Next to it, the terminal's keys and a transfer setting with nothing changed yet.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">05 · Terminals and contracts</p>
+          <h2>Read-only by default, overrides that inherit</h2><ul class="sec-chips"><li>Edit in the header</li><li>General + special terms</li><li>Empty field inherits</li></ul></header>
+          <p>Detail pages became read-only: no toggles or checkboxes on them, edits go through <strong>Edit</strong> in the header. A merchant terminal page reads top to bottom: overview, checkout settings, URLs, authentication, API settings, cascading, anti-fraud settings, the provider terminals it's connected to and its contract history, with a section index on the left.</p>
+          <p>The same thinking shaped special fee terms in a terminal contract. On top of the general terms, operators override values for a specific payment system in five blocks: reserve, debit, credit, refund and chargeback, for the merchant side and the provider side. Each block has "General terms" and "Special terms"; an empty field inherits the general value, and view mode shows only what is overridden. Tabs per payment system were rejected: an override hidden in a tab is easy to miss.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="gt-row" style="--n:2">
+              <a class="gt-tall" href="img/gate/terminal-full.png" target="_blank" rel="noopener" style="aspect-ratio:1440/1500"><img src="img/gate/terminal-full.png" width="1440" height="3246" alt="Merchant terminal page, read-only: overview, checkout settings, URLs, authentication and more, with a section index" loading="lazy" decoding="async"></a>
+              <a class="gt-tall" href="img/gate/agreement-view.png" target="_blank" rel="noopener" style="aspect-ratio:1440/1500"><img src="img/gate/agreement-view.png" width="1440" height="2074" alt="Merchant terminal contract in view mode: general settings, rolling reserve and the fee blocks" loading="lazy" decoding="async"></a>
+            </div>
+          </div>
+          <figcaption>A terminal and its contract, both read-only until Edit.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">06 · Errors</p>
+          <h2>Every provider's decline codes, mapped to one internal set</h2><ul class="sec-chips"><li>Provider reason → internal reason</li><li>Processing and Public API</li></ul></header>
+          <p>Each provider returns its own codes for the same problem. The mapping screen lists them next to the internal reason they become: provider, provider code and description on one side, internal name, code and description on the other. Creating or editing a mapping is one short modal; deleting one names the code it removes.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <div class="gt-pair">
+              <a href="img/gate/errors-list.png" target="_blank" rel="noopener"><img src="img/gate/errors-list.png" width="1440" height="760" alt="Errors mapping: provider reason and code mapped to internal reason name and code" loading="lazy" decoding="async"></a>
+              <a href="img/gate/errors-create.png" target="_blank" rel="noopener"><img src="img/gate/errors-create.png" width="480" height="518" alt="Create mapping modal" loading="lazy" decoding="async"></a>
+            </div>
+          </div>
+          <figcaption>The list and the modal that adds a mapping.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">07 · Honest part</p>
+          <h2>What went wrong</h2><ul class="sec-chips"><li>Drawing before looking</li><li>Rules one by one</li><li>A clever button label</li></ul></header>
+          <ul>
+            <li><strong>Drawing before looking.</strong> Twice the product manager's review sent me back to an existing component. The routing modal ended up assembled from rule creation instead of drawn anew. Now I search the system before I draw.</li>
+            <li><strong>Rules one by one.</strong> Routing restrictions started as a table of individual rules. After review they became one canvas by type and moved into the main terminal screen.</li>
+            <li><strong>A clever button label.</strong> A main button whose text changed with the selected mode confused people. "Save" plus a confirmation that says what happens worked better.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">08 · Result</p>
+          <h2>What changed after</h2><ul class="sec-chips"><li>No one-click money changes</li><li>One naming</li></ul></header>
+        </div>
+        <div class="results">
+          <div><b>No one-click money changes</b><p>Transfers between balances, special fee terms and routing restrictions shipped as explicit modes with confirmations.</p></div>
+          <div><b>10+ states for one feature</b><p>Transfer settings were drawn with every state: setup, editing each mode, adding a time, loading, saving, error, switching and turning off.</p></div>
+          <div><b>Routing, v1 → v2</b><p>From a table of single rules to one canvas of restrictions by type, built from an existing modal.</p></div>
+          <div><b>One structure for every entity</b><p>Entities moved into the design system's reference drawers, and 110 frames in the file got one naming: entity, view, type.</p></div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="prose">
+          <header class="sec-head"><p class="num">Scale</p>
+          <h2>More screens from the back-office</h2><ul class="sec-chips"><li>16 screens</li><li>Open full size</li></ul></header>
+          <p>Lists, drawers, modals and states from the same back-office. Open any of them full size.</p>
+        </div>
+        <div class="af-wall">
+          <a href="img/gate/transactions-list.png" target="_blank" rel="noopener"><img width="1440" height="808" src="img/gate/transactions-list.png" alt="Transactions list" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/gate/intent-drawer.png" target="_blank" rel="noopener"><img width="448" height="2336" src="img/gate/intent-drawer.png" alt="Intent drawer" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-manual.png" target="_blank" rel="noopener"><img width="480" height="454" src="img/gate/transit-manual.png" alt="Transfer settings switched to Manual, with the confirmation still ahead" loading="lazy" decoding="async"></a>
+          <a href="img/gate/terminal-full.png" target="_blank" rel="noopener"><img width="1440" height="3246" src="img/gate/terminal-full.png" alt="Merchant terminal page" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-turn-off.png" target="_blank" rel="noopener"><img width="480" height="182" src="img/gate/transit-turn-off.png" alt="Turn off transfers confirmation" loading="lazy" decoding="async"></a>
+          <a href="img/gate/errors-list.png" target="_blank" rel="noopener"><img width="1440" height="760" src="img/gate/errors-list.png" alt="Errors mapping list" loading="lazy" decoding="async"></a>
+          <a href="img/gate/api-keys.png" target="_blank" rel="noopener"><img width="480" height="644" src="img/gate/api-keys.png" alt="Terminal authentication" loading="lazy" decoding="async"></a>
+          <a href="img/gate/agreement-view.png" target="_blank" rel="noopener"><img width="1440" height="2074" src="img/gate/agreement-view.png" alt="Terminal contract, view mode" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-edit-instant.png" target="_blank" rel="noopener"><img width="480" height="426" src="img/gate/transit-edit-instant.png" alt="Transfer settings, Instant" loading="lazy" decoding="async"></a>
+          <a href="img/gate/intents-list.png" target="_blank" rel="noopener"><img width="1440" height="808" src="img/gate/intents-list.png" alt="Intents list" loading="lazy" decoding="async"></a>
+          <a href="img/gate/errors-create.png" target="_blank" rel="noopener"><img width="480" height="518" src="img/gate/errors-create.png" alt="Create error mapping" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-list.png" target="_blank" rel="noopener"><img width="1440" height="816" src="img/gate/transit-list.png" alt="Balance list with transfer modes" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-save-error.png" target="_blank" rel="noopener"><img width="480" height="837" src="img/gate/transit-save-error.png" alt="Transfer settings, save error" loading="lazy" decoding="async"></a>
+          <a class="crop" href="img/gate/routing-create.png" target="_blank" rel="noopener"><img width="480" height="3150" src="img/gate/routing-create.png" alt="Create routing rule" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-confirm-scheduled.png" target="_blank" rel="noopener"><img width="480" height="222" src="img/gate/transit-confirm-scheduled.png" alt="Switch to Scheduled confirmation" loading="lazy" decoding="async"></a>
+          <a href="img/gate/transit-setup-scheduled.png" target="_blank" rel="noopener"><img width="480" height="750" src="img/gate/transit-setup-scheduled.png" alt="Transfer settings, Scheduled" loading="lazy" decoding="async"></a>
+        </div>
+      </section>
+
+    </article>
+
+    <a class="next-case" href="back-office.html">
+      <div><small>Next case</small><b>An anti-fraud back-office built around the analyst's loop</b></div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Building something with a small team?</h2>
+        <p>I'm looking for a founding or first-designer role in a product team where design changes what ships. Telegram is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="https://t.me/dkuzmenkov">Message on Telegram</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:oliverbone3@gmail.com">oliverbone3@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Dzmitry Kuzmiankou</span>
+    <span>Built in code on my own design tokens, with AI.</span>
+  </footer>
+</div>
+<script src="../assets/wall.js?v=4"></script>
+<script src="../assets/site.js?v=20261109a"></script>
+</body>
+</html>

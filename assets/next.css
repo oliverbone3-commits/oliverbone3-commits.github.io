@@ -613,3 +613,13 @@ html body.nx[data-case] .rd-section .rd, .nx .rd-section .rd { background: var(-
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nx .ph-badge .ph-lt { display: none; } :root:not([data-theme="light"]) .nx .ph-badge .ph-dk { display: block; } }
 :root[data-theme="dark"] .nx .ph-badge .ph-lt { display: none; }
 :root[data-theme="dark"] .nx .ph-badge .ph-dk { display: block; }
+
+/* Gate case: a wide screen next to its drawer or modal, and rows of modals */
+.gt-pair { display: grid; grid-template-columns: minmax(0, 3.2fr) minmax(0, 1fr); gap: clamp(12px, 2vw, 24px); align-items: start; }
+.gt-row { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: clamp(12px, 2vw, 24px); align-items: start; }
+.gt-pair a, .gt-row a { display: block; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px rgb(12 12 12 / .08), 0 10px 30px rgb(12 12 12 / .08); }
+.gt-pair img, .gt-row img { display: block; width: 100%; height: auto; }
+.gt-pair a.gt-tall, .gt-row a.gt-tall { aspect-ratio: 448 / 900; }
+.gt-pair a.gt-tall img, .gt-row a.gt-tall img { height: 100%; object-fit: cover; object-position: top; }
+.gt-cap { margin: 8px 2px 0; font-size: 13px; line-height: 18px; color: var(--primary-400); }
+@media (max-width: 760px) { .gt-pair, .gt-row { grid-template-columns: 1fr; } .gt-pair a.gt-tall, .gt-row a.gt-tall { aspect-ratio: 448 / 640; } }
