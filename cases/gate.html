@@ -13,7 +13,7 @@
 <script src="../assets/font-lab.js?v=20261106e"></script>
 <link rel="stylesheet" href="../assets/rule-demo.css?v=20261110a">
 <link rel="stylesheet" href="../assets/antifraud-demo.css?v=6">
-<link rel="stylesheet" href="../assets/next.css?v=47">
+<link rel="stylesheet" href="../assets/next.css?v=48">
 </head>
 <body class="nx" data-case="gate">
 <a class="skip" href="#content">Skip to content</a>
@@ -44,7 +44,7 @@
         <div><dt>Role</dt><dd>Lead Product Designer, the only designer on the product</dd></div>
         <div><dt>Product</dt><dd>Operational back-office of a payment gateway: merchants, providers, terminals, balances</dd></div>
         <div><dt>Timeline</dt><dd>2025 – 2026</dd></div>
-        <div><dt>Scale</dt><dd>Payments, entities, terminals, balances, events, error mapping, lists, reports, limits · 16 screens and states below</dd></div>
+        <div><dt>Scale</dt><dd>Payments, entities, terminals, balances, events, error mapping, lists, reports, limits · 14 screens and states below</dd></div>
       </dl>
     </div>
   </section>
@@ -82,7 +82,7 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">02 · Payments</p>
-          <h2>A payment as the system sees it: intent, transaction, operation</h2><ul class="sec-chips"><li>Intents</li><li>Transactions</li><li>Operations</li><li>Drawer over the list</li></ul></header>
+          <h2>A payment as the system sees it: intent, transaction, operation</h2><ul class="sec-chips"><li>Intents</li><li>Attempts &amp; cascading</li><li>Operations</li><li>Drawer and full page</li></ul></header>
           <p>A buyer's attempt to pay is an <strong>intent</strong>. Behind it are the <strong>transactions</strong> it went through and the <strong>operations</strong> on them, such as a refund. The back-office shows payments in that order, with a tab for each, so an operator can start from what the merchant asked about and go down to what actually happened.</p>
           <p>Lists open on status counters (success, pending, declined, refunded, action required), and active filters stay above the table as removable chips. A row opens in a drawer over the list: overview first, then additional parameters, anti-fraud result, payment instrument, customer and device. The payment log and a refund sit in the drawer's header.</p>
         </div>
@@ -94,6 +94,15 @@
             </div>
           </div>
           <figcaption>The intents list and the drawer for one intent. Transactions and operations follow the same pattern.</figcaption>
+        </figure>
+        <div class="prose" style="margin-top: clamp(40px, 5vw, 72px)">
+          <p>The full intent page opens on <strong>Attempts &amp; Cascading</strong>, because that is the first thing an operator needs when a merchant asks "what happened to this payment". One intent can take several attempts; when a provider declines, the payment can cascade to another provider terminal. The block shows each attempt with its transactions, each transaction with its provider terminal and operations such as a debit or a refund, and the status and time of every step, collapsed to the level the operator is looking at. Overview, parameters, anti-fraud, payment instrument, customer and device follow below, with a section index on the left.</p>
+        </div>
+        <figure class="fig">
+          <div class="canvas screens-canvas">
+            <a class="af-shot gt-crop" href="img/gate/intent-full.png" target="_blank" rel="noopener" style="aspect-ratio:1440/660"><img src="img/gate/intent-full.png" width="1440" height="2690" alt="Intent page: Attempts and Cascading block with two attempts, the transactions inside them and their debit and refund operations, each with a status" loading="lazy" decoding="async"></a>
+          </div>
+          <figcaption>Attempt → transaction → operation, with a status on each level. Attempt 1 is collapsed.</figcaption>
         </figure>
       </section>
 
@@ -110,15 +119,11 @@
             <a class="af-shot" href="img/gate/transit-list.png" target="_blank" rel="noopener"><img src="img/gate/transit-list.png" width="1440" height="816" alt="Balance list: each merchant terminal shows its transfer mode as a badge and the next transfer time" loading="lazy" decoding="async"></a>
             <div class="gt-row" style="--n:3; margin-top: clamp(12px, 2vw, 24px)">
               <a href="img/gate/transit-setup-scheduled.png" target="_blank" rel="noopener"><img src="img/gate/transit-setup-scheduled.png" width="480" height="750" alt="Transfer settings: Manual, Instant and Scheduled as radio cards; Scheduled with run hours, timezone, alert threshold and minimum balance" loading="lazy" decoding="async"></a>
-              <div>
-                <a href="img/gate/transit-confirm-scheduled.png" target="_blank" rel="noopener"><img src="img/gate/transit-confirm-scheduled.png" width="480" height="222" alt="Confirmation: switch to Scheduled, with what happens to incoming payments and when the next transfer runs" loading="lazy" decoding="async"></a>
-                <p class="gt-cap">Only a change of money flow asks for confirmation.</p>
-                <a href="img/gate/transit-turn-off.png" target="_blank" rel="noopener" style="margin-top:16px"><img src="img/gate/transit-turn-off.png" width="480" height="182" alt="Confirmation: turn off transfers, with what happens to the current balance" loading="lazy" decoding="async"></a>
-              </div>
+              <a href="img/gate/transit-manual.png" target="_blank" rel="noopener"><img src="img/gate/transit-manual.png" width="480" height="454" alt="Transfer settings switched to Manual: after Save the operator is asked to confirm, and the current balance stays where it is" loading="lazy" decoding="async"></a>
               <a href="img/gate/transit-save-error.png" target="_blank" rel="noopener"><img src="img/gate/transit-save-error.png" width="480" height="837" alt="Save error state, with a separate action to turn off automatic transfers" loading="lazy" decoding="async"></a>
             </div>
           </div>
-          <figcaption>The list shows the mode; the modal changes it. Setup, confirmations and the save error are a few of the 10+ states drawn for this feature.</figcaption>
+          <figcaption>The list shows the mode; the modal changes it. Setup, a switch that will ask for confirmation, and the save error are a few of the 10+ states drawn for this feature.</figcaption>
         </figure>
       </section>
 
@@ -204,26 +209,24 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">Scale</p>
-          <h2>More screens from the back-office</h2><ul class="sec-chips"><li>16 screens</li><li>Open full size</li></ul></header>
+          <h2>More screens from the back-office</h2><ul class="sec-chips"><li>13 screens</li><li>Open full size</li></ul></header>
           <p>Lists, drawers, modals and states from the same back-office. Open any of them full size.</p>
         </div>
         <div class="af-wall">
-          <a href="img/gate/transactions-list.png" target="_blank" rel="noopener"><img width="1440" height="808" src="img/gate/transactions-list.png" alt="Transactions list" loading="lazy" decoding="async"></a>
-          <a class="crop" href="img/gate/intent-drawer.png" target="_blank" rel="noopener"><img width="448" height="2336" src="img/gate/intent-drawer.png" alt="Intent drawer" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-manual.png" target="_blank" rel="noopener"><img width="480" height="454" src="img/gate/transit-manual.png" alt="Transfer settings switched to Manual, with the confirmation still ahead" loading="lazy" decoding="async"></a>
-          <a href="img/gate/terminal-full.png" target="_blank" rel="noopener"><img width="1440" height="3246" src="img/gate/terminal-full.png" alt="Merchant terminal page" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-turn-off.png" target="_blank" rel="noopener"><img width="480" height="182" src="img/gate/transit-turn-off.png" alt="Turn off transfers confirmation" loading="lazy" decoding="async"></a>
-          <a href="img/gate/errors-list.png" target="_blank" rel="noopener"><img width="1440" height="760" src="img/gate/errors-list.png" alt="Errors mapping list" loading="lazy" decoding="async"></a>
-          <a href="img/gate/api-keys.png" target="_blank" rel="noopener"><img width="480" height="644" src="img/gate/api-keys.png" alt="Terminal authentication" loading="lazy" decoding="async"></a>
-          <a href="img/gate/agreement-view.png" target="_blank" rel="noopener"><img width="1440" height="2074" src="img/gate/agreement-view.png" alt="Terminal contract, view mode" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-edit-instant.png" target="_blank" rel="noopener"><img width="480" height="426" src="img/gate/transit-edit-instant.png" alt="Transfer settings, Instant" loading="lazy" decoding="async"></a>
-          <a href="img/gate/intents-list.png" target="_blank" rel="noopener"><img width="1440" height="808" src="img/gate/intents-list.png" alt="Intents list" loading="lazy" decoding="async"></a>
-          <a href="img/gate/errors-create.png" target="_blank" rel="noopener"><img width="480" height="518" src="img/gate/errors-create.png" alt="Create error mapping" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-list.png" target="_blank" rel="noopener"><img width="1440" height="816" src="img/gate/transit-list.png" alt="Balance list with transfer modes" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-save-error.png" target="_blank" rel="noopener"><img width="480" height="837" src="img/gate/transit-save-error.png" alt="Transfer settings, save error" loading="lazy" decoding="async"></a>
-          <a class="crop" href="img/gate/routing-create.png" target="_blank" rel="noopener"><img width="480" height="3150" src="img/gate/routing-create.png" alt="Create routing rule" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-confirm-scheduled.png" target="_blank" rel="noopener"><img width="480" height="222" src="img/gate/transit-confirm-scheduled.png" alt="Switch to Scheduled confirmation" loading="lazy" decoding="async"></a>
-          <a href="img/gate/transit-setup-scheduled.png" target="_blank" rel="noopener"><img width="480" height="750" src="img/gate/transit-setup-scheduled.png" alt="Transfer settings, Scheduled" loading="lazy" decoding="async"></a>
+          <a><img width="1440" height="808" src="img/gate/transactions-list.png" alt="Transactions list" loading="lazy" decoding="async"></a>
+          <a class="crop"><img width="1440" height="2690" src="img/gate/intent-full.png" alt="Intent page with attempts and cascading" loading="lazy" decoding="async"></a>
+          <a class="crop"><img width="448" height="2336" src="img/gate/intent-drawer.png" alt="Intent drawer" loading="lazy" decoding="async"></a>
+          <a><img width="1440" height="3246" src="img/gate/terminal-full.png" alt="Merchant terminal page" loading="lazy" decoding="async"></a>
+          <a><img width="1440" height="760" src="img/gate/errors-list.png" alt="Errors mapping list" loading="lazy" decoding="async"></a>
+          <a><img width="480" height="644" src="img/gate/api-keys.png" alt="Terminal authentication" loading="lazy" decoding="async"></a>
+          <a><img width="1440" height="2074" src="img/gate/agreement-view.png" alt="Terminal contract, view mode" loading="lazy" decoding="async"></a>
+          <a><img width="480" height="426" src="img/gate/transit-edit-instant.png" alt="Transfer settings, Instant" loading="lazy" decoding="async"></a>
+          <a><img width="1440" height="808" src="img/gate/intents-list.png" alt="Intents list" loading="lazy" decoding="async"></a>
+          <a><img width="480" height="518" src="img/gate/errors-create.png" alt="Create error mapping" loading="lazy" decoding="async"></a>
+          <a><img width="1440" height="816" src="img/gate/transit-list.png" alt="Balance list with transfer modes" loading="lazy" decoding="async"></a>
+          <a><img width="480" height="837" src="img/gate/transit-save-error.png" alt="Transfer settings, save error" loading="lazy" decoding="async"></a>
+          <a class="crop"><img width="480" height="3150" src="img/gate/routing-create.png" alt="Create routing rule" loading="lazy" decoding="async"></a>
+          <a><img width="480" height="750" src="img/gate/transit-setup-scheduled.png" alt="Transfer settings, Scheduled" loading="lazy" decoding="async"></a>
         </div>
       </section>
 

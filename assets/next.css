@@ -623,3 +623,10 @@ html body.nx[data-case] .rd-section .rd, .nx .rd-section .rd { background: var(-
 .gt-pair a.gt-tall img, .gt-row a.gt-tall img { height: 100%; object-fit: cover; object-position: top; }
 .gt-cap { margin: 8px 2px 0; font-size: 13px; line-height: 18px; color: var(--primary-400); }
 @media (max-width: 760px) { .gt-pair, .gt-row { grid-template-columns: 1fr; } .gt-pair a.gt-tall, .gt-row a.gt-tall { aspect-ratio: 448 / 640; } }
+.gt-crop { display: block; overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px rgb(12 12 12 / .08), 0 10px 30px rgb(12 12 12 / .08); }
+.gt-crop img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+@media (max-width: 760px) { .gt-crop { aspect-ratio: 1440 / 1100 !important; } }
+
+/* Screen walls are a visual block: tiles don't open, zoom or lift */
+.af-wall a, .af-wall a:hover { cursor: default; transform: none; box-shadow: none; }
+.af-wall a:hover::after { box-shadow: inset 0 0 0 1px rgba(12, 12, 12, .12); }
