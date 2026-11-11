@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Payment gateway back-office — Dzmitry Kuzmiankou</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Payment gateway back-office — Dzmitry Kuzmiankou">
+<meta property="og:description" content="The back-office of a payment gateway: payments as intent, transaction and operation, terminals and routing rules, balances that move on a schedule, and no money flow that changes on one click.">
+<meta property="og:url" content="https://oliverbone3-commits.github.io/cases/gate.html">
+<meta property="og:image" content="https://oliverbone3-commits.github.io/assets/og/gate.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="description" content="The back-office of a payment gateway: payments as intent, transaction and operation, terminals and routing rules, balances that move on a schedule, and no money flow that changes on one click.">
@@ -15,7 +23,7 @@
 <script src="../assets/font-lab.js?v=20261106e"></script>
 <link rel="stylesheet" href="../assets/rule-demo.css?v=20261110a">
 <link rel="stylesheet" href="../assets/antifraud-demo.css?v=9">
-<link rel="stylesheet" href="../assets/next.css?v=48">
+<link rel="stylesheet" href="../assets/next.css?v=50">
 </head>
 <body class="nx" data-case="gate">
 <a class="skip" href="#content">Skip to content</a>
@@ -41,7 +49,7 @@
     <div class="wrap">
       <a class="back" href="../index.html#work">← All work</a>
       <div class="tags"><span class="tag own">Only designer</span><span class="tag">Payment gateway</span><span class="tag">B2B back-office</span></div>
-      <h1>A payment gateway back-office where money never changes course on one click</h1>
+      <h1>A payment gateway back-office where money never changes course with one click</h1>
       <p class="summary">The operators of a payment gateway connect merchants to providers, decide which payments go where and when the money moves between balances. I designed the gateway's back-office: payments as intent, transaction and operation, terminals and their routing rules, balances that transfer on a schedule, and the mapping of provider errors, all on one design system.</p>
       <dl class="case-facts">
         <div><dt>Role</dt><dd>Lead Product Designer, the only designer on the product</dd></div>
@@ -87,7 +95,7 @@
           <header class="sec-head"><p class="num">02 · Payments</p>
           <h2>A payment as the system sees it: intent, transaction, operation</h2><ul class="sec-chips"><li>Intents</li><li>Attempts &amp; cascading</li><li>Operations</li><li>Drawer and full page</li></ul></header>
           <p>A buyer's attempt to pay is an <strong>intent</strong>. Behind it are the <strong>transactions</strong> it went through and the <strong>operations</strong> on them, such as a refund. The back-office shows payments in that order, with a tab for each, so an operator can start from what the merchant asked about and go down to what actually happened.</p>
-          <p>Lists open on status counters (success, pending, declined, refunded, action required), and active filters stay above the table as removable chips. A row opens in a drawer over the list: overview first, then additional parameters, anti-fraud result, payment instrument, customer and device. The payment log and a refund sit in the drawer's header.</p>
+          <p>Lists open on status counters (success, pending, declined, refunded, disputed, action required), and active filters stay above the table as removable chips. A row opens in a drawer over the list: overview first, then additional parameters, anti-fraud result, payment instrument, customer and device. The payment log and a refund sit in the drawer's header.</p>
         </div>
         <figure class="fig">
           <div class="canvas screens-canvas">
@@ -133,7 +141,7 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">04 · Routing</p>
-          <h2>One canvas of restrictions instead of rules one by one</h2><ul class="sec-chips"><li>Allowed · Restricted</li><li>10 parameters</li><li>Priority and weight</li></ul></header>
+          <h2>One canvas of restrictions instead of rules one by one</h2><ul class="sec-chips"><li>Allowed · Restricted</li><li>Amount + 9 lists</li><li>Priority and weight</li></ul></header>
           <p>Routing decides which provider terminal a payment goes to. The first version was a table of single rules: add one, edit one, delete one. In review with the product manager it became one canvas of restrictions grouped by type. For each type an operator picks <strong>Allowed</strong> or <strong>Restricted</strong> and fills the list: payment system, issuer, BIN country, BIN, customer email, card number, billing country, IP country, merchant customer ID. An amount range comes first, priority and weight close it.</p>
           <p>Long lists stay manageable: values are chips, and "copy all" and "delete all" handle a whole list in one action. The modal wasn't drawn from scratch either. It was assembled from the existing rule-creation modal, and at the product manager's request the block moved into the main terminal screen instead of a separate section.</p>
         </div>
@@ -153,7 +161,7 @@
         <div class="prose">
           <header class="sec-head"><p class="num">05 · Terminals and contracts</p>
           <h2>Read-only by default, overrides that inherit</h2><ul class="sec-chips"><li>Edit in the header</li><li>General + special terms</li><li>Empty field inherits</li></ul></header>
-          <p>Detail pages became read-only: no toggles or checkboxes on them, edits go through <strong>Edit</strong> in the header. A merchant terminal page reads top to bottom: overview, checkout settings, URLs, authentication, API settings, cascading, anti-fraud settings, the provider terminals it's connected to and its contract history, with a section index on the left.</p>
+          <p>Detail pages became read-only, and edits go through <strong>Edit</strong> in the header. A merchant terminal page reads top to bottom: overview, checkout settings, URLs, authentication, API settings, cascading, anti-fraud settings, the provider terminals it's connected to and its contract history, with a section index on the left.</p>
           <p>The same thinking shaped special fee terms in a terminal contract. On top of the general terms, operators override values for a specific payment system in five blocks: reserve, debit, credit, refund and chargeback, for the merchant side and the provider side. Each block has "General terms" and "Special terms"; an empty field inherits the general value, and view mode shows only what is overridden. Tabs per payment system were rejected: an override hidden in a tab is easy to miss.</p>
         </div>
         <figure class="fig">
@@ -170,7 +178,7 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">06 · Errors</p>
-          <h2>Every provider's decline codes, mapped to one internal set</h2><ul class="sec-chips"><li>Provider reason → internal reason</li><li>Processing and Public API</li></ul></header>
+          <h2>Every provider's decline codes, mapped to one internal set</h2><ul class="sec-chips"><li>Provider reason → internal reason</li></ul></header>
           <p>Each provider returns its own codes for the same problem. The mapping screen lists them next to the internal reason they become: provider, provider code and description on one side, internal name, code and description on the other. Creating or editing a mapping is one short modal; deleting one names the code it removes.</p>
         </div>
         <figure class="fig">
@@ -202,17 +210,17 @@
           <h2>What changed after</h2><ul class="sec-chips"><li>No one-click money changes</li><li>One naming</li></ul></header>
         </div>
         <div class="results">
-          <div><b>No one-click money changes</b><p>Transfers between balances, special fee terms and routing restrictions shipped as explicit modes with confirmations.</p></div>
+          <div><b>No one-click money changes</b><p>Transfers between balances got explicit modes, and switching or turning one off asks for confirmation.</p></div>
           <div><b>10+ states for one feature</b><p>Transfer settings were drawn with every state: setup, editing each mode, adding a time, loading, saving, error, switching and turning off.</p></div>
           <div><b>Routing, v1 → v2</b><p>From a table of single rules to one canvas of restrictions by type, built from an existing modal.</p></div>
-          <div><b>One structure for every entity</b><p>Entities moved into the design system's reference drawers, and 110 frames in the file got one naming: entity, view, type.</p></div>
+          <div><b>One structure for every entity</b><p>Entities moved into the design system's standard drawers, and 110 frames in the file got one naming: entity, view, type.</p></div>
         </div>
       </section>
 
       <section class="case-section">
         <div class="prose">
-          <header class="sec-head"><p class="num">Scale</p>
-          <h2>More screens from the back-office</h2><ul class="sec-chips"><li>13 screens</li></ul></header>
+          <header class="sec-head"><p class="num">Screens</p>
+          <h2>More screens from the back-office</h2><ul class="sec-chips"><li>14 screens</li></ul></header>
           <p>Lists, drawers, modals and states from the same back-office.</p>
         </div>
         <div class="af-wall">
@@ -235,8 +243,8 @@
 
     </article>
 
-    <a class="next-case" href="back-office.html">
-      <div><small>Next case</small><b>An anti-fraud back-office built around the analyst's loop</b></div>
+    <a class="next-case" href="weatherwell.html">
+      <div><small>Next case</small><b>A weather app that research turned into a health tracker</b></div>
       <span class="arrow" aria-hidden="true">→</span>
     </a>
 

@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Checkout builder — Dzmitry Kuzmiankou</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Checkout builder — Dzmitry Kuzmiankou">
+<meta property="og:description" content="How dozens of hand-drawn payment forms became ~30 blocks, two theme axes and a working prototype that engineering took into production.">
+<meta property="og:url" content="https://oliverbone3-commits.github.io/cases/checkout-builder.html">
+<meta property="og:image" content="https://oliverbone3-commits.github.io/assets/og/checkout-builder.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="description" content="How dozens of hand-drawn payment forms became ~30 blocks, two theme axes and a working prototype that engineering took into production.">
@@ -17,7 +25,7 @@
 <link rel="stylesheet" href="../assets/antifraud-demo.css?v=9">
 <link rel="stylesheet" href="../assets/gallery.css?v=20261106e">
 <script src="../assets/font-lab.js?v=20261106e"></script>
-<link rel="stylesheet" href="../assets/next.css?v=48">
+<link rel="stylesheet" href="../assets/next.css?v=50">
 </head>
 <body class="nx" data-case="checkout">
 <a class="skip" href="#content">Skip to content</a>
@@ -101,7 +109,7 @@
           <p>Launching a new region or payment method meant waiting for a designer to draw its checkout, almost from scratch. A payment gateway shows the buyer a checkout: card, bank transfer, QR, mobile money, local wallets. Every method, region and provider brand needed its own form. They were drawn screen by screen: four fonts in the files, hard-coded colours, and the same blocks — amount, timer, copyable details, instructions — redrawn with small differences each time.</p>
           <div class="insight">
             <b>Second attempt</b>
-            <p>I first proposed a checkout builder at Payler, my previous company. Engineering was overloaded and it never got capacity. At my next company the same pain came back, and this time I built it.</p>
+            <p>I first proposed a checkout builder at Payler, my previous company. Engineering was overloaded and it never got capacity. At PayTeria the same pain came back, and this time I built it.</p>
           </div>
         </div>
       </section>
@@ -183,7 +191,7 @@
           <header class="sec-head"><p class="num">04 · Decision</p>
           <h2>Show the business a product, not mockups</h2><ul class="sec-chips"><li>Prototype in one HTML file</li><li>5 iterations in a day</li><li>CSS variables + JSON tokens</li></ul></header>
           <p>People who decide on a merchant-facing builder don't open Figma. So I built a working prototype in one HTML file: the live checkout on the right, settings on the left, export of CSS variables and JSON tokens.</p>
-          <p>By the third iteration it had turned into a pile of features: fifteen equal sections in one flat list. I stopped and researched how leading payment providers and e-commerce platforms let merchants configure checkouts, then audited the prototype against it. Three findings changed the structure:</p>
+          <p>By the third iteration it had turned into a pile of features: fifteen equal sections in one flat list. I stopped and ran research with AI agents: how leading payment providers and e-commerce platforms let merchants configure checkouts, and an audit of the prototype against it. Three findings changed the structure:</p>
           <ul>
             <li>there are three different jobs: one-time setup, variants per market, and rare compliance edits;</li>
             <li>the "field state preview" was a testing tool pretending to be a setting;</li>
@@ -210,7 +218,7 @@
           <h2>What went wrong</h2><ul class="sec-chips"><li>Features before jobs</li><li>Token layers beyond the team</li><li>Brief read literally</li></ul><aside class="nx-note" style="--tilt:2.5deg"><p>Ask who sets it up, why and how often — before adding the option.</p><span>Note to self</span></aside></header>
           <ul class="lessons">
             <li><strong>Features before jobs.</strong> Three iterations added options without asking who configures this, why and how often. Researching the jobs first would have saved them.</li>
-            <li><strong>Token architecture beyond the team.</strong> I rebuilt the builder on an open UI kit with three token layers: 145 primitives and 35 semantic tokens. It was correct and too complex for daily work. Together with the team we went back to one collection of 43 tokens that people actually use.</li>
+            <li><strong>Token architecture beyond the team.</strong> I rebuilt the builder on an open UI kit with layered tokens: 145 primitives and 35 semantic tokens. It was correct and too complex for daily work. Together with the team we went back to one collection of 43 tokens that people actually use.</li>
             <li><strong>Reading the brief literally.</strong> One checkout had to be redone: "manual entry" meant input fields, not copyable details.</li>
           </ul>
         </div>
@@ -219,11 +227,10 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">06 · Result</p>
-          <h2>What changed after</h2><ul class="sec-chips"><li>In production</li><li>4+ regions</li><li>No designer in the loop</li></ul></header>
+          <h2>What changed after</h2><ul class="sec-chips"><li>In production</li><li>4+ regions</li></ul></header>
         </div>
         <div class="results">
           <div><b>Prototype → production</b><p>The checkout engineer took the working prototype and extended it against production.</p></div>
-          <div><b>No designer in the loop</b><p>New checkouts are assembled by the engineer from the builder.</p></div>
           <div><b>Real rollouts in 4+ regions</b><p>Desktop and mobile: bank transfers with "I've paid", QR with seven bank deep links, automatic status checks, custom merchant brands.</p></div>
           <div><b>336 → 36 input variants</b><p>One layer structure, so typed values no longer disappear when the state changes.</p></div>
         </div>
@@ -239,7 +246,7 @@
           <p>The flows list shows each checkout flow with its entry screen, number of screens and checks: <strong>No issues</strong>, <strong>2 warnings</strong>, <strong>8 errors · 4 warnings</strong>. A broken flow is visible before anyone opens it.</p>
 
           <h3>A checkout as a graph</h3>
-          <p>In <strong>Flow</strong> mode the scenario is a canvas. Screens are nodes with the actions a payer can take: pay, cancel, report. Between them sit backend operations (submit, status, cancel), and every outcome an operation can return (success, pending, failure, default) is its own exit that has to lead somewhere. Events that can happen anywhere, like cancel and timeout, hang off a single <strong>From any screen</strong> node instead of being wired to every screen. A pending screen polls status on its own. The same graph can be read as a flowchart or re-laid out as a graph.</p>
+          <p>In <strong>Flow</strong> mode the scenario is a canvas. Screens are nodes with the actions a payer can take: pay, cancel, report. Between them sit backend operations (submit, status, cancel), and every outcome an operation can return (success, pending, failure, default) is its own exit that has to lead somewhere. Events that can happen anywhere, like cancel and timeout, hang off a single <strong>From any screen</strong> node instead of being wired to every screen. A pending screen polls status on its own. The same scenario can be viewed as a flowchart or as an auto-arranged graph.</p>
 
           <h3>The backend contract on the same canvas</h3>
           <p>The inspector has three tabs: <strong>Screen, Transition, Operations</strong>. Operations is the contract with the backend: what we call, which fields go in, which outcomes may come back, and which values land in <code>{{placeholders}}</code> on the screens. Designers, frontend and backend are meant to look at one source instead of a spec and a mockup that drift apart.</p>
@@ -254,7 +261,7 @@
 
       <section class="case-section">
         <div class="prose">
-          <header class="sec-head"><p class="num">Scale</p>
+          <header class="sec-head"><p class="num">Screens</p>
           <h2>One editor, many screens and states</h2><ul class="sec-chips"><li>20 of 25 screens</li></ul></header>
           <p>Flows list, canvas modes, inspector tabs, form editing, drag and drop, confirmations, preview steps.</p>
         </div>
@@ -286,8 +293,8 @@
 
     </article>
 
-    <a class="next-case" href="gate.html">
-      <div><small>Next case</small><b>A payment gateway back-office where money never changes course on one click</b></div>
+    <a class="next-case" href="back-office.html">
+      <div><small>Next case</small><b>An anti-fraud back-office built around the analyst's loop</b></div>
       <span class="arrow" aria-hidden="true">→</span>
     </a>
 
@@ -314,9 +321,7 @@
 <script src="../assets/wall.js?v=7"></script>
 <script src="../assets/site.js?v=20261109a"></script>
 <template id="lab-frames">
-<!-- ============================================================
-     04 · Flow canvas  (Figma 6:1478)
-     ============================================================ -->
+<!-- 04 · Flow canvas -->
 <div class="fb-frame" id="fb-flow">
   <header class="fb-header">
     <div class="fb-header__back"><img src="img/ic-arrow-left-20.svg" width="20" height="20" alt=""></div>
@@ -558,9 +563,7 @@
   </div>
 </div>
 
-<!-- ============================================================
-     09 · Form mode — step  (Figma 17:3138)
-     ============================================================ -->
+<!-- 09 · Form mode — step -->
 <div class="fb-frame" id="fb-form">
   <header class="fb-header">
     <div class="fb-header__back"><img src="img/ic-arrow-left-20.svg" width="20" height="20" alt=""></div>
@@ -711,9 +714,7 @@
   </div>
 </div>
 
-<!-- ============================================================
-     14 · Preview — payment screen: modal only  (Figma 28:6373)
-     ============================================================ -->
+<!-- 14 · Preview — payment screen: modal only -->
 <div class="fb-modal" id="fb-modal">
   <div class="fb-modal__head">
     <p class="fb-t-h4">Preview</p>

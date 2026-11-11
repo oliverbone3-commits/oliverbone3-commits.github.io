@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zam — Dzmitry Kuzmiankou</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zam — Dzmitry Kuzmiankou">
+<meta property="og:description" content="Zam turns a construction crew's chats, voice notes and receipt photos into sorted paperwork. My own product: research, design and a working v1 built with AI.">
+<meta property="og:url" content="https://oliverbone3-commits.github.io/cases/zam.html">
+<meta property="og:image" content="https://oliverbone3-commits.github.io/assets/og/zam.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="description" content="Zam turns a construction crew's chats, voice notes and receipt photos into sorted paperwork. My own product: research, design and a working v1 built with AI.">
@@ -42,7 +50,7 @@
   .zam-hero .ph a { aspect-ratio: 390 / 844; }
   @media (max-width: 720px) { .zam-hero { grid-template-columns: 1fr; } .zam-hero .phones { width: 60%; max-width: 230px; margin: 0 auto; } }
 </style>
-<link rel="stylesheet" href="../assets/next.css?v=48">
+<link rel="stylesheet" href="../assets/next.css?v=50">
 </head>
 <body class="nx" data-case="zam">
 <a class="skip" href="#content">Skip to content</a>
@@ -112,8 +120,8 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">01 · The problem</p>
-          <h2>Ten hours a week and a ten-kilo backpack</h2><ul class="sec-chips"><li>Interview</li><li>10 h → 2 h a week</li><li>Word and Excel</li></ul></header>
-          <p>I started with an interview with a foreman who runs three or four sites at once. Paperwork took him about ten hours a week: two on Monday, one on Tuesday, three on Thursday and Saturday morning. His own target was two hours: one on Tuesday, one on Friday. That became the main metric of the pilot.</p>
+          <h2>Ten hours a week and a ten-kilo backpack</h2><ul class="sec-chips"><li>Interview</li><li>Target: 2 h a week</li><li>Word and Excel</li></ul></header>
+          <p>I started with an interview with a foreman who runs three or four sites at once. Paperwork took him about ten hours a week: spread over Monday, Tuesday, Thursday and Saturday morning. His own target was two hours: one on Tuesday, one on Friday. That was the metric the pilot was meant to move.</p>
           <p>He carried the documents of every site in a backpack, five to ten kilos, because “you never know which site will call today”. It was heavy enough to set off the passenger-seat belt alarm in his car. To find who said what, he scrolled through every chat. Estimates and contracts lived in Word and Excel, which break when you edit them on a phone.</p>
           <p>Big construction tools, from Procore to PlanRadar, are sold to companies with someone whose job is to run the system. A foreman with five workers has no such person, and every form he fills in is time the product was supposed to save.</p>
         </div>
@@ -170,7 +178,7 @@
         <div class="prose">
           <header class="sec-head"><p class="num">06 · Cost as design</p>
           <h2>AI cost shaped the product</h2><ul class="sec-chips"><li>$20 a month</li><li>Cents per message</li><li>Night batch</li></ul></header>
-          <p>The foreman named the price himself: twenty dollars a month, “even if you’re doing one apartment”. Then I measured. A message cost 0.4¢ to sort, a page of a document 3.2¢, an answer 0.7¢. Without limits that came to ten to twenty dollars a month per crew, so at twenty dollars the margin was zero.</p>
+          <p>The foreman named the price himself: twenty dollars a month, “even if you’re doing one apartment”. Then I measured. A message cost 0.4¢ to sort, a page of a document 3.2¢, an answer 0.7¢. Without limits that came to ten to twenty dollars a month per crew, so at twenty dollars the margin could drop to zero.</p>
           <p>So cost became a design decision. Text in group chats isn’t sent to AI in real time; small talk is filtered out without AI; only the first photo of a batch is classified. The private chat is sorted at once, while files from groups wait for the night run at half price. A cheap model handles simple steps and a stronger one handles documents. A daily cap stops runaway spend, and I see where every cent goes.</p>
         </div>
         <figure class="fig">
@@ -190,7 +198,7 @@
 
       <section class="case-section">
         <div class="prose">
-          <header class="sec-head"><p class="num">Scale</p>
+          <header class="sec-head"><p class="num">Screens</p>
           <h2>Zam, screen by screen</h2><ul class="sec-chips"><li>18 screens</li><li>Telegram, web, phone</li></ul></header>
           <p>The bot in Telegram, the app on a laptop and on a phone.</p>
         </div>

@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anti-fraud back-office — Dzmitry Kuzmiankou</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anti-fraud back-office — Dzmitry Kuzmiankou">
+<meta property="og:description" content="The back-office of an anti-fraud platform, designed around the analyst's path: monitoring, the transaction, cross-check and the blacklist.">
+<meta property="og:url" content="https://oliverbone3-commits.github.io/cases/back-office.html">
+<meta property="og:image" content="https://oliverbone3-commits.github.io/assets/og/back-office.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="description" content="The back-office of an anti-fraud platform, designed around the analyst's path: monitoring, the transaction, cross-check and the blacklist.">
@@ -15,7 +23,7 @@
 <script src="../assets/font-lab.js?v=20261106e"></script>
 <link rel="stylesheet" href="../assets/rule-demo.css?v=20261110a">
 <link rel="stylesheet" href="../assets/antifraud-demo.css?v=9">
-<link rel="stylesheet" href="../assets/next.css?v=48">
+<link rel="stylesheet" href="../assets/next.css?v=50">
 </head>
 <body class="nx" data-case="backoffice">
 <a class="skip" href="#content">Skip to content</a>
@@ -42,12 +50,12 @@
       <a class="back" href="../index.html#work">← All work</a>
       <div class="tags"><span class="tag own">Only designer</span><span class="tag">Anti-fraud</span><span class="tag">B2B back-office</span></div>
       <h1>An anti-fraud back-office built around the analyst's loop</h1>
-      <p class="summary">Rules decide on every payment. What they can't decide goes to people, and what people find goes back into the rules through the <a href="rule-builder.html">rule builder</a>. I designed the back-office of <a href="https://scanfraud.com/" target="_blank" rel="noopener">ScanFraud</a> so that this is one continuous path: from the payment stream, to the transaction, to everything connected to it, to the blacklist.</p>
+      <p class="summary">Rules, written in the <a href="rule-builder.html">rule builder</a>, decide on every payment. What they can't decide goes to people. I designed the back-office of <a href="https://scanfraud.com/" target="_blank" rel="noopener">ScanFraud</a> so that this is one continuous path: from the payment stream, to the transaction, to everything connected to it, to the blacklist.</p>
       <dl class="case-facts">
         <div><dt>Role</dt><dd>Lead Product Designer, the only designer on the product</dd></div>
         <div><dt>Product</dt><dd>B2B anti-fraud platform for payment providers</dd></div>
         <div><dt>Timeline</dt><dd>2026</dd></div>
-        <div><dt>Scale</dt><dd>Monitoring, transactions, cross-check, lists, dictionaries, merchants · 24 screens and states below</dd></div>
+        <div><dt>Scale</dt><dd>Monitoring, transactions, cross-check, lists, dictionaries, merchants · 22 screens and states below</dd></div>
       </dl>
     </div>
   </section>
@@ -58,7 +66,7 @@
       <section class="case-section rd-section">
         <div class="prose">
           <header class="sec-head"><p class="num">Walkthrough</p>
-          <h2>Follow one suspicious payment through the loop</h2><ul class="sec-chips"><li>Monitoring</li><li>Drawer</li><li>Full page</li></ul></header>
+          <h2>From the payment stream to one transaction</h2><ul class="sec-chips"><li>Monitoring</li><li>Drawer</li><li>Full page</li></ul></header>
           <p>From the payment stream to the transaction drawer, and from there to the full transaction page.</p>
         </div>
         <div class="rd af-demo" data-af-demo data-base="img/antifraud/" role="region" aria-label="Anti-fraud analyst loop walkthrough">
@@ -77,9 +85,9 @@
       <section class="case-section">
         <div class="prose">
           <header class="sec-head"><p class="num">01 · Context</p>
-          <h2>Rules handle the volume. People handle the rest, and teach the rules</h2><ul class="sec-chips"><li>Approve · decline · review</li><li>Analyst loop</li><li>Back into the rules</li></ul></header>
+          <h2>Rules handle the volume. People handle the rest</h2><ul class="sec-chips"><li>Approve · decline · review</li><li>Analyst loop</li></ul></header>
           <p>ScanFraud scores every payment of a payment provider's merchants and returns a reaction: approve, decline, send for review. Most payments never need a person. The ones that do land in the back-office, where a risk analyst has to answer two questions quickly: is this fraud, and what else is connected to it?</p>
-          <p>The second answer matters more. A blocked card stops one payment; a blocked phone, device or customer stops the whole ring behind it. So the back-office isn't a set of separate admin pages. It is one path: <strong>Monitoring → transaction → Cross-check → blacklist</strong>.</p>
+          <p>The second answer matters more. A blocked card stops one payment; a blocked phone, device or customer stops every other payment that uses it. So the back-office isn't a set of separate admin pages. It is one path: <strong>Monitoring → transaction → Cross-check → blacklist</strong>.</p>
         </div>
       </section>
 
@@ -123,8 +131,8 @@
 
       <section class="case-section">
         <div class="prose">
-          <header class="sec-head"><p class="num">06 · Scale</p>
-          <h2>The loop is a few screens. The product around it is many more</h2><ul class="sec-chips"><li>24 screens</li></ul></header>
+          <header class="sec-head"><p class="num">Screens</p>
+          <h2>The loop is a few screens. The product around it is many more</h2><ul class="sec-chips"><li>22 screens</li></ul></header>
           <p>Drawers, detail views, modals, imports and confirmations from the same back-office.</p>
         </div>
         <div class="af-wall">
@@ -143,7 +151,7 @@
           <a><img width="480" height="818" src="img/antifraud/edit-merchant-modal.png" alt="Edit merchant modal" loading="lazy" decoding="async"></a>
           <a><img width="448" height="808" src="img/antifraud/dictionaries-filters-drawer.png" alt="Dictionaries filters drawer" loading="lazy" decoding="async"></a>
           <a><img width="480" height="314" src="img/antifraud/add-country-analyze-result.png" alt="Add countries: analyse result" loading="lazy" decoding="async"></a>
-          <a><img width="480" height="640" src="img/antifraud/post-auth-modal.png" alt="Post-auth review modal" loading="lazy" decoding="async"></a>
+          <a><img width="480" height="640" src="img/antifraud/post-auth-modal.png" alt="Post-auth responses by terminal" loading="lazy" decoding="async"></a>
           <a><img width="320" height="903" src="img/antifraud/columns-settings.png" alt="Column settings" loading="lazy" decoding="async"></a>
           <a><img width="480" height="396" src="img/antifraud/merchants-import-modal.png" alt="Merchants import" loading="lazy" decoding="async"></a>
           <a><img width="480" height="266" src="img/antifraud/in-review-modal.png" alt="Move to review modal" loading="lazy" decoding="async"></a>
