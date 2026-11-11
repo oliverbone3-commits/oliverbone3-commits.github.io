@@ -49,3 +49,8 @@
 .af-wall.is-rows a img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
 .af-wall.is-rows a.small { display: grid; place-items: center; background: var(--well, #EDEDE6); }
 .af-wall.is-rows a.small img { width: 72%; height: auto; object-fit: contain; border-radius: 10px; box-shadow: 0 1px 2px rgb(12 12 12 / .08), 0 16px 40px rgb(12 12 12 / .14); }
+/* Masonry with weight, positioned by wall.js */
+.af-wall.is-masonry { position: relative; columns: auto; display: block; }
+.af-wall.is-masonry a { position: absolute; margin: 0; background: #fff; }
+.af-wall.is-masonry a img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.af-wall.is-masonry a.pad img { height: auto; max-height: 100%; }
