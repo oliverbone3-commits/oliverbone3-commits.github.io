@@ -84,11 +84,13 @@ html[data-theme="dark"]:has(body.nx) { background: #12120E; }
 .nx .hero h1 { font-size: clamp(38px, 6.2vw, 80px); line-height: 1.02; letter-spacing: -0.035em; max-width: 20ch; }
 .nx .hero h1 .muted { color: var(--primary-300); }
 .nx .status { background: var(--well); border: 0; }
-.nx-proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--p5); margin-top: clamp(64px, 9vw, 112px); }
+/* auto tracks: a column is never narrower than its number, so "13 → ~160" can't run into the next one */
+.nx-proof { display: grid; grid-template-columns: repeat(4, auto); gap: var(--p5) clamp(24px, 4vw, 56px); margin-top: clamp(64px, 9vw, 112px); }
 .nx-proof div { border-top: 1px solid var(--primary-200); padding-top: var(--p4); }
 .nx-proof b { display: block; font: 500 clamp(38px, 4.8vw, 64px)/1 var(--display); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .nx-proof > div > span { display: block; margin-top: var(--p3); color: var(--primary-400); font-size: 14px; line-height: 20px; max-width: 26ch; }
-@media (max-width: 820px) { .nx-proof { grid-template-columns: 1fr 1fr; row-gap: var(--p6); } }
+@media (max-width: 820px) { .nx-proof { grid-template-columns: auto auto; row-gap: var(--p6); } }
+@media (max-width: 440px) { .nx-proof { column-gap: var(--p4); } .nx-proof b { font-size: 34px; } }
 
 /* ---------- Odometer (assets/next.js) ---------- */
 .odo { display: inline-block; height: 1.12em; margin: -.06em 0; overflow: hidden; vertical-align: top; line-height: 1.12; }
